@@ -5,13 +5,17 @@
  *
  *   skills/index.json          metadata + file hashes, imported by the site
  *   mcp/src/skills.bundle.json metadata + file contents, bundled into the Worker
+ *   public/sitemap.xml         every page plus every skill (scripts/seo.mjs)
+ *   public/llms.txt            short reference for AI assistants   (scripts/seo.mjs)
+ *   public/llms-full.txt       full reference for AI assistants   (scripts/seo.mjs)
  *
- * The registry has no other source of truth: the site and the MCP server both
- * read what this script writes.
+ * The registry has no other source of truth: the site, the MCP server and the
+ * machine-readable files above all read what this script writes.
  */
 import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { writeSeoFiles } from "./seo.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SKILLS_DIR = path.join(ROOT, "skills");
@@ -136,7 +140,10 @@ if (process.argv.includes("--ensure")) {
     () => false,
   );
   if (ready) {
-    console.log("skills: index already present, skipping sync");
+    const seo = await writeSeoFiles();
+    console.log(
+      `skills: index already present, skipping sync · seo: ${seo.urls} urls, llms.txt refreshed`,
+    );
     process.exit(0);
   }
 }
@@ -235,4 +242,6 @@ await writeFile(
 );
 
 const bytes = bundle.reduce((sum, s) => sum + s.files.reduce((n, f) => n + f.bytes, 0), 0);
+const seo = await writeSeoFiles();
 console.log(`\n${index.length} skills → skills/index.json + mcp/src/skills.bundle.json (${Math.round(bytes / 1024)} KB of files)`);
+console.log(`seo → public/sitemap.xml (${seo.urls} urls) + llms.txt + llms-full.txt (${seo.files} files, ${seo.repos} repos)`);
