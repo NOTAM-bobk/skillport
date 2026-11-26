@@ -43,7 +43,7 @@ export default function Privacy() {
 
         <Section title="Questions">
           <p>
-            Email <Link to="/contact">hello@skillport.dev</Link> and ask. If the project adds
+            Email <Link to="/contact">hello@mathclass.uk</Link> and ask. If the project adds
             accounts or analytics later, this page will say so before it ships.
           </p>
         </Section>

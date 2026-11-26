@@ -8,7 +8,7 @@ const COMPONENTS = [
   { name: "Registry API", detail: "skills.search, skills.get, skills.install", state: "Operational" },
   { name: "Skill mirror", detail: `${SKILLS.length} skills · ${SOURCE_REPOS.length} repos · synced ${SKILLS_GENERATED.slice(0, 10)}`, state: "Built" },
   { name: "Custom domain", detail: "skillport.mcp.mathclass.uk", state: "Blocked by Cloudflare challenge" },
-  { name: "Website", detail: "skillport.dev", state: "Not deployed" },
+  { name: "Website", detail: "skillport.mathclass.uk", state: "Not deployed" },
 ];
 
 export default function Status() {
@@ -52,7 +52,7 @@ export default function Status() {
       <Section title="Incidents">
         <p className="prose">
           The MCP server is live on Freebuff Sites. The Cloudflare custom domain stays offline while
-          the mathclass.uk zone serves its bot challenge to non-browser clients, and skillport.dev
+          the mathclass.uk zone serves its bot challenge to non-browser clients, and skillport.mathclass.uk
           has no deployment yet.
         </p>
         <p className="prose">
