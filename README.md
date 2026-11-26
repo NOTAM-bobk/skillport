@@ -44,37 +44,138 @@ and returned by `skills.get`.
 
 ## MCP server
 
+The public MCP endpoint is:
+
+```text
+https://skillport.mcp.mathclass.uk/mcp
+```
+
+It is a public, anonymous, read-only registry. No API key or account is required.
+The Worker returns CORS headers so browser-based MCP clients can call it, but clients
+should still validate the upstream licence and the returned SHA-256 hashes before
+writing skill files into a project.
+
+### Tools
+
+| Tool | Arguments | Returns |
+| --- | --- | --- |
+| `skills.search` | `query`, `category`, `limit` | Ranked manifests with an install call for each |
+| `skills.get` | `name`, `includeInstructions` | Commit, licence, package hash, file hashes, and optionally `SKILL.md` |
+| `skills.install` | `name`, `version`, `files` | Every file's contents, per-file sha256, and suggested `writeTo` paths |
+
+All tools are read-only. `skills.install` does not write to a local filesystem; it
+returns a deterministic file manifest for the calling client to review and save.
+Skill names are the registry names returned by `skills.search`. Use the exact name
+rather than guessing a GitHub path.
+
+### Minimal JSON-RPC walkthrough
+
+Send JSON-RPC 2.0 requests as `POST` requests with `Content-Type: application/json`.
+The `id` can be any JSON value; the examples use integers.
+
+Initialize the MCP session:
+
+```bash
+curl -sS https://skillport.mcp.mathclass.uk/mcp \
+  -H 'content-type: application/json' \
+  -H 'accept: application/json, text/event-stream' \
+  --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"curl","version":"1.0"}}}'
+```
+
+List the available tools:
+
+```bash
+curl -sS https://skillport.mcp.mathclass.uk/mcp \
+  -H 'content-type: application/json' \
+  -H 'accept: application/json, text/event-stream' \
+  --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
+```
+
+Search, inspect, and install a skill. The `arguments` object is nested inside the
+MCP `tools/call` request:
+
+```bash
+# Search (limit is capped by the Worker)
+curl -sS https://skillport.mcp.mathclass.uk/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"skills.search","arguments":{"query":"pdf","limit":5}}}'
+
+# Get metadata and instructions for one exact name
+curl -sS https://skillport.mcp.mathclass.uk/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"skills.get","arguments":{"name":"pdf","includeInstructions":true}}}'
+
+# Return all installable files and their hashes
+curl -sS https://skillport.mcp.mathclass.uk/mcp \
+  -H 'content-type: application/json' \
+  --data '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"skills.install","arguments":{"name":"pdf"}}}'
+```
+
+### Connecting an MCP client
+
+For clients that accept a generic MCP server URL, add the URL above as a **Streamable
+HTTP** server and leave authentication unset. For clients with JSON configuration,
+the equivalent shape is typically:
+
+```json
+{
+  "mcpServers": {
+    "skillport": {
+      "url": "https://skillport.mcp.mathclass.uk/mcp"
+    }
+  }
+}
+```
+
+Some clients call this transport `http`, `streamable-http`, or `HTTP/SSE`. Prefer
+Streamable HTTP at `/mcp`; do not append `/sse` unless the client only supports the
+legacy transport. Client configuration formats vary, so keep the endpoint as a URL
+rather than copying a local `command` or `args` example.
+
+### Transports and HTTP behavior
+
+- `POST /mcp` is the primary Streamable HTTP transport. It accepts JSON-RPC 2.0 and
+  returns JSON, or a single-event SSE response when the client requests
+  `text/event-stream`.
+- `GET /sse` is the legacy HTTP+SSE transport. It announces a
+  `/messages?sessionId=...` URL; post JSON-RPC messages to that URL and read replies
+  from the open SSE stream. Legacy sessions live in Worker isolate memory, so use
+  `/mcp` for normal clients and anything that needs a more robust connection.
+- `GET /`, `GET /health`, `GET /skills`, and `GET /skills/:name` are lightweight
+  debugging/read-only endpoints. `/health` reports the deployed registry count.
+- `OPTIONS` is supported for CORS preflight. Only `GET`, `POST`, and `OPTIONS` are
+  supported; other methods return HTTP 405 with an `Allow` header.
+- CORS is open for the public read-only service. This does not make the endpoint a
+  general proxy: it only exposes the documented registry and MCP operations.
+- Anonymous requests are rate limited per IP in Worker memory. Limits can reset when
+  an isolate is replaced, so clients should cache results, avoid tight retry loops,
+  and respect `429` responses rather than treating them as permanent failures.
+
+### Troubleshooting
+
+- **404:** confirm the URL ends in `/mcp` (or use `/sse` only for a legacy SSE
+  client). The Vercel site URL is not the MCP endpoint.
+- **405:** use `POST` for JSON-RPC, `GET` for health/debug endpoints, and `OPTIONS`
+  for browser preflight. The service intentionally rejects other methods.
+- **415 or an empty response:** send `Content-Type: application/json` and a valid
+  JSON-RPC body. Include `Accept: application/json, text/event-stream` when using a
+  client that can consume either response format.
+- **JSON-RPC `-32600`:** check that the body has `jsonrpc: "2.0"`, an `id`, a
+  method, and an object-valued `params` field where required.
+- **Unknown tool or skill:** call `tools/list` or `skills.search` first and use the
+  exact returned name. Do not use a display title or source directory as a guess.
+- **429:** slow down and retry with backoff. The limiter is intentionally anonymous
+  and per-IP; repeated parallel installs are likely to hit it.
+- **CORS errors in a browser:** ensure the browser sent its `OPTIONS` preflight and
+  that the request targets `/mcp`, not a cached or redirected URL.
+
+### Local development and deployment
+
 ```bash
 npm run mcp:dev        # wrangler dev on http://127.0.0.1:8787
 npm run mcp:typecheck
 npm run mcp:deploy     # skills:sync, then wrangler deploy
 ```
-
-Tools — all read-only, all anonymous:
-
-| Tool | Arguments | Returns |
-| --- | --- | --- |
-| `skills.search` | `query`, `category`, `limit` | Ranked manifests with the install call for each |
-| `skills.get` | `name`, `includeInstructions` | Commit, licence, package hash, file hashes, SKILL.md |
-| `skills.install` | `name`, `version`, `files` | Every file's contents, per-file sha256, `writeTo` path |
-
-### Transports
-
-- `POST /mcp` — streamable HTTP. JSON-RPC 2.0 in, JSON out, or a single-event SSE
-  stream when the client only accepts `text/event-stream`.
-- `GET /sse` — legacy HTTP+SSE. Announces `/messages?sessionId=…`, which accepts
-  JSON-RPC posts and pushes the reply down the open stream.
-- `GET /` and `GET /health` — plain JSON summary; `GET /skills` and `/skills/:name`
-  return the same data over HTTP for debugging.
-
-Sessions for the legacy transport live in Worker isolate memory; anything long-lived
-should use `/mcp`.
-
-Tested with `npx @modelcontextprotocol/inspector --cli http://127.0.0.1:8787/mcp
---transport http --method tools/list` and with `curl` against `initialize`,
-`tools/list` and `tools/call`.
-
-### Deploying
 
 `mcp/wrangler.jsonc` attaches the custom domain route
 `skillport.mcp.mathclass.uk`. Wrangler needs a Cloudflare API token with **Workers

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-26T03:32:12.702Z",
-  "count": 13,
+  "generated": "2026-11-26T16:38:13.017Z",
+  "count": 28,
   "skills": [
     {
       "name": "librarian",
@@ -52,6 +52,289 @@
           "path": "SKILL.md",
           "bytes": 4084,
           "sha256": "b4d6d2541b9bb9774d722b5d0d024fa96ff044df300c77d160bb4cc1aeac1012"
+        }
+      ]
+    },
+    {
+      "name": "xlsx",
+      "slug": "xlsx",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/xlsx/SKILL.md",
+      "sourcePath": "skills/xlsx",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Data",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200891,
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \\\"the xlsx in my downloads\\\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "long": "> `openpyxl`, `pandas`, and `markitdown` are preinstalled — do not run `pip install` first; write the script and import directly. Only if an import fails (or the `markitdown` command is missing): `pip install` the missing package.",
+      "fileCount": 52,
+      "bytes": 922335,
+      "packageSha256": "5370101ddec4a72c47f34edf6158a170531bf604e3c5ee536bd5e05138610825",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "scripts/office/helpers/__init__.py",
+          "bytes": 4042,
+          "sha256": "5c456ffc522900399b5f9402f92d66aaf2d9f87655d236c69f60bf07f4fd7c9b"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_chart.py",
+          "bytes": 9938,
+          "sha256": "aed734e9a6c743ae712fc228c868bf0f6abcfb6a53549eefb19081b15d240fda"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_slide.py",
+          "bytes": 3352,
+          "sha256": "06fe06953bf038826b85ecc142f4dc9299a37fa0c4e4dd9b00b10486df33524d"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_theme.py",
+          "bytes": 3510,
+          "sha256": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+          "bytes": 1960,
+          "sha256": "5083a39fd5ade6790c291513d5b2a0447087424b04ae02d5f320edce2c5db158"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+          "bytes": 2512,
+          "sha256": "71d4844b6e31d108d1324708f1897843ef54deebe78869e7e15edac8b5495780"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+          "bytes": 2856,
+          "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+          "bytes": 1341,
+          "sha256": "ef23284866e5e1dd69eddc4f42b4efa58a9c4c4f7d94b21949887c02534c1ab4"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+          "bytes": 74984,
+          "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+          "bytes": 6956,
+          "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+          "bytes": 51302,
+          "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+          "bytes": 624,
+          "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+          "bytes": 152039,
+          "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+          "bytes": 1231,
+          "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+          "bytes": 8862,
+          "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+          "bytes": 14795,
+          "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+          "bytes": 83612,
+          "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+          "bytes": 1269,
+          "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+          "bytes": 7328,
+          "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+          "bytes": 6382,
+          "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+          "bytes": 1248,
+          "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+          "bytes": 880,
+          "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+          "bytes": 2608,
+          "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+          "bytes": 3507,
+          "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+          "bytes": 7507,
+          "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+          "bytes": 23313,
+          "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+          "bytes": 1367,
+          "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+          "bytes": 26148,
+          "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+          "bytes": 25279,
+          "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+          "bytes": 535,
+          "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+          "bytes": 5712,
+          "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+          "bytes": 4010,
+          "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+          "bytes": 171367,
+          "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+          "bytes": 4646,
+          "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+        },
+        {
+          "path": "scripts/office/schemas/mce/mc.xsd",
+          "bytes": 3127,
+          "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2010.xsd",
+          "bytes": 26549,
+          "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2012.xsd",
+          "bytes": 3745,
+          "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2018.xsd",
+          "bytes": 901,
+          "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+          "bytes": 1778,
+          "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+          "bytes": 1002,
+          "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+          "bytes": 600,
+          "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+          "bytes": 745,
+          "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+        },
+        {
+          "path": "scripts/office/soffice.py",
+          "bytes": 9100,
+          "sha256": "bcfa227707681ffbecc0f0af5c4e7155407b3baaf5cec5cdd41387c97cdd40c7"
+        },
+        {
+          "path": "scripts/office/validate.py",
+          "bytes": 7808,
+          "sha256": "8c10ec61d8e880877515019e1fe8fab9a1f590c9e50ed0631418e960aca1e313"
+        },
+        {
+          "path": "scripts/office/validators/__init__.py",
+          "bytes": 336,
+          "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+        },
+        {
+          "path": "scripts/office/validators/base.py",
+          "bytes": 34369,
+          "sha256": "6129ec6a4fc0a4aa78af1434f9baa73994cc24d3261afda4e680e00f215cbf3b"
+        },
+        {
+          "path": "scripts/office/validators/docx.py",
+          "bytes": 19745,
+          "sha256": "7b0f1a23c9cd9ff07187d9d7d359f62317f94a5e389d63fd19766e1688a195a2"
+        },
+        {
+          "path": "scripts/office/validators/pptx.py",
+          "bytes": 21058,
+          "sha256": "3a100ec5f00ae183bca67f4aaa8e3e902caee60254e141b8120f32c53d85cee7"
+        },
+        {
+          "path": "scripts/office/validators/redlining.py",
+          "bytes": 18983,
+          "sha256": "f9c4455adc32b3890d5203d6c25d868d98d7e970bbad76b686f502950737599a"
+        },
+        {
+          "path": "scripts/recalc.py",
+          "bytes": 34340,
+          "sha256": "7265aa4a41f5273596ee5694ce8a4d881c18adafb6203fece769107d08403263"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 9770,
+          "sha256": "f32b1c2b5d5d31e02964df110d6489613d9345f86830c118cfe24159d8448ce6"
         }
       ]
     },
@@ -299,6 +582,104 @@
       ]
     },
     {
+      "name": "accelint-react-testing",
+      "slug": "accelint-react-testing",
+      "owner": "gohypergiant",
+      "repo": "gohypergiant/agent-skills",
+      "repoUrl": "https://github.com/gohypergiant/agent-skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/gohypergiant/agent-skills/blob/f276ab4/skills/accelint-react-testing/SKILL.md",
+      "sourcePath": "skills/accelint-react-testing",
+      "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
+      "version": "f276ab4",
+      "category": "Dev",
+      "language": "Shell",
+      "color": "#89e051",
+      "stars": 25,
+      "description": "Use when writing, reviewing, or refactoring React component tests with Testing Library. Load when you see render(), screen, fireEvent, userEvent, waitFor, or *.test.tsx files. Covers query priority (getByRole > getByLabelText > getByText), user-centric testing patterns, async utilities, custom renders with providers, and accessibility-first assertions. Keywords include RTL, Testing Library, screen, getByRole, findBy, queryBy, userEvent, waitFor, toBeInTheDocument, testing-library/react, testing-library/user-event, jest-dom.",
+      "long": "Expert guidance for writing maintainable, user-centric React component tests with Testing Library. Focused on query selection, accessibility-first testing, and avoiding implementation details.",
+      "fileCount": 15,
+      "bytes": 110617,
+      "packageSha256": "b2c25038cfc6e0488c2adc9a7f5fd3b956328458cb47598bc2dc9eb8f3359fb1",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "bytes": 3285,
+          "sha256": "d9a41365d02e8f89e54621e4f432b5ee329c33c961556988d8a7879e89ddf4d5"
+        },
+        {
+          "path": "assets/custom-render-template.tsx",
+          "bytes": 4067,
+          "sha256": "b7b16e34c7721f5d6bc09903fb821eebc0a6ca7b8a8156508e81a3d18487fa67"
+        },
+        {
+          "path": "assets/output-report-template.md",
+          "bytes": 10242,
+          "sha256": "243d817558c18c0c9d8cb95aa798b5fe49a8264b7fbdf1d78c350aa5a875f914"
+        },
+        {
+          "path": "README.md",
+          "bytes": 3473,
+          "sha256": "e1049dad70893ba6eaf5d075db8a1ff542cc39dbfd87286ca195db851e6977f5"
+        },
+        {
+          "path": "references/accessibility-queries.md",
+          "bytes": 8734,
+          "sha256": "e5565b31c4481469af50662f2a1d5e073fc5574082912a6bacb97d3defaa98be"
+        },
+        {
+          "path": "references/anti-patterns.md",
+          "bytes": 12122,
+          "sha256": "238f77010db713de890aa91f59d9d2a6c5bf01b250c3748844f9cc74b6e7e045"
+        },
+        {
+          "path": "references/async-testing.md",
+          "bytes": 8026,
+          "sha256": "83a8daae99ae2b8394a50b23d863b660b5bfeee33e0d901ab4770ed261ca888b"
+        },
+        {
+          "path": "references/custom-render.md",
+          "bytes": 9437,
+          "sha256": "d1236a70f27002b3bf0676ea42d9eccac97b8c89909ce40ce3057c83f3669750"
+        },
+        {
+          "path": "references/query-priority.md",
+          "bytes": 7122,
+          "sha256": "4570ae1cc1d00961874028b5911f460c39391984113a76426a0a55d132e25200"
+        },
+        {
+          "path": "references/query-variants.md",
+          "bytes": 10410,
+          "sha256": "3e7e9e530f984e43a462245d8eade390cd9c6db41df92be0a897333722bf4dd9"
+        },
+        {
+          "path": "references/user-events.md",
+          "bytes": 10468,
+          "sha256": "f1b4f3c3b31062b6ba728d61ef274381c4c1f36b390c804bffb7f2adde58e7a0"
+        },
+        {
+          "path": "scripts/check-query-priority.sh",
+          "bytes": 2492,
+          "sha256": "8ae4079fb01da1e6eb9497196092c3beb3c615144f7fef0e95a72256744de0c0"
+        },
+        {
+          "path": "scripts/detect-wrapper-queries.sh",
+          "bytes": 2968,
+          "sha256": "4495da98e36c8b9a27c5a9addd2307a52650af2236ea0cfa4b3e2f8a03c332ab"
+        },
+        {
+          "path": "scripts/find-fire-event.sh",
+          "bytes": 2615,
+          "sha256": "d5ebd21dea55c568299eb9c75447e8782675ccb773b0ac958329526698a8bb02"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 15156,
+          "sha256": "9744f94ea0d0658330d6f4aac2aeec1a9e49935b03803fb9712d40c97f5dc817"
+        }
+      ]
+    },
+    {
       "name": "accelint-security-best-practices",
       "slug": "accelint-security-best-practices",
       "owner": "gohypergiant",
@@ -417,6 +798,1993 @@
       ]
     },
     {
+      "name": "accelint-ts-best-practices",
+      "slug": "accelint-ts-best-practices",
+      "owner": "gohypergiant",
+      "repo": "gohypergiant/agent-skills",
+      "repoUrl": "https://github.com/gohypergiant/agent-skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/gohypergiant/agent-skills/blob/f276ab4/skills/accelint-ts-best-practices/SKILL.md",
+      "sourcePath": "skills/accelint-ts-best-practices",
+      "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
+      "version": "f276ab4",
+      "category": "Dev",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 25,
+      "description": "Comprehensive TypeScript/JavaScript coding standards focusing on type safety, defensive programming, and code correctness. Use when (1) Writing or reviewing TS/JS code, (2) Fixing type errors or avoiding any/enum/null, (3) Implementing control flow, state management, or error handling, (4) Applying zero-value pattern or immutability, (5) Code review for TypeScript anti-patterns. Covers naming conventions, function design, return values, bounded iteration, input validation. For performance optimization, use accelint-ts-performance skill. For documentation, use accelint-ts-documentation skill.",
+      "long": "Comprehensive coding standards for JavaScript and TypeScript applications, designed for AI agents and LLMs working with modern JavaScript/TypeScript codebases.",
+      "fileCount": 22,
+      "bytes": 66364,
+      "packageSha256": "f79c301077bc0037388bc70c66d04c1b1ad85827c9254ab908374729c73d3762",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "bytes": 6899,
+          "sha256": "f84645677186c8068f421ca5da2dbb94277c57d0c7805d51753516ab6cfb6221"
+        },
+        {
+          "path": "assets/output-report-template.md",
+          "bytes": 7812,
+          "sha256": "00d79b4af97fe4e3cd6c822c419c10a0602f89628f761ec163b15790c886e82f"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "bytes": 1553,
+          "sha256": "b3c2c9b70510b239066edf2939506160c9dd3364fd299930219dd29a6571e69c"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4150,
+          "sha256": "224b939b84c596b6f721b4f2002b364654fede9e631913eea8b1c651bd9a2725"
+        },
+        {
+          "path": "references/any.md",
+          "bytes": 2300,
+          "sha256": "db765335aff9dcf22577d3e08bca5fa05e92ad9b499820b451623302209d81d4"
+        },
+        {
+          "path": "references/assertions.md",
+          "bytes": 737,
+          "sha256": "c9fb5ac6d7415db7da3b0bc6eb140b544a352a08166e7136ca9eaf1bb896f616"
+        },
+        {
+          "path": "references/bounded-iteration.md",
+          "bytes": 7760,
+          "sha256": "fe340c8aad9729b06590294cd5e1208e4baee8468d98c1750a14e7d8cf206c6f"
+        },
+        {
+          "path": "references/bundler-paths.md",
+          "bytes": 2297,
+          "sha256": "56c1356d34358c9dfb9bddad1c9f6a531cfdbd180dd2b36fcfd11e0f6e738736"
+        },
+        {
+          "path": "references/code-duplication.md",
+          "bytes": 5426,
+          "sha256": "66a7d37f5130e4309e2ab97df303e4eb91fdea0667487054d933e80ac61cca74"
+        },
+        {
+          "path": "references/control-flow.md",
+          "bytes": 2084,
+          "sha256": "9ab3b496ae34ba5419825cb5704dfa303a95fb80803535c477e38d85d37e9198"
+        },
+        {
+          "path": "references/enums.md",
+          "bytes": 2308,
+          "sha256": "394e9c7509f10cdd0199a2134f1921c1dce6c21972a4c8b02072fd3f3f9c3386"
+        },
+        {
+          "path": "references/error-handling.md",
+          "bytes": 52,
+          "sha256": "9b40f29ccf0cc828f3e96eb8f2266772247f826109620dd3865472c43389cc4f"
+        },
+        {
+          "path": "references/error-messages.md",
+          "bytes": 733,
+          "sha256": "6e2d81a9cfa7df278fb0f11e091322ae867fe0cd45aec717d974043592371db5"
+        },
+        {
+          "path": "references/functions.md",
+          "bytes": 2721,
+          "sha256": "60039a975cd395f4f2bfc14d94df3caac960a6ec56e0cf4c2f89df14d3f2113e"
+        },
+        {
+          "path": "references/input-validation.md",
+          "bytes": 497,
+          "sha256": "c0e3d40acb3099e3d35294f4cfd825f5367beecb3c306652108e0d632bbc22d5"
+        },
+        {
+          "path": "references/misc.md",
+          "bytes": 204,
+          "sha256": "ee4c8f8cefb68606f283e5fdbfb401fe49572b2919221e6aaa459942f883e73d"
+        },
+        {
+          "path": "references/naming-conventions.md",
+          "bytes": 2311,
+          "sha256": "17d558634667ff3840c7cd284c1215cd9fde03ebc42b6837c95a8cfb1134a727"
+        },
+        {
+          "path": "references/quick-start.md",
+          "bytes": 4758,
+          "sha256": "17f8a81451a7d5c6931942232f60a44b3a2136adfe499630440ac83d188ff41c"
+        },
+        {
+          "path": "references/return-values.md",
+          "bytes": 2951,
+          "sha256": "3ef2374b58f787b46c6810a2d8d768da986d4d7effa8439987fe9b742678a756"
+        },
+        {
+          "path": "references/state-management.md",
+          "bytes": 3441,
+          "sha256": "4e88b64cf8d507c618da325b8a170acc18bb016d44ebbe13ac908a766f93269b"
+        },
+        {
+          "path": "references/type-vs-interface.md",
+          "bytes": 514,
+          "sha256": "73c4dafab909c671fb6d798e2da05f6d17b25696f8b098ce311e5026293610e9"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 4856,
+          "sha256": "fa7d87c215f19fd0c754a3d8c4e8e96d397c71839f3cade93a67c0dc4262759c"
+        }
+      ]
+    },
+    {
+      "name": "claude-api",
+      "slug": "claude-api",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/claude-api/SKILL.md",
+      "sourcePath": "skills/claude-api",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Dev",
+      "language": "JavaScript",
+      "color": "#f1e05a",
+      "stars": 200891,
+      "description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens). SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+      "long": "This skill helps you build LLM-powered applications with Claude. Choose the right surface based on your needs, detect the project language, then read the relevant language-specific documentation.",
+      "fileCount": 95,
+      "bytes": 1733613,
+      "packageSha256": "bca73b890343f5dd9c0461fd0710e04c47a7533102c94152ef85bc3056eb02e8",
+      "files": [
+        {
+          "path": "csharp/claude-api/batches.md",
+          "bytes": 413,
+          "sha256": "ec276fccf21757ed00803dfa4bc35f14f334138629fa53c77a025d718eda96a1"
+        },
+        {
+          "path": "csharp/claude-api/files-api.md",
+          "bytes": 900,
+          "sha256": "766ccf5dca9ef3caba8cefeddde10f6d171a7bd2ff4c97689462fad2d0d18e4b"
+        },
+        {
+          "path": "csharp/claude-api/README.md",
+          "bytes": 18933,
+          "sha256": "87a2cc5c6e670e0bf34120f9a592d321567eea57c716c06791f6d2dcaba08b00"
+        },
+        {
+          "path": "csharp/claude-api/streaming.md",
+          "bytes": 787,
+          "sha256": "bc0100e50b3495e869901bcfb231870cb3483b936534af5fd3dddb5d07e4531e"
+        },
+        {
+          "path": "csharp/claude-api/tool-use.md",
+          "bytes": 7623,
+          "sha256": "18aa857c41e39eedb35815bfd8d50868a1bbc1f1a657f5e7233a3879baebc764"
+        },
+        {
+          "path": "curl/examples.md",
+          "bytes": 9714,
+          "sha256": "4520e447d37924e62fe982923f3eceea5338dbf3b3a0d25d0f914272c16b90a0"
+        },
+        {
+          "path": "curl/managed-agents.md",
+          "bytes": 10788,
+          "sha256": "faa7dd3d83cfd32d1faabb13fee5902e041285579b00256f17fd21681ed3ff2a"
+        },
+        {
+          "path": "go/claude-api/files-api.md",
+          "bytes": 936,
+          "sha256": "7bf67ece5e4d18b1fb07085a55b680420cc7bd4de94a1fb2bb73cb23f39c20f0"
+        },
+        {
+          "path": "go/claude-api/README.md",
+          "bytes": 8477,
+          "sha256": "c73ac644d8efe65a8d149e800267f98b0aa9d1e716ca38a22fd8803d5c35bfae"
+        },
+        {
+          "path": "go/claude-api/streaming.md",
+          "bytes": 1026,
+          "sha256": "a523e992e438309ca1bbc075ded2b652eb257242fd0ce521afd3b8ea024ed94d"
+        },
+        {
+          "path": "go/claude-api/tool-use.md",
+          "bytes": 10018,
+          "sha256": "18c6dc0cec151293b44697c340e0e0759f6081ad711ca34b06570c2450f243e9"
+        },
+        {
+          "path": "go/managed-agents/README.md",
+          "bytes": 22460,
+          "sha256": "0343be8d49f94687fe5e068ad69d9e05253b408e7bcd0e230b39924f6404facc"
+        },
+        {
+          "path": "java/claude-api/files-api.md",
+          "bytes": 1198,
+          "sha256": "1c792f3421de32f42a56235327f87807a5579340726bba677ec13e05f9b493c7"
+        },
+        {
+          "path": "java/claude-api/README.md",
+          "bytes": 11946,
+          "sha256": "cb6d395dc1d930371f828290132681541eff7f1a7e2739bb4c6655ebbb3b8c7f"
+        },
+        {
+          "path": "java/claude-api/streaming.md",
+          "bytes": 655,
+          "sha256": "de13bc9573b37edb5af69606853c4fde3d494ee10ff47d1a030ecef9cc17463b"
+        },
+        {
+          "path": "java/claude-api/tool-use.md",
+          "bytes": 11134,
+          "sha256": "1916b8d4e49b5d319a2d0c7e21b5a3d7a0f225e4a94d82139e769f66eb66f6d1"
+        },
+        {
+          "path": "java/managed-agents/README.md",
+          "bytes": 20465,
+          "sha256": "ba2a845898b302dc78b5354aa8f34ae4fc2c2ea41d12aa7d0440db59ee004e0c"
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "php/claude-api/batches.md",
+          "bytes": 447,
+          "sha256": "6f82a29f718ff6e6b02aaaee3cfd6cda2feb82aca57d945f11a2c021214a699d"
+        },
+        {
+          "path": "php/claude-api/files-api.md",
+          "bytes": 476,
+          "sha256": "0715a0d4cce88fd885f57bd33b4654071a9068d5f8a892143b062c78fe51afc9"
+        },
+        {
+          "path": "php/claude-api/README.md",
+          "bytes": 6554,
+          "sha256": "00e2e88f3ea9a6cce812d3e6ae9e035bc36f88828a09e518bb73af91097a9d66"
+        },
+        {
+          "path": "php/claude-api/streaming.md",
+          "bytes": 682,
+          "sha256": "3b8ac667b21f17750eb3c1fc7dc166fd7b1f57a1d8b11e74489de4432e21d31d"
+        },
+        {
+          "path": "php/claude-api/tool-use.md",
+          "bytes": 9722,
+          "sha256": "1d79c316ef608d8327da1ae7495ecc4a0c517bdd761037c886d8fc61a0eca7d0"
+        },
+        {
+          "path": "php/managed-agents/README.md",
+          "bytes": 16555,
+          "sha256": "2f9ada8a85098a7a4a7265c29fadb74d695a33bf19bc6d5df3a2c275b4a535b2"
+        },
+        {
+          "path": "python/claude-api/batches.md",
+          "bytes": 5723,
+          "sha256": "7e4d07173845836617be3db70482c182311ad2d6d5ddf786482ca57c7c45776c"
+        },
+        {
+          "path": "python/claude-api/files-api.md",
+          "bytes": 4499,
+          "sha256": "2aa142978660d9ae3200d21a4d333531ca101898706f620834304e8a7d534580"
+        },
+        {
+          "path": "python/claude-api/README.md",
+          "bytes": 20623,
+          "sha256": "284fbc6408809afd27288da95c5fb32daa48bd77518cd5fd4e973cc05363eaa8"
+        },
+        {
+          "path": "python/claude-api/sdk-upgrade.md",
+          "bytes": 28760,
+          "sha256": "f7c5651b21dd6fd5651935415d907fa0a369736f3055d50edb3d236ea016527c"
+        },
+        {
+          "path": "python/claude-api/streaming.md",
+          "bytes": 11940,
+          "sha256": "8f73a54dbbb5e82c2c7690d7d866f17ad8c72f662a2be6dd788b5c0956714026"
+        },
+        {
+          "path": "python/claude-api/tool-use.md",
+          "bytes": 21411,
+          "sha256": "548dcc4bd2a36e8b90cec446f9b0b7917d2d75a085c7c2603b28c840bd621621"
+        },
+        {
+          "path": "python/managed-agents/README.md",
+          "bytes": 14823,
+          "sha256": "82b6e5847027b0ffe5976116e5c249a58e9e2781eb09e914a81ee2f9eb970245"
+        },
+        {
+          "path": "ruby/claude-api/README.md",
+          "bytes": 4843,
+          "sha256": "c7de89d236f22bc0b44a091a45ee186ec057caa021a71acd4d3849599cbf3b36"
+        },
+        {
+          "path": "ruby/claude-api/streaming.md",
+          "bytes": 235,
+          "sha256": "09b784f2ab0a5fd17e0589225408c618d26c6dd3cd601364ff92f409d5b104a0"
+        },
+        {
+          "path": "ruby/claude-api/tool-use.md",
+          "bytes": 2688,
+          "sha256": "80cbb7c7fd4a01b816524eb54e0f8f4e5b4cc7643d393dfce6b9682e0f4d61b6"
+        },
+        {
+          "path": "ruby/managed-agents/README.md",
+          "bytes": 12201,
+          "sha256": "729ba22b8711a09192006d169098f16b933dd124ff36421772e4334d862306ab"
+        },
+        {
+          "path": "shared/admin-api.md",
+          "bytes": 11606,
+          "sha256": "a69c53817391fca50c0a1848f46de9debf71fa3681298fccb0a6435b760bac2d"
+        },
+        {
+          "path": "shared/agent-design.md",
+          "bytes": 8736,
+          "sha256": "9960728faf6976a2ddfceed02ed72af122d3b2558af573a9a0ea207b3adec2bc"
+        },
+        {
+          "path": "shared/anthropic-cli.md",
+          "bytes": 23999,
+          "sha256": "2baa725ea0248ab7d98dcb218f09e5eb22f768006ad28f4d5011b4975b4d500e"
+        },
+        {
+          "path": "shared/claude-platform-on-aws.md",
+          "bytes": 4420,
+          "sha256": "dec03193c61909167846c0526a4feacf011578b5e7ee29f76378141315cf97f5"
+        },
+        {
+          "path": "shared/cost-optimization.md",
+          "bytes": 58448,
+          "sha256": "d0107a954e9059f43c0aaac07ac1f8a9f5aa0a898834d3d983d623e5976e051b"
+        },
+        {
+          "path": "shared/error-codes.md",
+          "bytes": 20796,
+          "sha256": "1abf8dcc262732f7ee5e4c58d1909fbb0722ac12e1b957bffdf64f28fde9e4d2"
+        },
+        {
+          "path": "shared/evals/build-eval.md",
+          "bytes": 54835,
+          "sha256": "c8f6ae960867f6b3b35557aec75361553888ae7168f268365444bf6a4e09a5d7"
+        },
+        {
+          "path": "shared/evals/cost-hillclimb.md",
+          "bytes": 31711,
+          "sha256": "dd46a354fed24d96c7f9acf42f9da64f5cceaa797949662d82374fd2cf7a3515"
+        },
+        {
+          "path": "shared/evals/eval-audit.md",
+          "bytes": 27892,
+          "sha256": "a013f8eb0452c51c5a31860df0fb47219dcdb4da507092fc98867225095026ba"
+        },
+        {
+          "path": "shared/evals/eval-hillclimb.md",
+          "bytes": 69153,
+          "sha256": "315ae8540ebaeb9f1d7de5efa49625e6137ead255dc3a545b63393df89375588"
+        },
+        {
+          "path": "shared/evals/report/build-report-lite.mjs",
+          "bytes": 27329,
+          "sha256": "af79ca5fa5f06747dbcaa1d40017c8c8e81e0aa11cb8e32b848043893cdb03c7"
+        },
+        {
+          "path": "shared/evals/report/runner-scaffold.mjs",
+          "bytes": 33142,
+          "sha256": "c3a87ba4b94b3018b83c075d5148ba7760580aa447699d513d45ab55b82a531a"
+        },
+        {
+          "path": "shared/evals/report/SCHEMA.md",
+          "bytes": 16121,
+          "sha256": "9a83404a9b3c413113df39d9bdf08e003ff4d6a75386f4010887da3298766687"
+        },
+        {
+          "path": "shared/live-sources.md",
+          "bytes": 17732,
+          "sha256": "cc82c88587c861919557598df0421ea7e8cec683f63adead997a0170dc78732b"
+        },
+        {
+          "path": "shared/managed-agents-api-reference.md",
+          "bytes": 35296,
+          "sha256": "efd84dc8a17a2842965c775a905b17fa94cf762cc544df81e708f3aa7a89ae7b"
+        },
+        {
+          "path": "shared/managed-agents-client-patterns.md",
+          "bytes": 12095,
+          "sha256": "e9cf54ca98a9cdd7dba0f51acfedfc1b0f160bad243e39f338ff39d4bf5bf823"
+        },
+        {
+          "path": "shared/managed-agents-core.md",
+          "bytes": 33515,
+          "sha256": "b1e7f90f644ef3333bc2c8407ba17410cf672314868474c73242ac969e22007f"
+        },
+        {
+          "path": "shared/managed-agents-environments.md",
+          "bytes": 14234,
+          "sha256": "227e52e6a3d1c967c68912738ff184a97d1f4cd019c6a7bc7cd90c9b9857e5a5"
+        },
+        {
+          "path": "shared/managed-agents-events.md",
+          "bytes": 26015,
+          "sha256": "3c5edc1428bc4b9cff1ebf01cecffaff3ef1650c19afa48c616fcd05b9586e03"
+        },
+        {
+          "path": "shared/managed-agents-memory.md",
+          "bytes": 11362,
+          "sha256": "0dec5641630f97629ea75bbbe5c2bced861f9c16b0572a68c901849ea4d00bcb"
+        },
+        {
+          "path": "shared/managed-agents-multiagent.md",
+          "bytes": 66616,
+          "sha256": "f3d03cc910064cf419c80ce79c5fe62abde127467deea55491b447a07953a06b"
+        },
+        {
+          "path": "shared/managed-agents-onboarding-from-quickstart.md",
+          "bytes": 19798,
+          "sha256": "e37628c5639786a7868acfed4be0e25678b69b7d13a9aced03d74deebe042342"
+        },
+        {
+          "path": "shared/managed-agents-onboarding-from-url.md",
+          "bytes": 32707,
+          "sha256": "b6c49289186d7cc521c995ba88fa916b65433101b2b3e9bf3c9add94ad87fa34"
+        },
+        {
+          "path": "shared/managed-agents-onboarding.md",
+          "bytes": 16787,
+          "sha256": "025683a9ee3db081d8a6978980349ce68d1df316d0c5aea31ae12438907208c9"
+        },
+        {
+          "path": "shared/managed-agents-outcomes.md",
+          "bytes": 8960,
+          "sha256": "a516c6bf6a6a76f7f5ef83ec80895efd5de718e8f9418b57c705ce151afc5afe"
+        },
+        {
+          "path": "shared/managed-agents-overview.md",
+          "bytes": 14571,
+          "sha256": "abcbdc29435c07be4749e21f005ed51f45942af03fa0bdcdeb18ebfa38c6a6f8"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/bug-hunter.md",
+          "bytes": 8096,
+          "sha256": "9afd40ef3e1bca9e1cc4c6655d314127cec0b4dcff0e12f6016508c134954248"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/contract-tracker.md",
+          "bytes": 1806,
+          "sha256": "312ee5f886de59b6db4603d2df9766d66285db36973656c5b9ff0bcc1ed02279"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/data-analyst.md",
+          "bytes": 1561,
+          "sha256": "c2116bac43972f2b40311104bd7cd4e084cca806dd40a1ddf8462845d785bd57"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/deep-researcher.md",
+          "bytes": 2430,
+          "sha256": "a680856d874dff23cd3f016e36d0a58bc4db36c56d790d216743f236ee37a48c"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/explainer-video-maker.md",
+          "bytes": 4886,
+          "sha256": "c2570c5e14d51c5caa77646ac417d18619d34a27cc94dc72cf020c698f2803f3"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/field-monitor.md",
+          "bytes": 2105,
+          "sha256": "f17f26eee0109f4172134c5bea5761c52b8459e44ae03608c701cd3492f4a3af"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/incident-commander.md",
+          "bytes": 1723,
+          "sha256": "badd3622ffab0798ab44a55189f47e95c107107ce57eda9fa5357b1aded8fb2a"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/performance-tuner.md",
+          "bytes": 11394,
+          "sha256": "922396e14b569bc98a7bdde34d10890cc81c5184e81971e6c9be108d191dd639"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/sprint-retro-facilitator.md",
+          "bytes": 2091,
+          "sha256": "8b5ed9895feb1ade54578a270493c63d0f57b3bb0fbc2eafcfa2e87d3130fa75"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/structured-extractor.md",
+          "bytes": 1541,
+          "sha256": "c278074c8c48d35fc6c68ed32eaa8704cae73a8e74035fd1d4a6abdcb9bd0fbd"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/support-agent.md",
+          "bytes": 1481,
+          "sha256": "da75c50edf207f5ef468fbbbfc2e77d56e7d906a6c2cda28756f896195e171c5"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/support-to-eng-escalator.md",
+          "bytes": 1842,
+          "sha256": "46720e5341808a9938825be44f936c91f83739ebdef9e1d17d9f0ec22738346b"
+        },
+        {
+          "path": "shared/managed-agents-quickstarts/watchlist-scanner.md",
+          "bytes": 5642,
+          "sha256": "e67861c63b9d46b01c8d2784998b7f0de9a87aa6012b77127def1253c5ac13db"
+        },
+        {
+          "path": "shared/managed-agents-scheduled-deployments.md",
+          "bytes": 9561,
+          "sha256": "3fdf7bd691b4f798149d7ebdb933dcee7d14d5d47dd6bf8196c41b819223175e"
+        },
+        {
+          "path": "shared/managed-agents-self-hosted-sandboxes.md",
+          "bytes": 27926,
+          "sha256": "a0c0d98ee1921ee5856a9fd1c02931d724c7b7ffffe17f72c85bc90190399085"
+        },
+        {
+          "path": "shared/managed-agents-tools.md",
+          "bytes": 37869,
+          "sha256": "9a9fd54ebb5e81eb0c6b7505f1cadc420fed5696cdab3e0080dd00ccf2e37b6f"
+        },
+        {
+          "path": "shared/managed-agents-webhooks.md",
+          "bytes": 11321,
+          "sha256": "38746f77a3ee971f9b1f7d47cec9e753131bf271fd795aed5c3da1764c9a6ac1"
+        },
+        {
+          "path": "shared/models.md",
+          "bytes": 17502,
+          "sha256": "c1af1f093d46fd58e50ef3e8e28d339650f333059bfc49a63d01d0175675161b"
+        },
+        {
+          "path": "shared/platform-availability.md",
+          "bytes": 7415,
+          "sha256": "607997bc16de403970cb32c1dc1fa63e68f7f02328728be59397e7cefb2efed4"
+        },
+        {
+          "path": "shared/preserved-thinking-migration.md",
+          "bytes": 64049,
+          "sha256": "29921d69fa8dc7e450e7bb793c9f59ae755262ccc933a52eb7116c207defb34c"
+        },
+        {
+          "path": "shared/preserved-thinking-migration/causes.md",
+          "bytes": 39705,
+          "sha256": "c2dbadb0439806863723e5ef7279d626d731d8179fd39293ff26d226b94d3694"
+        },
+        {
+          "path": "shared/preserved-thinking-migration/drop_block_probe.py",
+          "bytes": 66582,
+          "sha256": "f23abb75bc079d835f57da7598ac5a1bee4318214ab803185feb94d8db8c4b88"
+        },
+        {
+          "path": "shared/preserved-thinking-migration/prefix_diff.py",
+          "bytes": 94008,
+          "sha256": "734934b81b5f26e9ed2f8f51f44fed6554233de4f37b22a8845ae4ffcb622ac0"
+        },
+        {
+          "path": "shared/prompt-audit.md",
+          "bytes": 49344,
+          "sha256": "1a50ec950f9c11bb4ad1a5032a26bb20cd52c9d358adf6add2cb1ceb1aaf6cc9"
+        },
+        {
+          "path": "shared/prompt-caching.md",
+          "bytes": 33116,
+          "sha256": "5800f883ff1babe24105e7e0e3fc7e9b03dfcce25bb2ccded4bb40d8c81d8464"
+        },
+        {
+          "path": "shared/token-counting.md",
+          "bytes": 1603,
+          "sha256": "8674e246c165decdc13106a4861a254ededb0421caf7fa4015ed0fb36e6c60dc"
+        },
+        {
+          "path": "shared/tool-use-concepts.md",
+          "bytes": 44359,
+          "sha256": "62293e7bb7763f7ae487d3b98ead6b733689b2fd7089784ad5859dd869a153f5"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 105146,
+          "sha256": "40537cca17c4aa86e4ce83ced39efcbfb1204905e3cf4c4ff98f2eab011e4b7f"
+        },
+        {
+          "path": "typescript/claude-api/batches.md",
+          "bytes": 2594,
+          "sha256": "acc33bb981acd48b6ee9a6b2c2afeef9487c42ef2b117225da3949dc61efb464"
+        },
+        {
+          "path": "typescript/claude-api/files-api.md",
+          "bytes": 2384,
+          "sha256": "df8e4e433a4ded6d4c3eb40de9bc0782cf77aaa8e3e331a539aec1cff55d1316"
+        },
+        {
+          "path": "typescript/claude-api/README.md",
+          "bytes": 15833,
+          "sha256": "b2a01ccbaa0d4406e400bcd8efc033759af5d646a97aab744aee55bf07d6ab16"
+        },
+        {
+          "path": "typescript/claude-api/streaming.md",
+          "bytes": 9514,
+          "sha256": "09db982effb0b7d14e29eddd5425b00040debfedccf3dd0db9af73f7d2da3e79"
+        },
+        {
+          "path": "typescript/claude-api/tool-use.md",
+          "bytes": 24295,
+          "sha256": "d0c3e5da146c6da8a85ced14f964dc33de4c0153aa2748dee35c319752e8b725"
+        },
+        {
+          "path": "typescript/managed-agents/README.md",
+          "bytes": 14013,
+          "sha256": "5daf6b0c6a443e1ae720b0a7343e061ebdbaeb751dd674f37f9abf9d12efc66f"
+        }
+      ]
+    },
+    {
+      "name": "cloudflare",
+      "slug": "cloudflare",
+      "owner": "roerohan",
+      "repo": "roerohan/skills",
+      "repoUrl": "https://github.com/roerohan/skills",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/roerohan/skills/blob/171fbdd/cloudflare/SKILL.md",
+      "sourcePath": "cloudflare",
+      "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
+      "version": "171fbdd",
+      "category": "Dev",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 30,
+      "description": "Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), networking (Tunnel, Spectrum), security (WAF, DDoS), and infrastructure-as-code (Terraform, Pulumi). Use for any Cloudflare development task.",
+      "long": "Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.",
+      "fileCount": 257,
+      "bytes": 787493,
+      "packageSha256": "0b2b888650d874049b6d020fc59f690615e5d434d55a03b5759c50d0549aa0a4",
+      "files": [
+        {
+          "path": "references/agents-sdk/api.md",
+          "bytes": 2819,
+          "sha256": "ca483fb03a0a3d42d2b3a0bee2190b861a945548263fe16166908cc8778fad41"
+        },
+        {
+          "path": "references/agents-sdk/configuration.md",
+          "bytes": 1695,
+          "sha256": "c30d93fbf1b1bcb66a4cb26223c073cb16fd87d6fc9722935399f24f0041df20"
+        },
+        {
+          "path": "references/agents-sdk/gotchas.md",
+          "bytes": 2033,
+          "sha256": "cc24542fb79c36705d0600bfa22cd88c3557d8c984026abb92ee3ac6d2b050f8"
+        },
+        {
+          "path": "references/agents-sdk/patterns.md",
+          "bytes": 3615,
+          "sha256": "5cd1cc4321024b66639e5e4ae27191eec539ce1dc111a63be2e34cab1bfcc196"
+        },
+        {
+          "path": "references/agents-sdk/README.md",
+          "bytes": 1003,
+          "sha256": "658ae31fa6b6cf121d642128e7c0482ace7d64722238c7d5bdacba2d7aca1fc2"
+        },
+        {
+          "path": "references/ai-gateway/README.md",
+          "bytes": 19851,
+          "sha256": "00ddd048621065232b387dae4601637ee89c27de70ba155b520d479b9cb47da7"
+        },
+        {
+          "path": "references/ai-search/api.md",
+          "bytes": 1000,
+          "sha256": "9f71a93d909c40f8ad9b08480d1ae67d5b63df37442e0797163905f38e268335"
+        },
+        {
+          "path": "references/ai-search/configuration.md",
+          "bytes": 1000,
+          "sha256": "c60a556dae8b463a81d0607873c9edaa956ba9434a6c8b59159606106e1275f9"
+        },
+        {
+          "path": "references/ai-search/gotchas.md",
+          "bytes": 836,
+          "sha256": "544807ddddf675b86911de8deb2096ac9a57ec2f85f7646a2ad89d6c7079b9a2"
+        },
+        {
+          "path": "references/ai-search/patterns.md",
+          "bytes": 1000,
+          "sha256": "4674498bf33a7abfec9cd006259edd5ef4465fbc3bcf7c8b50c98eb7e75f386f"
+        },
+        {
+          "path": "references/ai-search/README.md",
+          "bytes": 560,
+          "sha256": "0ba39bdc37261fffc8b7e34b1c6b769f56aac30d0bdec99edb199e5928ae77f1"
+        },
+        {
+          "path": "references/analytics-engine/api.md",
+          "bytes": 1000,
+          "sha256": "41083800ae365b0c15eb5841db1af713fc79b49d0b2c4302718083178a5fccd7"
+        },
+        {
+          "path": "references/analytics-engine/configuration.md",
+          "bytes": 1000,
+          "sha256": "cf74e8c3fdcf43a408595eca3700901e21dce867639bd145e90eb82f4b385af0"
+        },
+        {
+          "path": "references/analytics-engine/gotchas.md",
+          "bytes": 34,
+          "sha256": "f651ccd8abf454a78a9adeb9451aa2336c3d5ab0e8cb2ae5a9dd3d7c62a12d26"
+        },
+        {
+          "path": "references/analytics-engine/patterns.md",
+          "bytes": 1000,
+          "sha256": "aaa486179f030b7548d5bcf64b89b2563b539e948fdcc80bbee13e954f9eec1a"
+        },
+        {
+          "path": "references/analytics-engine/README.md",
+          "bytes": 637,
+          "sha256": "00fadbe9ba8bb82792178a8674212213250cde4d118dc653923a7530bb7ea5a0"
+        },
+        {
+          "path": "references/api-shield/api.md",
+          "bytes": 2406,
+          "sha256": "f528f91ca518272e0a79fe618c5e5a132b90bcb4c51046627ceeca7e53028154"
+        },
+        {
+          "path": "references/api-shield/configuration.md",
+          "bytes": 3155,
+          "sha256": "88707f1ca1c201995446115999e09618cb9cee43aa98bf79cb81c48561872d0c"
+        },
+        {
+          "path": "references/api-shield/gotchas.md",
+          "bytes": 1781,
+          "sha256": "4f238cbb5499a236da40775815779d693b59de83b8e21144b80e563842081ef0"
+        },
+        {
+          "path": "references/api-shield/patterns.md",
+          "bytes": 3953,
+          "sha256": "bbfacab61cc0c0059dd2c38dd771726be9f95e57a85172948351c03d603c05ef"
+        },
+        {
+          "path": "references/api-shield/README.md",
+          "bytes": 973,
+          "sha256": "faa5a4ca67d9a8cba4fe79fe8ec58067a20d34f842f477987561dbfefb581611"
+        },
+        {
+          "path": "references/api/api.md",
+          "bytes": 755,
+          "sha256": "d5c0cdcbc40c277901ce91dfd4ebc70915058b1e6a0f079514ddfb204668d7a6"
+        },
+        {
+          "path": "references/api/configuration.md",
+          "bytes": 515,
+          "sha256": "364b51878b6585accc1c8c0fdaa8efd8661ec2f094ebd25513d7d836b3f789e4"
+        },
+        {
+          "path": "references/api/gotchas.md",
+          "bytes": 800,
+          "sha256": "b4cd0a63993fc5cd7f7fca659054a220bb8a2febd21d7f6f65a119533e989bf0"
+        },
+        {
+          "path": "references/api/patterns.md",
+          "bytes": 1000,
+          "sha256": "0abacc350620b7f45ea9cf52d54bd9445454a2714323e1f7bb092108d29a26c0"
+        },
+        {
+          "path": "references/api/README.md",
+          "bytes": 739,
+          "sha256": "fae97309ed682eeef813b4cdb7af42d8c2102e839b8646fc2db8cde16670d800"
+        },
+        {
+          "path": "references/argo-smart-routing/api.md",
+          "bytes": 1000,
+          "sha256": "7d8a9489015c6aa428f3386dd1d61131d7604da8b09ca60beaf9de5693ec8845"
+        },
+        {
+          "path": "references/argo-smart-routing/configuration.md",
+          "bytes": 1000,
+          "sha256": "bec4f1269dd03a5cc94d5b3156fdfacd338a1df2c059836c1cc5b48ec21c7322"
+        },
+        {
+          "path": "references/argo-smart-routing/gotchas.md",
+          "bytes": 800,
+          "sha256": "753bb36600f660ec07481559c8f52caf12ddf6a20e1fcd97de3dd7152ee76acb"
+        },
+        {
+          "path": "references/argo-smart-routing/patterns.md",
+          "bytes": 1006,
+          "sha256": "c1d662ded53da8877b63947b2aa52e8d05cacec4568a61020afe5212b65653c7"
+        },
+        {
+          "path": "references/argo-smart-routing/README.md",
+          "bytes": 742,
+          "sha256": "5bef531ac754d3984fc1ce2fc4409814e86095395ccd2e9a24450eb7d5c8160f"
+        },
+        {
+          "path": "references/bindings/api.md",
+          "bytes": 40,
+          "sha256": "06238b42d9839a0ca7b72ce31adb9345d33546f77a2017951831b3a92f0347ec"
+        },
+        {
+          "path": "references/bindings/configuration.md",
+          "bytes": 1000,
+          "sha256": "7f4383a48f9e8bf8be995f85f4f34fd4d29d95e6b84061cdb292a74a7bcb5301"
+        },
+        {
+          "path": "references/bindings/gotchas.md",
+          "bytes": 800,
+          "sha256": "56496642c3cc86a97930629b8fa7a15a3e3076d5c24f0700fcf8d89558746061"
+        },
+        {
+          "path": "references/bindings/patterns.md",
+          "bytes": 725,
+          "sha256": "13b66c0b43f5f1ddf9156de64b7d20dc603204b887be1559f3cb211f0401fc60"
+        },
+        {
+          "path": "references/bindings/README.md",
+          "bytes": 552,
+          "sha256": "f188b35e8e33caf8cf23cacd83a8367995374f3af8ee5a1731056e7cd85de1ad"
+        },
+        {
+          "path": "references/bot-management/api.md",
+          "bytes": 5109,
+          "sha256": "ff9048f801e297069c4ddbdb7f1f636ffed20f316dcabaf3d2837b672d1c9726"
+        },
+        {
+          "path": "references/bot-management/configuration.md",
+          "bytes": 3811,
+          "sha256": "15498f11450106dff110d053b1eb7e221051cd4560476f35c14347536480cf20"
+        },
+        {
+          "path": "references/bot-management/gotchas.md",
+          "bytes": 3149,
+          "sha256": "e90a80547460cfeb3cdb111203ebb3d44495d7ac680da2e4f9200f15b9799d98"
+        },
+        {
+          "path": "references/bot-management/patterns.md",
+          "bytes": 3219,
+          "sha256": "20207233fd665876dea37e716f03fdb48718422ed20a24fe19bc328dff2e2241"
+        },
+        {
+          "path": "references/bot-management/README.md",
+          "bytes": 3081,
+          "sha256": "f41ab728f9ca3294ce6352924a38078bb0df88ea67d57c00cf4a63b3b1d60b32"
+        },
+        {
+          "path": "references/browser-rendering/api.md",
+          "bytes": 1000,
+          "sha256": "bc6ace441f907351a4e4deb5aa607d5144171d8c15ae27223941e97b1da7b01a"
+        },
+        {
+          "path": "references/browser-rendering/configuration.md",
+          "bytes": 1000,
+          "sha256": "e29666a0e4b358fb907aac5e8690d6e80511fcd585ab029d66ee0da401b54677"
+        },
+        {
+          "path": "references/browser-rendering/gotchas.md",
+          "bytes": 806,
+          "sha256": "91f17934bba6103dac6e8765f0f5e68cd61c946a1b8e792746a5c9d0ef778303"
+        },
+        {
+          "path": "references/browser-rendering/patterns.md",
+          "bytes": 1000,
+          "sha256": "d051d1d8c9852ea0690e23f5d546f39a54b3f5f391cd3138196389e34ad3e419"
+        },
+        {
+          "path": "references/browser-rendering/README.md",
+          "bytes": 741,
+          "sha256": "2f6276aba8823810c143f9e4d6bdc8209d2d8acf26aa54964d5ee5629830eadf"
+        },
+        {
+          "path": "references/c3/README.md",
+          "bytes": 5556,
+          "sha256": "a394ea558db9cdd331ac7a335e6f892593a9b9dd1e37dffe10d9d54848a21e60"
+        },
+        {
+          "path": "references/cache-reserve/api.md",
+          "bytes": 5213,
+          "sha256": "8244e49738077d6bf37b0c79d7fdeb7b028c2d37a5952393e62989806b4f3996"
+        },
+        {
+          "path": "references/cache-reserve/configuration.md",
+          "bytes": 3991,
+          "sha256": "51dc6cae304783d037f87fcb2b6eddfe97c2f2e54958af42e1001b3d08f883c6"
+        },
+        {
+          "path": "references/cache-reserve/gotchas.md",
+          "bytes": 5634,
+          "sha256": "c2c38eeb3d5529ee114704d3f0f97bdeaca85d69fb072ec877e54040738cdfa2"
+        },
+        {
+          "path": "references/cache-reserve/patterns.md",
+          "bytes": 5215,
+          "sha256": "8e687f40581bc4739441fd69f2f1b8ea8ded8d8ab2a2ef45ab3146249b2b2507"
+        },
+        {
+          "path": "references/cache-reserve/README.md",
+          "bytes": 3130,
+          "sha256": "86e34716c886065009d17778a69ee5bb6bdd2679be6cc87370b02ee54d3d8385"
+        },
+        {
+          "path": "references/containers/api.md",
+          "bytes": 1000,
+          "sha256": "62b7f72f8d94d837dbe1002e8f7a4c5b856eaf14d14866b077ea66f12104013d"
+        },
+        {
+          "path": "references/containers/configuration.md",
+          "bytes": 1000,
+          "sha256": "b43af2ff39844ed4b7a3a0b5cb2cc7f3511edd0b076497a6ae980d47a1553fc7"
+        },
+        {
+          "path": "references/containers/gotchas.md",
+          "bytes": 806,
+          "sha256": "25c9d3a5c880b2c023876589454801e0b23cd51b336d5349451edf03de86dca6"
+        },
+        {
+          "path": "references/containers/patterns.md",
+          "bytes": 1000,
+          "sha256": "a8c441aba3e37b452976b386b12623dee025e1fe1b1b6e20f1d0de13844280b6"
+        },
+        {
+          "path": "references/containers/README.md",
+          "bytes": 734,
+          "sha256": "64ad9d8af80ff457949ce26be71ab91d0bbd16efea1e66a97843edd87ecd2227"
+        },
+        {
+          "path": "references/cron-triggers/api.md",
+          "bytes": 4448,
+          "sha256": "0257d6bc3577210aafd88d0476e473486fd617b44a4df33c910682c85cf4103f"
+        },
+        {
+          "path": "references/cron-triggers/configuration.md",
+          "bytes": 3127,
+          "sha256": "805d6cafe74a6454da4e3bfd703132ead26a8ec0e92db842bcbbe6105c6b6ee6"
+        },
+        {
+          "path": "references/cron-triggers/gotchas.md",
+          "bytes": 4149,
+          "sha256": "09463f2270805dc918985be9c79f985eff58db977e10d92213e4f632aa5a4255"
+        },
+        {
+          "path": "references/cron-triggers/patterns.md",
+          "bytes": 4998,
+          "sha256": "dba791afc63fc8206a2f2fa8f51d65ebcc66f2527d22325e80dac5ccb11c8f77"
+        },
+        {
+          "path": "references/cron-triggers/README.md",
+          "bytes": 2299,
+          "sha256": "74f2e0a6a107ebb11fe7273a96b36f0652829ffcf8dd76b39ed255ee4338a8a1"
+        },
+        {
+          "path": "references/d1/api.md",
+          "bytes": 4981,
+          "sha256": "e4415e01c8a5b733172f753c91a76bc13a31e0c35bb4e4ecf47e06127ff8a3ce"
+        },
+        {
+          "path": "references/d1/configuration.md",
+          "bytes": 3635,
+          "sha256": "ab3c2c311f97a38f502f30abd62cf4e1045fda8c23048ceb1b9b32c9118e3730"
+        },
+        {
+          "path": "references/d1/gotchas.md",
+          "bytes": 2430,
+          "sha256": "9912bd4f51ce894e6c58cc3de96ee5d216f2d8586871f7f2ac52c632afdae8eb"
+        },
+        {
+          "path": "references/d1/patterns.md",
+          "bytes": 5081,
+          "sha256": "b177a20350a8da96cc04867a754b6e9f7f6586897570042374e8b3c50e064cdf"
+        },
+        {
+          "path": "references/d1/README.md",
+          "bytes": 3080,
+          "sha256": "0a6864b32fc65910dacf6745b4ae2496658e66b6bec6af6c2c8d07ff057cba4e"
+        },
+        {
+          "path": "references/ddos/api.md",
+          "bytes": 3218,
+          "sha256": "28f4dbecaa52f089a3b1b088a076776398e6fc95bca3377be2f2ea0a79b82348"
+        },
+        {
+          "path": "references/ddos/configuration.md",
+          "bytes": 1827,
+          "sha256": "516008d68857f7cd9f88f4d781ec5e6d1472d9e65591ab9ca738f74fd642e6cb"
+        },
+        {
+          "path": "references/ddos/gotchas.md",
+          "bytes": 2825,
+          "sha256": "377404ffe3cbf3c15d27895f844fbd065aebe3d40401801f7ee61e4ee340c9c2"
+        },
+        {
+          "path": "references/ddos/patterns.md",
+          "bytes": 4704,
+          "sha256": "337a4d1e7083dc931dbc09b2aa8dfc1216749a8c7c2b61bc9034d72699a17fb1"
+        },
+        {
+          "path": "references/ddos/README.md",
+          "bytes": 1175,
+          "sha256": "fb432bdb60d324e9c77325de84136eb371322b3995de5829e5c9e3d8254ae986"
+        },
+        {
+          "path": "references/do-storage/api.md",
+          "bytes": 2901,
+          "sha256": "7b658fb2af3388e9075b640e3b0b58f25215afc55fa3de65fa0a76e853cee0d7"
+        },
+        {
+          "path": "references/do-storage/configuration.md",
+          "bytes": 1974,
+          "sha256": "0386a4d25458da1c4a156eba4dcd365ff24bfd079bea971b741c893f1c1a77da"
+        },
+        {
+          "path": "references/do-storage/gotchas.md",
+          "bytes": 3189,
+          "sha256": "f97040150a4a9a36f6d90b4f287b75f564e2e2f8301afb6cdaf45ed31362fadb"
+        },
+        {
+          "path": "references/do-storage/patterns.md",
+          "bytes": 3482,
+          "sha256": "289a5edcfbf353546d62053a64b420cf72736aee07ca7576d41c1515bcb244dd"
+        },
+        {
+          "path": "references/do-storage/README.md",
+          "bytes": 2262,
+          "sha256": "27a7f7bb4f908da789b1627d47a5bda48df1df2c9b670881199b8cb64517146a"
+        },
+        {
+          "path": "references/durable-objects/api.md",
+          "bytes": 5161,
+          "sha256": "f0d30a962dda65680f269fc0a830629b9cd2f09085d74c800ba79c25229f48ee"
+        },
+        {
+          "path": "references/durable-objects/configuration.md",
+          "bytes": 4004,
+          "sha256": "fa89458dad279cd0250758f70b7cc7665f2c9b0f0092fc7d2be932335051857c"
+        },
+        {
+          "path": "references/durable-objects/gotchas.md",
+          "bytes": 6387,
+          "sha256": "263f088f5ee39638e958343ed1b36bbf0d595d74edbe63dcdcd697118dc5fd90"
+        },
+        {
+          "path": "references/durable-objects/patterns.md",
+          "bytes": 9378,
+          "sha256": "8f81bc3154ae77050e6cd560965e7b5606fcc27cc8d4923beb878a1a548781a5"
+        },
+        {
+          "path": "references/durable-objects/README.md",
+          "bytes": 4795,
+          "sha256": "872f310cb16b2a0df8b4458a67f0cdbacf0dffcb463bcab11a3bce1df1bde330"
+        },
+        {
+          "path": "references/email-routing/api.md",
+          "bytes": 1000,
+          "sha256": "dbf9c57d8a2129d1280b193f650f1d58ab217623434f75259bd2d7cbba8bd2d4"
+        },
+        {
+          "path": "references/email-routing/configuration.md",
+          "bytes": 1000,
+          "sha256": "29a52e86c1cc51846cabcb32ab9d9268fea63375c7f8d7fc27bbf66ed8d39f20"
+        },
+        {
+          "path": "references/email-routing/gotchas.md",
+          "bytes": 800,
+          "sha256": "39f42bad7f01ed7e5f19bb45196204018a01d0e367deaa3bf90ec53d48ce6ea4"
+        },
+        {
+          "path": "references/email-routing/patterns.md",
+          "bytes": 1000,
+          "sha256": "4f78539aa52fbd6bf589c7bc88c392630c496b20541bc9d43bf2b355dbfdfeec"
+        },
+        {
+          "path": "references/email-routing/README.md",
+          "bytes": 737,
+          "sha256": "79ef7b1305561648794740f794ab365ef0f65f500eba7cc3851b324ca1d8b452"
+        },
+        {
+          "path": "references/email-workers/README.md",
+          "bytes": 14005,
+          "sha256": "031b0cec90d17a54af9e283215b31c82e15ba22e7598f1ab178082c550c91be6"
+        },
+        {
+          "path": "references/hyperdrive/api.md",
+          "bytes": 3510,
+          "sha256": "8c6c609a5f8c4885e10815c9d35e7b24dcc28614d13b753202e6ef399642b80e"
+        },
+        {
+          "path": "references/hyperdrive/configuration.md",
+          "bytes": 3211,
+          "sha256": "e9f66a4d8e10ea9bd13db96059f4c6ad676377df0891807db202fda9bdb6d3af"
+        },
+        {
+          "path": "references/hyperdrive/gotchas.md",
+          "bytes": 5123,
+          "sha256": "a7ed30c6096df56bc6d4d1f7c85e53d632f40f6ea5d46614124a95738a8b2d07"
+        },
+        {
+          "path": "references/hyperdrive/patterns.md",
+          "bytes": 5173,
+          "sha256": "fe947de87c4d4fa299f9a1ebf0c7583c5b508e5f47ee08449aefe9eb6f83dab5"
+        },
+        {
+          "path": "references/hyperdrive/README.md",
+          "bytes": 1790,
+          "sha256": "e67424a2951bb979f725c9d7ba38c5e0aef8e904b78fd22179cb84f9f802fd67"
+        },
+        {
+          "path": "references/images/api.md",
+          "bytes": 40,
+          "sha256": "06238b42d9839a0ca7b72ce31adb9345d33546f77a2017951831b3a92f0347ec"
+        },
+        {
+          "path": "references/images/configuration.md",
+          "bytes": 1000,
+          "sha256": "7f70622cad425797d1df1ae435e5e905a3936edba6e35b9eaec40978ea8fb73b"
+        },
+        {
+          "path": "references/images/gotchas.md",
+          "bytes": 800,
+          "sha256": "7b840a1a74a0bed821cc82a7ac66f5ad1729600c96e734726b436f82d342aa65"
+        },
+        {
+          "path": "references/images/patterns.md",
+          "bytes": 1000,
+          "sha256": "6cdd9a5e6a92c1bceb408a1516b0c7992ed04441c498d16421d430a1c7c8fbd5"
+        },
+        {
+          "path": "references/images/README.md",
+          "bytes": 598,
+          "sha256": "d0e34dafe58840ebdd965e77c643f9597f5043857288e905f42beb1e8bcaa7b5"
+        },
+        {
+          "path": "references/kv/api.md",
+          "bytes": 2883,
+          "sha256": "05c4d31422ca97bb621371d0e9ad89d8376685b99c8c0a719e46e3c188ae71c6"
+        },
+        {
+          "path": "references/kv/configuration.md",
+          "bytes": 1830,
+          "sha256": "699aa2f3f22b613391b20b24cdc9ac19ad9562ff6e9fd61b0eafaa88a81a9af0"
+        },
+        {
+          "path": "references/kv/gotchas.md",
+          "bytes": 2972,
+          "sha256": "86c1dc04bf7125cc3eb0caf8dd1c5607c84e908d4721d108dce273089e5129ff"
+        },
+        {
+          "path": "references/kv/patterns.md",
+          "bytes": 3894,
+          "sha256": "1122450f7b9297f01acbaad3110bd65162a0a53832e394946807fe5812b658f7"
+        },
+        {
+          "path": "references/kv/README.md",
+          "bytes": 1922,
+          "sha256": "af28ed702558400798c4a8844b21819b6a57c3eaf935fcc13d38ffd9cd9964c4"
+        },
+        {
+          "path": "references/miniflare/api.md",
+          "bytes": 3360,
+          "sha256": "5a36e38c572b2405f06321f3cf2f9169a0d8adfffc6a42d310110e64daa0dd09"
+        },
+        {
+          "path": "references/miniflare/configuration.md",
+          "bytes": 3471,
+          "sha256": "67424dc198f4e3a7fdcd03f0470bd91b61ed7d118a029da2ec573ae567771fcc"
+        },
+        {
+          "path": "references/miniflare/gotchas.md",
+          "bytes": 3937,
+          "sha256": "dce77f2aacb4be6677f1ceeb3283a8807b0aa19c63fcf3c9d6d6b78bd357e36c"
+        },
+        {
+          "path": "references/miniflare/patterns.md",
+          "bytes": 4524,
+          "sha256": "047129e03481ada3bd0fbd1ff8f5bfd261299c68045f17e1002575ac12713f78"
+        },
+        {
+          "path": "references/miniflare/README.md",
+          "bytes": 1766,
+          "sha256": "e1762d31fb64b75c9fb04fde64a0826058495626cc8c1944e2a36dec73c71052"
+        },
+        {
+          "path": "references/network-interconnect/api.md",
+          "bytes": 5127,
+          "sha256": "bcd4083d49159259eaf79c12a538cb5de32d07be3723bcb9f6ad603038615a11"
+        },
+        {
+          "path": "references/network-interconnect/configuration.md",
+          "bytes": 4198,
+          "sha256": "cbda20d659fb6c02a5b1ffb098b3fb6c978babb9e3bdd69106c5cd61957f2da7"
+        },
+        {
+          "path": "references/network-interconnect/gotchas.md",
+          "bytes": 3957,
+          "sha256": "0b4c8f594e90cb651c360696a350b65372dfaa550d2a694a096cfb3bcdf51d48"
+        },
+        {
+          "path": "references/network-interconnect/patterns.md",
+          "bytes": 4046,
+          "sha256": "d1debb56be1e69bb4728d4ac9e53ae47ac6602e9bd3e198e10e1e05fb3383a88"
+        },
+        {
+          "path": "references/network-interconnect/README.md",
+          "bytes": 1947,
+          "sha256": "4a1cbc8ac733f63164a3c72676256ae3ea664cc88328ca836632b48a33ef5684"
+        },
+        {
+          "path": "references/observability/api.md",
+          "bytes": 1000,
+          "sha256": "8c158f54f6c334f32eb36ee507edd2937f7bb790d8a7b91e1de19b66a67b64d8"
+        },
+        {
+          "path": "references/observability/configuration.md",
+          "bytes": 1000,
+          "sha256": "0b88a2548f30da401d45cf7d3f4e890d2bac66823e86a22cc8631304291ada83"
+        },
+        {
+          "path": "references/observability/gotchas.md",
+          "bytes": 800,
+          "sha256": "e19c8bebbde334a7998faeb5b2f7dd29d97758266b45c8ba8ce3049ec3ae7a03"
+        },
+        {
+          "path": "references/observability/patterns.md",
+          "bytes": 1000,
+          "sha256": "359d1dd099f9f0db74b3d398fdbe8d6653d2bae8e895a33805ca0cf5b19585ef"
+        },
+        {
+          "path": "references/observability/README.md",
+          "bytes": 728,
+          "sha256": "35fe619fa82871b703c41042eefb28b969be5182645d224264cb91ca0b4368eb"
+        },
+        {
+          "path": "references/pages-functions/api.md",
+          "bytes": 4786,
+          "sha256": "5bf511eb21de2ca53c4d38a4bd315f2c438f7fd1525b2c92e455d5160c5cb85a"
+        },
+        {
+          "path": "references/pages-functions/configuration.md",
+          "bytes": 3007,
+          "sha256": "daa7596ddd969bb2b92d61cdf686ad4cb22201ecafcf2fb332a9b1b0043314cb"
+        },
+        {
+          "path": "references/pages-functions/gotchas.md",
+          "bytes": 3329,
+          "sha256": "8e599029347792246bccef16840b69b03f3afb0fbf6b42d6032057dd402b993f"
+        },
+        {
+          "path": "references/pages-functions/patterns.md",
+          "bytes": 4873,
+          "sha256": "3171e6b694485ef690b8a922bc98cc18ca0a631a65232b35628297b592e027e1"
+        },
+        {
+          "path": "references/pages-functions/README.md",
+          "bytes": 1734,
+          "sha256": "0fe823960975e4b6592fd1a5f1b4145908e9ab12866e96f382c91802a6fcff08"
+        },
+        {
+          "path": "references/pages/api.md",
+          "bytes": 5185,
+          "sha256": "cb988b13fc79fecdf12c7f3cafc964b702bc671cab5ce33d81a4e9c786ad7ea5"
+        },
+        {
+          "path": "references/pages/configuration.md",
+          "bytes": 4488,
+          "sha256": "2418fd5b4d90290d8eb572019188d6b4d5b552524ff6bf2c7e264841093ac8ac"
+        },
+        {
+          "path": "references/pages/gotchas.md",
+          "bytes": 5799,
+          "sha256": "49899d73e23627adbd37cba0645bd52a7600e532941924e650ae63d845f193c0"
+        },
+        {
+          "path": "references/pages/patterns.md",
+          "bytes": 4950,
+          "sha256": "0e42d25f8e343e9d9b75eb0bbf5b29062219051b791d2d4823b369cc2d43b855"
+        },
+        {
+          "path": "references/pages/README.md",
+          "bytes": 2284,
+          "sha256": "8f4c1e21b4cbb568519b63a81889fdda7b2b1a3ce650635bf10bb27ac2fe984b"
+        },
+        {
+          "path": "references/pipelines/README.md",
+          "bytes": 16101,
+          "sha256": "e472c95e4f0352bd0918521ca1cd29962ef697d34d0019212196467f7217b4b4"
+        },
+        {
+          "path": "references/pulumi/api.md",
+          "bytes": 5230,
+          "sha256": "55b0612ea9fd0c837527b4dd559ef7e76e2903bca405e58df4d57a97864dc6e5"
+        },
+        {
+          "path": "references/pulumi/configuration.md",
+          "bytes": 5478,
+          "sha256": "4fd4cda675a703ec9b54a6d4590f9d15cf9a3d7f71f2519f7ee84b3ca8cadd41"
+        },
+        {
+          "path": "references/pulumi/gotchas.md",
+          "bytes": 5701,
+          "sha256": "3e5178530ecf2a69a52555f18edf09227927b998930db23cb39d8309053247dc"
+        },
+        {
+          "path": "references/pulumi/patterns.md",
+          "bytes": 5274,
+          "sha256": "9bb9a82eab7e0ee3a67d76460f1a82199ef46705fa3d51015d321e6e567dd3cc"
+        },
+        {
+          "path": "references/pulumi/README.md",
+          "bytes": 2511,
+          "sha256": "d7c4e3814c6856082a5d3b6934ef3ee24f9f7556ef05daf2c8fc6c5d456b6ec9"
+        },
+        {
+          "path": "references/queues/api.md",
+          "bytes": 3331,
+          "sha256": "7a9f33e6d9cd37baba3a3c710e8f9675aa9f84808edc2e412f4d31f5021ebeb6"
+        },
+        {
+          "path": "references/queues/configuration.md",
+          "bytes": 2500,
+          "sha256": "e378a51d9d32e145ab8fe03553887dd5106d2a37c653edc2154d32cc66bea4b5"
+        },
+        {
+          "path": "references/queues/gotchas.md",
+          "bytes": 2835,
+          "sha256": "4db245d7f6453be5ba5073ba9bb3ad0655903ba6a302d22654be4c8c2175dfe9"
+        },
+        {
+          "path": "references/queues/patterns.md",
+          "bytes": 3891,
+          "sha256": "faaead3a7aa54303fab5590ac23c6f1ec7c8ea550b8cce2d517426a450b5f015"
+        },
+        {
+          "path": "references/queues/README.md",
+          "bytes": 1942,
+          "sha256": "1bc2ec82505e9bb1b33fa2de38b65ef8ecc7a96075786d591f563636360530c0"
+        },
+        {
+          "path": "references/r2-data-catalog/api.md",
+          "bytes": 717,
+          "sha256": "02585845088cc89dc40b527cd68aef8f5683e314c3d714772a202f00b6c7ce97"
+        },
+        {
+          "path": "references/r2-data-catalog/configuration.md",
+          "bytes": 1010,
+          "sha256": "152c63f8a50cdd8218e7d398fb0b401ba7c55275d5ab00adc3fc631f30cd4051"
+        },
+        {
+          "path": "references/r2-data-catalog/gotchas.md",
+          "bytes": 800,
+          "sha256": "df62e70f9d1a0b7cf56e1be94baf6897f045b7c6f748a2061fc24233e7ec237c"
+        },
+        {
+          "path": "references/r2-data-catalog/patterns.md",
+          "bytes": 1000,
+          "sha256": "3908388acb0c5a0f4bf7f54726837448246388604d896dcd3d174d6e97a77b18"
+        },
+        {
+          "path": "references/r2-data-catalog/README.md",
+          "bytes": 739,
+          "sha256": "51b2e11f2dfed52a740db35123ebc9bc197d658a4210a1800985e658dc6af4c2"
+        },
+        {
+          "path": "references/r2-sql/README.md",
+          "bytes": 13068,
+          "sha256": "f1ff0858a00772fbe2c0be5752c222805f90f41b48991fcdf5dd903fed46f707"
+        },
+        {
+          "path": "references/r2/api.md",
+          "bytes": 3036,
+          "sha256": "45225758227b8b046bb7ad9e848a5bbce4fcdbcb104f0ef237f9eb251576865a"
+        },
+        {
+          "path": "references/r2/configuration.md",
+          "bytes": 1500,
+          "sha256": "d63d92d9dfd37b4be7b818fc974b3055fe6d353d10e42826a7f6d2000f1efaf1"
+        },
+        {
+          "path": "references/r2/gotchas.md",
+          "bytes": 2489,
+          "sha256": "99506b691721f39d02fce8556b9c5b0d9a39d51fdcb430733ba92144e775868f"
+        },
+        {
+          "path": "references/r2/patterns.md",
+          "bytes": 3736,
+          "sha256": "1859a719a5ee8e18b245aa3efdba493dc331474c847862956cc5617f27b40f6c"
+        },
+        {
+          "path": "references/r2/README.md",
+          "bytes": 1963,
+          "sha256": "929ec10b3c9d53dedb7e3797d7bc9040a163729b09bacf7d261c35e6cba34280"
+        },
+        {
+          "path": "references/realtime-sfu/api.md",
+          "bytes": 3111,
+          "sha256": "0a830a8c09ab8ac5d74288ddbf3a9c16f073124f49757f583d5713e2514706dd"
+        },
+        {
+          "path": "references/realtime-sfu/configuration.md",
+          "bytes": 1296,
+          "sha256": "68a8f34046f6978b0b9c4e427da6873b60e03bedcc78473578dbcb722aa764ff"
+        },
+        {
+          "path": "references/realtime-sfu/gotchas.md",
+          "bytes": 2595,
+          "sha256": "d97fc806d13487442022460deda67352cdfe7393345aac15e6773de0146d1e70"
+        },
+        {
+          "path": "references/realtime-sfu/patterns.md",
+          "bytes": 3151,
+          "sha256": "b91974eb338821adc8c5abe9f0047e987a5b2541aa5a1ad43a95bcda7fa10d43"
+        },
+        {
+          "path": "references/realtime-sfu/README.md",
+          "bytes": 972,
+          "sha256": "83c0d7f0c4a2bee705ac3e5f6c1aeb5b2103997321b4a24a779c82250d8a4175"
+        },
+        {
+          "path": "references/realtimekit/api.md",
+          "bytes": 6646,
+          "sha256": "33d26b3b989144fd59d078923d2e67b25fe865f7b4f44c683024768f77fef345"
+        },
+        {
+          "path": "references/realtimekit/configuration.md",
+          "bytes": 3754,
+          "sha256": "f6cfdd2644445745d649ad47a2a9868c5505b765e37247e88d206f4588806f9f"
+        },
+        {
+          "path": "references/realtimekit/gotchas.md",
+          "bytes": 6156,
+          "sha256": "13a0ee6b0846a58e230af86d6955e15c57661899606801abfceb8b60fe9e5eda"
+        },
+        {
+          "path": "references/realtimekit/patterns.md",
+          "bytes": 6857,
+          "sha256": "69496eab315b3e806798cd4802fc6f227ebed5864a04da10fa79361cc5e0d29d"
+        },
+        {
+          "path": "references/realtimekit/README.md",
+          "bytes": 3120,
+          "sha256": "fa00d9fde57f3b94459cab537ce9042ac0654cf5da4bed31ab1808bca6c78e00"
+        },
+        {
+          "path": "references/sandbox/api.md",
+          "bytes": 4558,
+          "sha256": "58b8fda6265ca047df8a9abb6aa3f149e9781e77a463b51cfc0544307db26555"
+        },
+        {
+          "path": "references/sandbox/configuration.md",
+          "bytes": 3076,
+          "sha256": "899da765b82cbc7a353c4ee894d5ed15e43209b41ffeb78ddb49f410f1664df0"
+        },
+        {
+          "path": "references/sandbox/gotchas.md",
+          "bytes": 4057,
+          "sha256": "beeb7213d45894e56297c6c335b16da92bbd7fbacd863d622252c39f859863d0"
+        },
+        {
+          "path": "references/sandbox/patterns.md",
+          "bytes": 5410,
+          "sha256": "b89a5e4c1613777fa00add6f13471308b5eaa97e3ab9a0ac14ddb0966ee6b5f6"
+        },
+        {
+          "path": "references/sandbox/README.md",
+          "bytes": 2723,
+          "sha256": "b1a4db8682c08b26ba8b6b4fc97068b05e41e41402952f1fcc2db888a0b33cdc"
+        },
+        {
+          "path": "references/secrets-store/api.md",
+          "bytes": 3883,
+          "sha256": "1fe9b74c3ecc7de6bc0530d6598c3073edcb202e1ef2a9e83b12c0e551a2db6b"
+        },
+        {
+          "path": "references/secrets-store/configuration.md",
+          "bytes": 3276,
+          "sha256": "3ab1f58095c53ae325cd0bf037f77bcd58c57e227789b049a91aa2439d66defb"
+        },
+        {
+          "path": "references/secrets-store/gotchas.md",
+          "bytes": 3058,
+          "sha256": "141e815e39efbfe8631bdc488f006bd1957e62fa1aef755b242fefe391209e46"
+        },
+        {
+          "path": "references/secrets-store/patterns.md",
+          "bytes": 5345,
+          "sha256": "8959de106388afbcba0e00f7b63f0e35d8313768302019944021cc9b52d5414c"
+        },
+        {
+          "path": "references/secrets-store/README.md",
+          "bytes": 1776,
+          "sha256": "a95c5b7d020a956c4ed11a75c10fd15a2acc06d6aeb7b7ec8a0c09e77b95f895"
+        },
+        {
+          "path": "references/smart-placement/api.md",
+          "bytes": 3835,
+          "sha256": "b4a2d36d2b13a7da0eb13648cbd133cef349c2141814d3f0afc41a1000352741"
+        },
+        {
+          "path": "references/smart-placement/configuration.md",
+          "bytes": 2950,
+          "sha256": "14294a9ee51d91b9b60c6771ca0aa6d4a553fe75a322d73b21608278fddc1125"
+        },
+        {
+          "path": "references/smart-placement/gotchas.md",
+          "bytes": 2816,
+          "sha256": "ee0230ae022349762e636f86049464fe58a7a9262e9b1c9d838cd30971572b26"
+        },
+        {
+          "path": "references/smart-placement/patterns.md",
+          "bytes": 4485,
+          "sha256": "44672553dec8a237bcd050b61c0230817fb68f3883019dd2e79193137b1cd98a"
+        },
+        {
+          "path": "references/smart-placement/README.md",
+          "bytes": 3186,
+          "sha256": "127c8bdf38903ea08d8caa169983915eb601e84538701cba1d993c7cf31c73cb"
+        },
+        {
+          "path": "references/snippets/api.md",
+          "bytes": 1000,
+          "sha256": "364d850459cb36c3c8baf70697e15cc67080272f81d33e5038f7077979782582"
+        },
+        {
+          "path": "references/snippets/configuration.md",
+          "bytes": 1004,
+          "sha256": "636aa6f3bd71f670817012f4bc532ef97667506b4fad9e572761668eb4cc8d54"
+        },
+        {
+          "path": "references/snippets/gotchas.md",
+          "bytes": 800,
+          "sha256": "16f1d5a4758355aacdad76d9ae80258d7b7266249ba85ff7dca6722582994ba9"
+        },
+        {
+          "path": "references/snippets/patterns.md",
+          "bytes": 1000,
+          "sha256": "64d07b0a77c245ae102efa4047f6069baef7518bc60be96500b247324e398ee8"
+        },
+        {
+          "path": "references/snippets/README.md",
+          "bytes": 716,
+          "sha256": "5485cdc99c1228f45bfaea43f496ff56de91d6376c5d69e65854332846e5fa82"
+        },
+        {
+          "path": "references/spectrum/api.md",
+          "bytes": 774,
+          "sha256": "1bbdffcdae80d718a678acf0c3b64560d3a4ccd4927a64c396f4723b6e0de466"
+        },
+        {
+          "path": "references/spectrum/configuration.md",
+          "bytes": 1000,
+          "sha256": "681ae5e57ea57a3f183ed73a9d0839cc6a01cca3773856f7a93f17c45062d4e4"
+        },
+        {
+          "path": "references/spectrum/gotchas.md",
+          "bytes": 800,
+          "sha256": "d140fd6ceddb7fa200ca932dda8b900b2e8fea4a4148e9d1f39e02d29aea3b7c"
+        },
+        {
+          "path": "references/spectrum/patterns.md",
+          "bytes": 1000,
+          "sha256": "a7c967c5223bffa04d9b7494266f24e61de0d6c5102f3b47f8f8218322b2e858"
+        },
+        {
+          "path": "references/spectrum/README.md",
+          "bytes": 732,
+          "sha256": "94481bd286cadfd540e7cab12ad1efa1e4a576e2eeee3ca348359a42961cc795"
+        },
+        {
+          "path": "references/static-assets/api.md",
+          "bytes": 40,
+          "sha256": "06238b42d9839a0ca7b72ce31adb9345d33546f77a2017951831b3a92f0347ec"
+        },
+        {
+          "path": "references/static-assets/configuration.md",
+          "bytes": 1000,
+          "sha256": "b814b52d0cc72ed8f49e30ffe52036f4f3ba324c62d43524142953b128775c27"
+        },
+        {
+          "path": "references/static-assets/gotchas.md",
+          "bytes": 800,
+          "sha256": "8ed4184e6912fde300f2cda58f91b6fb790ff2558b7ec8f935b5f513aee3379a"
+        },
+        {
+          "path": "references/static-assets/patterns.md",
+          "bytes": 1000,
+          "sha256": "24932a9a551d94a1a9549660b67f584b3369739b829ae17fac8b28ec2d5cb2ee"
+        },
+        {
+          "path": "references/static-assets/README.md",
+          "bytes": 676,
+          "sha256": "b7e1fef887bbbcc9613235d31b07567d5ce62fdb5a29721f0370d1d2edf3e0be"
+        },
+        {
+          "path": "references/stream/api.md",
+          "bytes": 6106,
+          "sha256": "0313f2dcf95ce6fbc1d3980095f61702944be84f1514ec140e35fe3a1c08bff6"
+        },
+        {
+          "path": "references/stream/configuration.md",
+          "bytes": 2952,
+          "sha256": "1ef3aaad1bb0243fdefe23fb97c0dd00b78dd435c54fc498dbd7286b5f558685"
+        },
+        {
+          "path": "references/stream/gotchas.md",
+          "bytes": 4307,
+          "sha256": "618a2bee5fdee9ced8daad596aaffe29fd297de872b931b3083ea2a216b1ba4c"
+        },
+        {
+          "path": "references/stream/patterns.md",
+          "bytes": 4923,
+          "sha256": "79779ddd5b3f5ea4639ff665318b76b73c8083de5ef8fd9475ff7faf4a5e9df3"
+        },
+        {
+          "path": "references/stream/README.md",
+          "bytes": 3224,
+          "sha256": "f27c6b403b424fb337387422564da67204e3ef527ad7b0c9d9b63be9aa398f31"
+        },
+        {
+          "path": "references/tail-workers/README.md",
+          "bytes": 16340,
+          "sha256": "03aec91f4e013c94509ca007e2ce786639657de8c261059e1b8122298a06ae15"
+        },
+        {
+          "path": "references/terraform/api.md",
+          "bytes": 3348,
+          "sha256": "c91a5b3f019824415616680c05962e76641787f1cc2b1791bfaf23a9195e2e79"
+        },
+        {
+          "path": "references/terraform/configuration.md",
+          "bytes": 5781,
+          "sha256": "28e6511d8733a458b539d84c0d9dea74b7bfb9d6699af920a18a85cab7d9be6d"
+        },
+        {
+          "path": "references/terraform/gotchas.md",
+          "bytes": 5840,
+          "sha256": "2d453f7232cb9e8ab6ee3e4eb1c0aabb9f97cbeae33edeafe822609cc021373a"
+        },
+        {
+          "path": "references/terraform/patterns.md",
+          "bytes": 5644,
+          "sha256": "82e611ece5accf71237e7379de66138b6fd8f2f2b8486ffbfbad3532b6136e16"
+        },
+        {
+          "path": "references/terraform/README.md",
+          "bytes": 2454,
+          "sha256": "0a809a370d82003b5a7f5c4b5e8b8c6bf65a851daad3729cef7a88a5a768b454"
+        },
+        {
+          "path": "references/tunnel/api.md",
+          "bytes": 2684,
+          "sha256": "0b5ab44896f8cb309d2344584648712601d4d1984adec01e849eb82237eff463"
+        },
+        {
+          "path": "references/tunnel/configuration.md",
+          "bytes": 2477,
+          "sha256": "0454483a2f57374bf8471100f4b8be10737a8b337b69429e32f21af9b0870bde"
+        },
+        {
+          "path": "references/tunnel/gotchas.md",
+          "bytes": 2612,
+          "sha256": "859888037261f152169a4ef808d6596b9a85246ef35c849e945a2d6862c64f34"
+        },
+        {
+          "path": "references/tunnel/patterns.md",
+          "bytes": 3017,
+          "sha256": "9b13868f920d087fc5b4b04288677ab1e157365c395cc3ee7a33311a3fd2baad"
+        },
+        {
+          "path": "references/tunnel/README.md",
+          "bytes": 2153,
+          "sha256": "eac5aa60c623ea888e31433e7249f6361aa660d8d52cf6610c2972f0c99e1f81"
+        },
+        {
+          "path": "references/turn/README.md",
+          "bytes": 17881,
+          "sha256": "0933c8878352b0dcebdd8a0bfebbc82cd4b0e5ab9597838108646eaa89a8d8b9"
+        },
+        {
+          "path": "references/turnstile/api.md",
+          "bytes": 40,
+          "sha256": "06238b42d9839a0ca7b72ce31adb9345d33546f77a2017951831b3a92f0347ec"
+        },
+        {
+          "path": "references/turnstile/configuration.md",
+          "bytes": 1000,
+          "sha256": "63db6f2fa1814acf4adb3a92a8475b67ed087ca351889238abf3aed717f0f2ff"
+        },
+        {
+          "path": "references/turnstile/gotchas.md",
+          "bytes": 800,
+          "sha256": "073063b15a1fed9a519969b68f20688c2e60ceb18c2ed1ed12c88e6908f22793"
+        },
+        {
+          "path": "references/turnstile/patterns.md",
+          "bytes": 1006,
+          "sha256": "12e2d1b6849c0c5d6d749c834762d46ef6558fb9d2fc8fbcf6714ef852145464"
+        },
+        {
+          "path": "references/turnstile/README.md",
+          "bytes": 609,
+          "sha256": "c90128904812e143510f4bb2fe459b8bb8ec5d645ce164bab92362e272279d4f"
+        },
+        {
+          "path": "references/vectorize/README.md",
+          "bytes": 19109,
+          "sha256": "e2a931827dc80c9922d50ba6afafa8c4cf7ffc263e5fc80df0bcb288eaf5b8a0"
+        },
+        {
+          "path": "references/waf/api.md",
+          "bytes": 40,
+          "sha256": "06238b42d9839a0ca7b72ce31adb9345d33546f77a2017951831b3a92f0347ec"
+        },
+        {
+          "path": "references/waf/configuration.md",
+          "bytes": 1000,
+          "sha256": "37f60d409692cb599437c9db172a178760275f1ee6c4c311a8c2498005d46dcf"
+        },
+        {
+          "path": "references/waf/gotchas.md",
+          "bytes": 800,
+          "sha256": "b959b3d73e60202c3e0d96f7ffd210ff39011da2dbc23a5f88b6cdc18a3cdc88"
+        },
+        {
+          "path": "references/waf/patterns.md",
+          "bytes": 1000,
+          "sha256": "d40e5d5e1820a007d468037acce893a9563d0e9b5d00bc1793fefaa89af73090"
+        },
+        {
+          "path": "references/waf/README.md",
+          "bytes": 590,
+          "sha256": "f29a84f836a96712b06125048f4cd390a8151578b524db3822ef1fdaf5d135cf"
+        },
+        {
+          "path": "references/web-analytics/api.md",
+          "bytes": 1000,
+          "sha256": "12e967f24ab2d95f387fd8404fe3937e9500d64ce649d044e91062a3c31df6b7"
+        },
+        {
+          "path": "references/web-analytics/configuration.md",
+          "bytes": 1006,
+          "sha256": "cfe7f203ffb365585e860075419eb1c748ab61978998570eded7d7da367a52b2"
+        },
+        {
+          "path": "references/web-analytics/gotchas.md",
+          "bytes": 800,
+          "sha256": "9a4a13d54befd0eba527951f7d9dfb47df38829fff67e6c05f3a55f7bcadfeee"
+        },
+        {
+          "path": "references/web-analytics/patterns.md",
+          "bytes": 1010,
+          "sha256": "ea0ab46c7a3d0466ae34dba08c9a250528c8ac33e158e94450ac76da9048e747"
+        },
+        {
+          "path": "references/web-analytics/README.md",
+          "bytes": 737,
+          "sha256": "495726fc30795778248ee7cf9466cbe6c8c9c76c865d07ed4f853d350e6e3071"
+        },
+        {
+          "path": "references/workerd/api.md",
+          "bytes": 4385,
+          "sha256": "7c74d1772e679cbc86f64fa9201ecc6e22fd6771b538a7908dbf3666968f2aa8"
+        },
+        {
+          "path": "references/workerd/configuration.md",
+          "bytes": 4733,
+          "sha256": "bb16b7b6ff873e375aef9f0495f7478e4981af61edc857c72e88ce9e7a56458a"
+        },
+        {
+          "path": "references/workerd/gotchas.md",
+          "bytes": 5211,
+          "sha256": "b86bf455bb350ec26340b8d9ffc4569d200d72b597ad97ac23e1104d12183df7"
+        },
+        {
+          "path": "references/workerd/patterns.md",
+          "bytes": 5117,
+          "sha256": "85ae60a87370f1504b5a8f231880b142b60809354d17d297ec02cb57f0296197"
+        },
+        {
+          "path": "references/workerd/README.md",
+          "bytes": 1619,
+          "sha256": "024c78d52b495131ef64759c7779eb317b8299f22990644a84c873cbb44e4b27"
+        },
+        {
+          "path": "references/workers-ai/README.md",
+          "bytes": 4390,
+          "sha256": "12259ff25059c25cd3e08955687724373333dba1e1ff1b1b47e5b9165346527e"
+        },
+        {
+          "path": "references/workers-for-platforms/api.md",
+          "bytes": 4612,
+          "sha256": "c1ce4c053af33917823207aa1fca95f00848fcc21294323e2876c1ed1e14e310"
+        },
+        {
+          "path": "references/workers-for-platforms/configuration.md",
+          "bytes": 2670,
+          "sha256": "8b7f5559d4b41326c5c73e5918b44a4fbab52b2f5e2bfdd69f7a6121061a52a8"
+        },
+        {
+          "path": "references/workers-for-platforms/gotchas.md",
+          "bytes": 3531,
+          "sha256": "5bac8301c4056ac82b2cd8a727aff299503f14555b01a5f3a565c131750b09c1"
+        },
+        {
+          "path": "references/workers-for-platforms/patterns.md",
+          "bytes": 4607,
+          "sha256": "527a5131dcbaad1a630382699d6f93b26f14c313c2030e7f9079e68732ae3c72"
+        },
+        {
+          "path": "references/workers-for-platforms/README.md",
+          "bytes": 1792,
+          "sha256": "a856a2fede143c0820d52d23a1aaff609e233d65f56ee5500d8c57d4399ecb7d"
+        },
+        {
+          "path": "references/workers-playground/api.md",
+          "bytes": 571,
+          "sha256": "ce6de2fb23d23c657e989ff7df2959234ae6e8c605ce016bef6d192239d69b10"
+        },
+        {
+          "path": "references/workers-playground/configuration.md",
+          "bytes": 40,
+          "sha256": "a2ed744bb00723b3b4c22e066a0d1ae89bf342c5a3799da3e68ef2808cc2b984"
+        },
+        {
+          "path": "references/workers-playground/gotchas.md",
+          "bytes": 800,
+          "sha256": "3ac8f134cd8ea13ed07d321037899bebe82f52458f67538320b3d86beccd81d8"
+        },
+        {
+          "path": "references/workers-playground/patterns.md",
+          "bytes": 1000,
+          "sha256": "a788f39b1f132d1a222688e1fb825d26f4c386a89229b8a2f36738e4065d69d6"
+        },
+        {
+          "path": "references/workers-playground/README.md",
+          "bytes": 724,
+          "sha256": "ba8f0470417b767ea8009d68eb6a9f1d10c1dd666cadeb465f76556c867d7702"
+        },
+        {
+          "path": "references/workers-vpc/README.md",
+          "bytes": 13536,
+          "sha256": "dc794e9ad9f520a40cf3d22ccea7efe060b72bb64c49b4a8694725bf84b0d440"
+        },
+        {
+          "path": "references/workers/api.md",
+          "bytes": 3505,
+          "sha256": "b7952f8d04c7870b239ca2f42b542fe7c9f4f2da632b6926b44225dde2bcc33c"
+        },
+        {
+          "path": "references/workers/configuration.md",
+          "bytes": 3442,
+          "sha256": "83de77fecccca4f41cdc47f8d61839cebae168f7e851c3f674f78992f4c47423"
+        },
+        {
+          "path": "references/workers/gotchas.md",
+          "bytes": 2217,
+          "sha256": "425f9971fcf116341cab3b1f275d01bbc16190ebbcde4be0e1962bc46a242330"
+        },
+        {
+          "path": "references/workers/patterns.md",
+          "bytes": 3695,
+          "sha256": "26f891ac4a847cc241648d9c8aeaf4bb2189eb7325bd382649014f9bcea5f8ae"
+        },
+        {
+          "path": "references/workers/README.md",
+          "bytes": 2906,
+          "sha256": "9655a978ba12c137590a760059f7002ad41f84cfef691ef4508c8316b43fc798"
+        },
+        {
+          "path": "references/workflows/api.md",
+          "bytes": 5053,
+          "sha256": "6793065cd6d2e4d8006ea51cf498220756c858a10788d2b8476d2a818a55fb5b"
+        },
+        {
+          "path": "references/workflows/configuration.md",
+          "bytes": 3986,
+          "sha256": "db0853d2bea0a3d54fd3a87bac338d6091e831e991335cfc380d3ec630173d6a"
+        },
+        {
+          "path": "references/workflows/gotchas.md",
+          "bytes": 4241,
+          "sha256": "dcbe973b24ef7e8295152495fc20086fc0c9c211abce8180a31ed2323fcd4430"
+        },
+        {
+          "path": "references/workflows/patterns.md",
+          "bytes": 5899,
+          "sha256": "6afbbd86a64fd2387291d2652f998d80a758552ebc896677c4621a62fd78d521"
+        },
+        {
+          "path": "references/workflows/README.md",
+          "bytes": 2121,
+          "sha256": "a112cc37bf122bffa0830303b62a195368a6798504b3ac7181d53dc3816fde7f"
+        },
+        {
+          "path": "references/wrangler/api.md",
+          "bytes": 3117,
+          "sha256": "1cc8fad591ba1b5d275c40d433796dea24098fcd07d8dfffec938d9bb1e97c41"
+        },
+        {
+          "path": "references/wrangler/configuration.md",
+          "bytes": 3120,
+          "sha256": "164fbec87c446faa59e18764aef3c1e4507880cae6383dd91ab239f4d327c94c"
+        },
+        {
+          "path": "references/wrangler/gotchas.md",
+          "bytes": 2559,
+          "sha256": "c9975cc53ec92057a091613e334aa118820cd49d36e928e7064d323f2efe2eb7"
+        },
+        {
+          "path": "references/wrangler/patterns.md",
+          "bytes": 2892,
+          "sha256": "555be8bbafc66ce087d18a2e7d2920d993c8a9b30019872fb5724210506b0e1c"
+        },
+        {
+          "path": "references/wrangler/README.md",
+          "bytes": 2531,
+          "sha256": "2290427eac31d4a60fdc2ba4e0f945c0487d52fccd81d2b6eda185c8b066b6b7"
+        },
+        {
+          "path": "references/zaraz/README.md",
+          "bytes": 7031,
+          "sha256": "c1fd43e131dd57576c84b10c4bc12b92d17ce8a837d042c0ed0e9ec5ab2fd256"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 8150,
+          "sha256": "c983a939145af81f4ac952969b27ef84fe4b607ecd5be55d1aeb9f188cfdfda7"
+        }
+      ]
+    },
+    {
+      "name": "diff-walkthrough",
+      "slug": "diff-walkthrough",
+      "owner": "roerohan",
+      "repo": "roerohan/skills",
+      "repoUrl": "https://github.com/roerohan/skills",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/roerohan/skills/blob/171fbdd/diff-walkthrough/SKILL.md",
+      "sourcePath": "diff-walkthrough",
+      "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
+      "version": "171fbdd",
+      "category": "Dev",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 30,
+      "description": "Produce a guided walkthrough of a code diff, pull request, merge request, commit range, or staged changes. Use when the user asks to explain, narrate, summarize, review, or walk through a diff. Supports configurable depth and output formats, defaults to HTML, and uses Plannotator when available.",
+      "long": "Generate a grounded, reader-friendly walkthrough of a code change. Explain the change in the order a human should read it, not in filesystem or diff order.",
+      "fileCount": 5,
+      "bytes": 23087,
+      "packageSha256": "67ea71e7b6fb7f0c881ad31273f5c33dbdb45aef17c19d6044efe35d514b8309",
+      "files": [
+        {
+          "path": "references/annotations.md",
+          "bytes": 1915,
+          "sha256": "8136a67ad59c70fd7a5434a0b692572c55160f645da6483270f3540243164a8a"
+        },
+        {
+          "path": "references/file-roles.md",
+          "bytes": 3198,
+          "sha256": "6324079dafda8f91c2dcb77ab9bf91907c0d5ce11087b5ec4bc3068b72986cb9"
+        },
+        {
+          "path": "references/output-formats.md",
+          "bytes": 3109,
+          "sha256": "04fb6d03c441bb3b05466de9e16edb8cce18d7fd4f51a99a4308544acfa38ca1"
+        },
+        {
+          "path": "references/reading-order.md",
+          "bytes": 3670,
+          "sha256": "12dbe8c60588f970ea517e642e1794c8640131356bfd45f9cedd0ed88dbc1b49"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 11195,
+          "sha256": "cc0c595e1fa787e05356ae526831f815f9ac268df79c2041f4b9898957530eaf"
+        }
+      ]
+    },
+    {
       "name": "mcp-builder",
       "slug": "mcp-builder",
       "owner": "anthropics",
@@ -430,7 +2798,7 @@
       "category": "Dev",
       "language": "Python",
       "color": "#3572a5",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
       "long": "Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.",
       "fileCount": 11,
@@ -491,6 +2859,235 @@
           "path": "SKILL.md",
           "bytes": 11129,
           "sha256": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c"
+        }
+      ]
+    },
+    {
+      "name": "pr-description",
+      "slug": "pr-description",
+      "owner": "gohypergiant",
+      "repo": "gohypergiant/agent-skills",
+      "repoUrl": "https://github.com/gohypergiant/agent-skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/gohypergiant/agent-skills/blob/f276ab4/skills/pr-description/SKILL.md",
+      "sourcePath": "skills/pr-description",
+      "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
+      "version": "f276ab4",
+      "category": "Dev",
+      "language": "JSON",
+      "color": "#8a8479",
+      "stars": 25,
+      "description": "Use when the user wants to write, draft, rewrite, review, improve, or grade a pull request description or PR title; asks for a PR summary, rationale, reviewer context, test plan, or ready-to-paste GitHub/GitLab PR body; or needs to explain a code change to reviewers, future maintainers, or non-expert integrators. Trigger on requests such as \"write the PR,\" \"draft a pull request,\" \"improve this PR description,\" \"PR summary,\" \"PR title,\" \"test plan for the PR,\" or \"review my PR write-up.\" Do not use for commit-message-only requests, release notes, implementation planning, or code review without a request to describe the change.",
+      "long": "Write a PR as durable engineering context, not a narrated diff. The reader should understand the problem, the argument for the chosen mechanism, the contract it relies on, and the evidence without knowing this part of the codebase.",
+      "fileCount": 9,
+      "bytes": 58873,
+      "packageSha256": "a921312147f66ec2a4fbda8f57d638a33d79ffa17094115b5f1710ec24fa2e09",
+      "files": [
+        {
+          "path": "assets/pr-description-template.md",
+          "bytes": 4429,
+          "sha256": "db36b61cb5ccffac7b0e7b04880650c6d5205fedc33c973c3d7af1346ec153c6"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "bytes": 11675,
+          "sha256": "a4cbff22b90ef0f2e84670cab58eaeb8361e91234bb365d3d07670f621ac5919"
+        },
+        {
+          "path": "evals/evals.json",
+          "bytes": 3966,
+          "sha256": "e23735bf5521d904b92c8030ea67cd811c885a6e9b536abaf1d2a86ede8f3f89"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1702,
+          "sha256": "cc8cbc263abe7d0f6c42c76209a879bfa6542192b3c39096d3c23a9250f65f6f"
+        },
+        {
+          "path": "references/pr-description-rubric.md",
+          "bytes": 7427,
+          "sha256": "43adeb94bf446f75a881e9d9e87f92a700c521db2de3df1f82b572c7973dec40"
+        },
+        {
+          "path": "references/pr-writing-calibration.md",
+          "bytes": 2414,
+          "sha256": "52ce15be11ed6866890e540c8f2276a3c88d7fd85d75b092efd9251961116e7b"
+        },
+        {
+          "path": "references/react-pr-findings.md",
+          "bytes": 6104,
+          "sha256": "fbb0cb4a03718405f5fd8f1b5e357297a66afe74e9f4d1a9287f60326846e48f"
+        },
+        {
+          "path": "references/visual-explanations.md",
+          "bytes": 4763,
+          "sha256": "af35490f161993ce4c52ec7b879bf099fddf3995741b1f290cc65f5b3af8fae1"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 16393,
+          "sha256": "c1b8035be765c4102655725b88be3e633d9bfa34ef6bc0c0e5be9b0f095320de"
+        }
+      ]
+    },
+    {
+      "name": "skill-creator",
+      "slug": "skill-creator",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/skill-creator/SKILL.md",
+      "sourcePath": "skills/skill-creator",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Dev",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200891,
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "long": "A skill for creating new skills and iteratively improving them.",
+      "fileCount": 18,
+      "bytes": 224992,
+      "packageSha256": "3a9b4bc3aa53c978706cd77f95151989c47622c929b7da81317be8c1ff8bb496",
+      "files": [
+        {
+          "path": "agents/analyzer.md",
+          "bytes": 10376,
+          "sha256": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a"
+        },
+        {
+          "path": "agents/comparator.md",
+          "bytes": 7287,
+          "sha256": "fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e"
+        },
+        {
+          "path": "agents/grader.md",
+          "bytes": 9049,
+          "sha256": "57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a"
+        },
+        {
+          "path": "assets/eval_review.html",
+          "bytes": 7058,
+          "sha256": "ce477dcc74dc1c0d1d3352646a79167b5a63634e936b1019160025065974e452"
+        },
+        {
+          "path": "eval-viewer/generate_review.py",
+          "bytes": 16365,
+          "sha256": "fc9d1b9243fe5ab6012ebd579bd76d0035de1b79fd3b969de114defab26478fb"
+        },
+        {
+          "path": "eval-viewer/viewer.html",
+          "bytes": 44998,
+          "sha256": "a53213426ee1100441d701a3a0d49cda7a842f992d2c36463f4d3cc0258575fa"
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "references/schemas.md",
+          "bytes": 12061,
+          "sha256": "8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f"
+        },
+        {
+          "path": "scripts/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "scripts/aggregate_benchmark.py",
+          "bytes": 14386,
+          "sha256": "123ef128ea5ccc01a4b1ac212ef5567f21e9c13d3d240609780beeb3200c49aa"
+        },
+        {
+          "path": "scripts/generate_report.py",
+          "bytes": 12847,
+          "sha256": "13df7118a3c50c83c4c3250a606d5f2b20b25a3d44cbc392b3d669ec75281453"
+        },
+        {
+          "path": "scripts/improve_description.py",
+          "bytes": 11116,
+          "sha256": "87d864570220b699fac52da309d2d6efdb060647bfebc74f768128e646accf80"
+        },
+        {
+          "path": "scripts/package_skill.py",
+          "bytes": 4234,
+          "sha256": "1a33059b0db1ef73375d46d513e5ea81369d2e8838c970597b0d52ddef8d1c0f"
+        },
+        {
+          "path": "scripts/quick_validate.py",
+          "bytes": 3972,
+          "sha256": "67cf5703402013936c8fb75ad6a1afecd8841d45cc5e606b634eb05825fde365"
+        },
+        {
+          "path": "scripts/run_eval.py",
+          "bytes": 11464,
+          "sha256": "43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f"
+        },
+        {
+          "path": "scripts/run_loop.py",
+          "bytes": 13605,
+          "sha256": "7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21"
+        },
+        {
+          "path": "scripts/utils.py",
+          "bytes": 1661,
+          "sha256": "3af8ae62c40c73ab712207436a0d9a981e845f25c5a7040229eb189cc8e45bb1"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 33168,
+          "sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+        }
+      ]
+    },
+    {
+      "name": "spec-planner",
+      "slug": "spec-planner",
+      "owner": "roerohan",
+      "repo": "roerohan/skills",
+      "repoUrl": "https://github.com/roerohan/skills",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/roerohan/skills/blob/171fbdd/spec-planner/SKILL.md",
+      "sourcePath": "spec-planner",
+      "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
+      "version": "171fbdd",
+      "category": "Dev",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 30,
+      "description": "Dialogue-driven spec development through skeptical questioning and iterative refinement. Triggers: \"spec this out\", feature planning, architecture decisions, \"is this worth it?\" questions, RFC/design doc creation, work scoping. Invoke Librarian for unfamiliar tech/frameworks/APIs.",
+      "long": "Produce implementation-ready specs through rigorous dialogue and honest trade-off analysis.",
+      "fileCount": 5,
+      "bytes": 16541,
+      "packageSha256": "73cec8c40aec4341e327d49b479d8676968ccde8f2a51fd0610f574675a6c3ab",
+      "files": [
+        {
+          "path": "references/decision-frameworks.md",
+          "bytes": 2154,
+          "sha256": "8c1ea22e3ad11d30ccf5cbf4c932b2e14c8b0f0f9b82f2ae4c58124a6cd2b066"
+        },
+        {
+          "path": "references/estimation.md",
+          "bytes": 1790,
+          "sha256": "1cb401ede25bf97ff58f4a48c30843a69c61bbfb46796f7c9cec3e0624214193"
+        },
+        {
+          "path": "references/technical-debt.md",
+          "bytes": 2233,
+          "sha256": "223a1366a5edef8bab2f2fdf32116e002926532edd87cbb5a968b241cfb45695"
+        },
+        {
+          "path": "references/templates.md",
+          "bytes": 3165,
+          "sha256": "34c028939fd8bd27ba22c97e62a60fa6a0850df207ab8067617bc188369f6e79"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 7199,
+          "sha256": "13e94c33aad59116a502ea67710281a1d544c358535e646a298cce5bbc15b112"
         }
       ]
     },
@@ -601,7 +3198,7 @@
       "category": "Dev",
       "language": "Python",
       "color": "#3572a5",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
       "long": "To test local web applications, write native Python Playwright scripts.",
       "fileCount": 6,
@@ -641,6 +3238,54 @@
       ]
     },
     {
+      "name": "accelint-architecture-doc",
+      "slug": "accelint-architecture-doc",
+      "owner": "gohypergiant",
+      "repo": "gohypergiant/agent-skills",
+      "repoUrl": "https://github.com/gohypergiant/agent-skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/gohypergiant/agent-skills/blob/f276ab4/skills/accelint-architecture-doc/SKILL.md",
+      "sourcePath": "skills/accelint-architecture-doc",
+      "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
+      "version": "f276ab4",
+      "category": "Docs",
+      "language": "JSON",
+      "color": "#8a8479",
+      "stars": 25,
+      "description": "Create or update a living ARCHITECTURE.md for a codebase. Use when the user wants to write, refresh, restructure, or maintain an architecture document; document how the system is organized across tech stack, deployment model, services, components, and data stores; or turn codebase findings into durable architecture docs for engineers or agents. Trigger on requests such as write an architecture doc, document this system, create or update ARCHITECTURE.md, give me a technical overview of this repo, or map out how this app is put together, even when the file is not named. Prefer this skill for file-producing architecture documentation, not for generic architecture advice, implementation planning, or diagram-only brainstorming unless that work is clearly part of updating the document.",
+      "long": "Generate or update a living `ARCHITECTURE.md` for the current codebase. It should give agents and engineers a fast, complete view of the system structure, tech stack, and deployment model.",
+      "fileCount": 5,
+      "bytes": 51364,
+      "packageSha256": "22b82ecfd1bea2a0c89100538191a24007c8cc6b03504ea6f46a34ad0ff41364",
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "bytes": 10065,
+          "sha256": "9e08e1af3d28b09a20673e9960c8244e2d274c17d8acdaf8ee31027075cf46c5"
+        },
+        {
+          "path": "evals/evals.json",
+          "bytes": 7331,
+          "sha256": "faa32dcdb65aaa7040e16e1415eeb72ac7b66b9514ef5ea20356b4911ab177d6"
+        },
+        {
+          "path": "README.md",
+          "bytes": 5832,
+          "sha256": "987941f58fe3cb5580330843e0216082cbda81970c0fb48210e1d0b13c525b79"
+        },
+        {
+          "path": "references/template.md",
+          "bytes": 5666,
+          "sha256": "3f0fad76dadb16c0ab368add0298a992aaa6fcdd501a126c4b63a18baf615fc6"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 22470,
+          "sha256": "3bf2503755c65d956dde7cbed66c4cf111059cb52c147bb6f2c31d2399bc033b"
+        }
+      ]
+    },
+    {
       "name": "doc-coauthoring",
       "slug": "doc-coauthoring",
       "owner": "anthropics",
@@ -654,7 +3299,7 @@
       "category": "Docs",
       "language": "Markdown",
       "color": "#8a8479",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
       "long": "This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.",
       "fileCount": 1,
@@ -665,6 +3310,329 @@
           "path": "SKILL.md",
           "bytes": 15815,
           "sha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4"
+        }
+      ]
+    },
+    {
+      "name": "docx",
+      "slug": "docx",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/docx/SKILL.md",
+      "sourcePath": "skills/docx",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Docs",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200891,
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "long": "A `.docx` is a ZIP archive of XML files. Choose your approach by task:",
+      "fileCount": 60,
+      "bytes": 923872,
+      "packageSha256": "da9faa2c5e0510e032a8402419c1a8146a699ee3046254b9cca3860d4ab9bace",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "scripts/__init__.py",
+          "bytes": 1,
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "scripts/accept_changes.py",
+          "bytes": 4051,
+          "sha256": "0c991d2bc7304a1248e9f3bf9b1498f0b6e76641fc457e7cbd73c99b4eef3a74"
+        },
+        {
+          "path": "scripts/comment.py",
+          "bytes": 14054,
+          "sha256": "37d116e5f56bb142b208c6c6a4bbcf960495abf470ddb7c6675ccfac864ba3d7"
+        },
+        {
+          "path": "scripts/merge_runs.py",
+          "bytes": 9398,
+          "sha256": "3ab367fd7fba4647943d0aa5e65203b15458551410f5ffc821d902616a4b9f40"
+        },
+        {
+          "path": "scripts/office/helpers/__init__.py",
+          "bytes": 4042,
+          "sha256": "5c456ffc522900399b5f9402f92d66aaf2d9f87655d236c69f60bf07f4fd7c9b"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_chart.py",
+          "bytes": 9938,
+          "sha256": "aed734e9a6c743ae712fc228c868bf0f6abcfb6a53549eefb19081b15d240fda"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_slide.py",
+          "bytes": 3352,
+          "sha256": "06fe06953bf038826b85ecc142f4dc9299a37fa0c4e4dd9b00b10486df33524d"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_theme.py",
+          "bytes": 3510,
+          "sha256": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+          "bytes": 1960,
+          "sha256": "5083a39fd5ade6790c291513d5b2a0447087424b04ae02d5f320edce2c5db158"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+          "bytes": 2512,
+          "sha256": "71d4844b6e31d108d1324708f1897843ef54deebe78869e7e15edac8b5495780"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+          "bytes": 2856,
+          "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+          "bytes": 1341,
+          "sha256": "ef23284866e5e1dd69eddc4f42b4efa58a9c4c4f7d94b21949887c02534c1ab4"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+          "bytes": 74984,
+          "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+          "bytes": 6956,
+          "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+          "bytes": 51302,
+          "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+          "bytes": 624,
+          "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+          "bytes": 152039,
+          "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+          "bytes": 1231,
+          "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+          "bytes": 8862,
+          "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+          "bytes": 14795,
+          "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+          "bytes": 83612,
+          "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+          "bytes": 1269,
+          "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+          "bytes": 7328,
+          "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+          "bytes": 6382,
+          "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+          "bytes": 1248,
+          "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+          "bytes": 880,
+          "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+          "bytes": 2608,
+          "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+          "bytes": 3507,
+          "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+          "bytes": 7507,
+          "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+          "bytes": 23313,
+          "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+          "bytes": 1367,
+          "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+          "bytes": 26148,
+          "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+          "bytes": 25279,
+          "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+          "bytes": 535,
+          "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+          "bytes": 5712,
+          "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+          "bytes": 4010,
+          "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+          "bytes": 171367,
+          "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+          "bytes": 4646,
+          "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+        },
+        {
+          "path": "scripts/office/schemas/mce/mc.xsd",
+          "bytes": 3127,
+          "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2010.xsd",
+          "bytes": 26549,
+          "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2012.xsd",
+          "bytes": 3745,
+          "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2018.xsd",
+          "bytes": 901,
+          "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+          "bytes": 1778,
+          "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+          "bytes": 1002,
+          "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+          "bytes": 600,
+          "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+          "bytes": 745,
+          "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+        },
+        {
+          "path": "scripts/office/soffice.py",
+          "bytes": 9100,
+          "sha256": "bcfa227707681ffbecc0f0af5c4e7155407b3baaf5cec5cdd41387c97cdd40c7"
+        },
+        {
+          "path": "scripts/office/validate.py",
+          "bytes": 7808,
+          "sha256": "8c10ec61d8e880877515019e1fe8fab9a1f590c9e50ed0631418e960aca1e313"
+        },
+        {
+          "path": "scripts/office/validators/__init__.py",
+          "bytes": 336,
+          "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+        },
+        {
+          "path": "scripts/office/validators/base.py",
+          "bytes": 34369,
+          "sha256": "6129ec6a4fc0a4aa78af1434f9baa73994cc24d3261afda4e680e00f215cbf3b"
+        },
+        {
+          "path": "scripts/office/validators/docx.py",
+          "bytes": 19745,
+          "sha256": "7b0f1a23c9cd9ff07187d9d7d359f62317f94a5e389d63fd19766e1688a195a2"
+        },
+        {
+          "path": "scripts/office/validators/pptx.py",
+          "bytes": 21058,
+          "sha256": "3a100ec5f00ae183bca67f4aaa8e3e902caee60254e141b8120f32c53d85cee7"
+        },
+        {
+          "path": "scripts/office/validators/redlining.py",
+          "bytes": 18983,
+          "sha256": "f9c4455adc32b3890d5203d6c25d868d98d7e970bbad76b686f502950737599a"
+        },
+        {
+          "path": "scripts/templates/comments.xml",
+          "bytes": 2603,
+          "sha256": "a08ba83ee8790ac9e3dc61921f4988f19edd7e06ac09d6f1897a877c1581818d"
+        },
+        {
+          "path": "scripts/templates/commentsExtended.xml",
+          "bytes": 2611,
+          "sha256": "544eeecfeceed4b468fff163cd9c366d33641c8b8ab691ce002576197846afe8"
+        },
+        {
+          "path": "scripts/templates/commentsExtensible.xml",
+          "bytes": 2707,
+          "sha256": "bad10b3283e6ad6e7ef6d1ca5169683721ed690ee331282c65df04017e080631"
+        },
+        {
+          "path": "scripts/templates/commentsIds.xml",
+          "bytes": 2619,
+          "sha256": "db20f9616e004ec42ef736e80c2384e45db0f8d1194d31dc8b37c7d6ecdd6420"
+        },
+        {
+          "path": "scripts/templates/people.xml",
+          "bytes": 115,
+          "sha256": "056f63aa1197fd8c9dda980c9f1b9ff016fd5fa4a462df8aec5f384f39d23e37"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 7488,
+          "sha256": "895d5aa6c4cd98e4aed4c995d846f056f3549086e79bcd6617afea6014f82288"
         }
       ]
     },
@@ -682,7 +3650,7 @@
       "category": "Docs",
       "language": "Markdown",
       "color": "#8a8479",
-      "stars": 200591,
+      "stars": 200891,
       "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
       "long": "To write internal communications, use this skill for: 3P updates (Progress, Plans, Problems) Company newsletters FAQ responses Status reports Leadership updates Project updates Incident reports",
       "fileCount": 6,
@@ -735,7 +3703,7 @@
       "category": "Docs",
       "language": "Python",
       "color": "#3572a5",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
       "long": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
       "fileCount": 12,
@@ -805,6 +3773,314 @@
       ]
     },
     {
+      "name": "pptx",
+      "slug": "pptx",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/pptx/SKILL.md",
+      "sourcePath": "skills/pptx",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Docs",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200891,
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \\\"deck,\\\" \\\"slides,\\\" \\\"presentation,\\\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+      "long": "A `.pptx` is a ZIP archive of XML files. Choose your approach by task:",
+      "fileCount": 57,
+      "bytes": 957375,
+      "packageSha256": "9ea5f1379fad198bdfaf8f957256d177f268356ab4f3f53d3373435fe6a96a69",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "scripts/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "scripts/add_slide.py",
+          "bytes": 18831,
+          "sha256": "23a4c66a9f43e651189cbc9f82ba0a8271d19dc8d44cf0c426dda66f7eb6a93a"
+        },
+        {
+          "path": "scripts/apply_theme.js",
+          "bytes": 7291,
+          "sha256": "e440b33c43f2e707076cb64b57ca926ce886564b115c19ee23ac487bdb1a6259"
+        },
+        {
+          "path": "scripts/clean.py",
+          "bytes": 10415,
+          "sha256": "5c808cd4dff7e02661ef3c68b5917f4e25097cc6610c92a3a7df4a6366a5c3c1"
+        },
+        {
+          "path": "scripts/office/helpers/__init__.py",
+          "bytes": 4042,
+          "sha256": "5c456ffc522900399b5f9402f92d66aaf2d9f87655d236c69f60bf07f4fd7c9b"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_chart.py",
+          "bytes": 9938,
+          "sha256": "aed734e9a6c743ae712fc228c868bf0f6abcfb6a53549eefb19081b15d240fda"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_slide.py",
+          "bytes": 3352,
+          "sha256": "06fe06953bf038826b85ecc142f4dc9299a37fa0c4e4dd9b00b10486df33524d"
+        },
+        {
+          "path": "scripts/office/helpers/pptx_theme.py",
+          "bytes": 3510,
+          "sha256": "ebb54c56e9c13807f5f98f0cae22d47cdd0162da8525eaa664e3f2c8c8d6bb03"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+          "bytes": 1960,
+          "sha256": "5083a39fd5ade6790c291513d5b2a0447087424b04ae02d5f320edce2c5db158"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+          "bytes": 2512,
+          "sha256": "71d4844b6e31d108d1324708f1897843ef54deebe78869e7e15edac8b5495780"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-digSig.xsd",
+          "bytes": 2856,
+          "sha256": "6de111e11403f7cd49027400755bae0ea1cabef2815f09bd40a24f0017613b24"
+        },
+        {
+          "path": "scripts/office/schemas/ecma/fouth-edition/opc-relationships.xsd",
+          "bytes": 1341,
+          "sha256": "ef23284866e5e1dd69eddc4f42b4efa58a9c4c4f7d94b21949887c02534c1ab4"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+          "bytes": 74984,
+          "sha256": "41b93bd8857cc68b1e43be2806a872d736a9bdd6566900062d8fdb57d7bbb354"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+          "bytes": 6956,
+          "sha256": "3fd0586f2637b98bb9886f0e0b67d89e1cc987c2d158cc7deb5f5b9890ced412"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+          "bytes": 51302,
+          "sha256": "29b254ee0d10414a8504b5a08149c7baec35a60d5ff607d6b3f492aa36815f40"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+          "bytes": 624,
+          "sha256": "5cb76dabd8b97d1e9308a1700b90c20139be4d50792d21a7f09789f5cccd6026"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+          "bytes": 152039,
+          "sha256": "5375417f0f5394b8dd1a7035b9679151f19a6b65df309dec10cfb4a420cb00e9"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+          "bytes": 1231,
+          "sha256": "5d389d42befbebd91945d620242347caecd3367f9a3a7cf8d97949507ae1f53c"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+          "bytes": 8862,
+          "sha256": "b4532b6d258832953fbb3ee4c711f4fe25d3faf46a10644b2505f17010d01e88"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+          "bytes": 14795,
+          "sha256": "bdad416b096b61d37b71603b2c949484f9070c830bdaeba93bf35e15c8900614"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/pml.xsd",
+          "bytes": 83612,
+          "sha256": "d173c3e5d61e42e2e3a97226c632fd2ab7cc481fc4e492365b87024ab546daff"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+          "bytes": 1269,
+          "sha256": "3c6709101c6aaa82888df5d8795c33f9e857196790eb320d9194e64be2b6bdd8"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+          "bytes": 7328,
+          "sha256": "0b364451dc36a48dd6dae0f3b6ada05fd9b71e5208211f8ee5537d7e51a587e2"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+          "bytes": 6382,
+          "sha256": "e2abacbb9a55ce1365f8961bc1b1395bbc811e512b111000d8c333f98458dece"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+          "bytes": 1248,
+          "sha256": "0ef4bb354ff44b923564c4ddbdda5987919d220225129ec94614a618ceafc281"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+          "bytes": 880,
+          "sha256": "0d103b99a4a8652f8871552a69d42d2a3760ac6a5e3ef02d979c4273257ff6a4"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+          "bytes": 2608,
+          "sha256": "9c085407751b9061c1f996f6c39ce58451be22a8d334f09175f0e89e42736285"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+          "bytes": 3507,
+          "sha256": "bc92e36ccd233722d4c5869bec71ddc7b12e2df56059942cce5a39065cc9c368"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+          "bytes": 7507,
+          "sha256": "7b5b7413e2c895b1e148e82e292a117d53c7ec65b0696c992edca57b61b4a74b"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+          "bytes": 23313,
+          "sha256": "3213ef1631606250f5010b42cad7ef716f7c59426367798e33c374c0ec391d3a"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+          "bytes": 1367,
+          "sha256": "12264f3c03d738311cd9237d212f1c07479e70f0cbe1ae725d29b36539aef637"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+          "bytes": 26148,
+          "sha256": "f5ee623b08b6a66935e5aced2f5d8ad0fc71bf9e8e833cd490150c0fa94b8763"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+          "bytes": 25279,
+          "sha256": "585bedc1313b40888dcc544cb74cd939a105ee674f3b1d3aa1cc6d34f70ff155"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+          "bytes": 535,
+          "sha256": "133c9f64a5c5d573b78d0a474122b22506d8eadb5e063f67cdbbb8fa2f161d0e"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+          "bytes": 5712,
+          "sha256": "6bdeb169c3717eb01108853bd9fc5a3750fb1fa5b82abbdd854d49855a40f519"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+          "bytes": 4010,
+          "sha256": "475dcae1e7d1ea46232db6f8481040c15e53a52a3c256831d3df204212b0e831"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/wml.xsd",
+          "bytes": 171367,
+          "sha256": "c2dd9f61f892deae6acd8d20771ea79b12018af25f3bf8d06639c8542d218cfd"
+        },
+        {
+          "path": "scripts/office/schemas/ISO-IEC29500-4_2016/xml.xsd",
+          "bytes": 4646,
+          "sha256": "a539aa2fb154fa50e0f5cc97e6ad7cbc66f8ec3e3746f61ec6a8b0d5d15ecdf2"
+        },
+        {
+          "path": "scripts/office/schemas/mce/mc.xsd",
+          "bytes": 3127,
+          "sha256": "3a37e461ecf5a8670fdec34029703401f8728ab9c96ec1739a6ae58d55212413"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2010.xsd",
+          "bytes": 26549,
+          "sha256": "568b26ee156cb9549aa439ca2158965f77b7c1602b7e0316f40ac6cf586e35f2"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2012.xsd",
+          "bytes": 3745,
+          "sha256": "0fa75578a000439a7988ba0c59fdc69f774bbd416cbacc14d07125b3f686cb74"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-2018.xsd",
+          "bytes": 901,
+          "sha256": "be0ff793a22dd31384650c3a4da14c2fa8062751c2e97b0e5ee852bda13c60ad"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-cex-2018.xsd",
+          "bytes": 1778,
+          "sha256": "fddc2b880cabb9005aebbc7e783e53c19fec1c03df7d0e2f2076a33a0fdfd081"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-cid-2016.xsd",
+          "bytes": 1002,
+          "sha256": "127ca209fa73d7cb708449cb355c871867948a96e4a74f7bf5811ef62d17991d"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+          "bytes": 600,
+          "sha256": "842e7163409c8d74f4d7088a8bc99500d80bc75332681a0980055b08f374a604"
+        },
+        {
+          "path": "scripts/office/schemas/microsoft/wml-symex-2015.xsd",
+          "bytes": 745,
+          "sha256": "16f6f8072249f431370723c2cd8974672e0d9c897e00e97dd918079df934871b"
+        },
+        {
+          "path": "scripts/office/soffice.py",
+          "bytes": 9100,
+          "sha256": "bcfa227707681ffbecc0f0af5c4e7155407b3baaf5cec5cdd41387c97cdd40c7"
+        },
+        {
+          "path": "scripts/office/validate.py",
+          "bytes": 7808,
+          "sha256": "8c10ec61d8e880877515019e1fe8fab9a1f590c9e50ed0631418e960aca1e313"
+        },
+        {
+          "path": "scripts/office/validators/__init__.py",
+          "bytes": 336,
+          "sha256": "83e0f035c5abea238d3f2c3968afbd511ed022b527b7c9cb60a9434cc34ff987"
+        },
+        {
+          "path": "scripts/office/validators/base.py",
+          "bytes": 34369,
+          "sha256": "6129ec6a4fc0a4aa78af1434f9baa73994cc24d3261afda4e680e00f215cbf3b"
+        },
+        {
+          "path": "scripts/office/validators/docx.py",
+          "bytes": 19745,
+          "sha256": "7b0f1a23c9cd9ff07187d9d7d359f62317f94a5e389d63fd19766e1688a195a2"
+        },
+        {
+          "path": "scripts/office/validators/pptx.py",
+          "bytes": 21058,
+          "sha256": "3a100ec5f00ae183bca67f4aaa8e3e902caee60254e141b8120f32c53d85cee7"
+        },
+        {
+          "path": "scripts/office/validators/redlining.py",
+          "bytes": 18983,
+          "sha256": "f9c4455adc32b3890d5203d6c25d868d98d7e970bbad76b686f502950737599a"
+        },
+        {
+          "path": "scripts/slide_text.py",
+          "bytes": 4446,
+          "sha256": "0deab09d4ae494411ee893f9c69fffc19fe264a6053990a2f066334c0d88d422"
+        },
+        {
+          "path": "scripts/thumbnail.py",
+          "bytes": 9802,
+          "sha256": "94ef83a84346aa2d63913de0d42bb2fe902ccdc17bfac6130096ca758381793c"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 28365,
+          "sha256": "598c981d93f2173b251f86a4bc94e9fb4e4f5ddaa314ba2dd4eca24b7a07808e"
+        }
+      ]
+    },
+    {
       "name": "repo-walkthrough",
       "slug": "repo-walkthrough",
       "owner": "roerohan",
@@ -846,7 +4122,7 @@
       "category": "Media",
       "language": "JavaScript",
       "color": "#f1e05a",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
       "long": "Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).",
       "fileCount": 4,
@@ -889,7 +4165,7 @@
       "category": "Media",
       "language": "Markdown",
       "color": "#8a8479",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
       "long": "To access Anthropic's official brand identity and style resources, use this skill.",
       "fileCount": 2,
@@ -909,6 +4185,257 @@
       ]
     },
     {
+      "name": "canvas-design",
+      "slug": "canvas-design",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/canvas-design/SKILL.md",
+      "sourcePath": "skills/canvas-design",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Media",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 200891,
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "long": "These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.",
+      "fileCount": 29,
+      "bytes": 141899,
+      "packageSha256": "6c3aee40a2980cd3005e88a1a9bcbfccaef1657437323112af6f6ef2e2b742a7",
+      "files": [
+        {
+          "path": "canvas-fonts/ArsenalSC-OFL.txt",
+          "bytes": 4373,
+          "sha256": "8ddd61b18ba2c0d0dbe4a691cf5f1a0673f473d02fa0546e67ee88c006aeff6e"
+        },
+        {
+          "path": "canvas-fonts/BigShoulders-OFL.txt",
+          "bytes": 4397,
+          "sha256": "fbc746aabf0eb1847dfd92e2efc4596d79fa897d60b8e64062a22f585508fb3f"
+        },
+        {
+          "path": "canvas-fonts/Boldonse-OFL.txt",
+          "bytes": 4390,
+          "sha256": "45cc82ab4032273c0924025ffcf8f0665a68e1a5955e3f7247e5daf1deeb1326"
+        },
+        {
+          "path": "canvas-fonts/BricolageGrotesque-OFL.txt",
+          "bytes": 4403,
+          "sha256": "0e4f4eb8534bc66a76aca13dd19c1f9731b2008866b29ccff182b764649df9b4"
+        },
+        {
+          "path": "canvas-fonts/CrimsonPro-OFL.txt",
+          "bytes": 4394,
+          "sha256": "35680d14547b6748b6f362a052a46d22764ce5eccf96e18b74f567bb2ee58114"
+        },
+        {
+          "path": "canvas-fonts/DMMono-OFL.txt",
+          "bytes": 4392,
+          "sha256": "bfe7842fcb88323e2981e24710c25202677385a8c75fb6a87217b275a0247ae3"
+        },
+        {
+          "path": "canvas-fonts/EricaOne-OFL.txt",
+          "bytes": 4410,
+          "sha256": "e0de629968b52255548d5fafcf30b24ff9edae0eda362380755a75816404d0fa"
+        },
+        {
+          "path": "canvas-fonts/GeistMono-OFL.txt",
+          "bytes": 4388,
+          "sha256": "6a873c900f584109b13ae0aaf81d6e3cf0a68751a216b03f7b6c68d547057bb4"
+        },
+        {
+          "path": "canvas-fonts/Gloock-OFL.txt",
+          "bytes": 4381,
+          "sha256": "c0a3f3125ac491ef3d1f09f401be4834c646562f647e44f2bcbc49f0466c656d"
+        },
+        {
+          "path": "canvas-fonts/IBMPlexMono-OFL.txt",
+          "bytes": 4363,
+          "sha256": "5294ce778857e1eb02e830b6ab06435537d38f43055327e73d03a2d4d57d5123"
+        },
+        {
+          "path": "canvas-fonts/InstrumentSans-OFL.txt",
+          "bytes": 4403,
+          "sha256": "bf4dc6d13a8cccd4807133c77a1ee9619a16b92cb23322258725ab6731c2f6e5"
+        },
+        {
+          "path": "canvas-fonts/Italiana-OFL.txt",
+          "bytes": 4394,
+          "sha256": "8373b11312ace78c4cec2e8f9f6aa9f2330601107dac7bcf899c6f2dbd40c5a5"
+        },
+        {
+          "path": "canvas-fonts/JetBrainsMono-OFL.txt",
+          "bytes": 4399,
+          "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697"
+        },
+        {
+          "path": "canvas-fonts/Jura-OFL.txt",
+          "bytes": 4380,
+          "sha256": "eaf9bdb675f6d87e5feb88199ab3ea581d3bd2082f426e384fa9c394576d7260"
+        },
+        {
+          "path": "canvas-fonts/LibreBaskerville-OFL.txt",
+          "bytes": 4449,
+          "sha256": "55959eef5b0c3b2e3c1c7631b8ff0f9447d75de20f29cfa7db5bcfb026763343"
+        },
+        {
+          "path": "canvas-fonts/Lora-OFL.txt",
+          "bytes": 4423,
+          "sha256": "62e37a82d3f1ef2a70712885fa8b3144b65fd144d8e748d6196b690a354d792c"
+        },
+        {
+          "path": "canvas-fonts/NationalPark-OFL.txt",
+          "bytes": 4399,
+          "sha256": "81c6c71d83b5b45d7344f96df12bb4a2477a5b092a9144757ee1d0f50f855175"
+        },
+        {
+          "path": "canvas-fonts/NothingYouCouldDo-OFL.txt",
+          "bytes": 4363,
+          "sha256": "7c2a6970584ddad04919816163746f83b378078015899b18468b40f05e9ce128"
+        },
+        {
+          "path": "canvas-fonts/Outfit-OFL.txt",
+          "bytes": 4389,
+          "sha256": "1945b62cd76da9a3051a1660dde72afaa64ffc2666d30e7a78356d651653ba2f"
+        },
+        {
+          "path": "canvas-fonts/PixelifySans-OFL.txt",
+          "bytes": 4395,
+          "sha256": "7f54d1d9f1ae1ba9f2722f978145f90324fea34ca3c2304b3a29cfa96ac6037e"
+        },
+        {
+          "path": "canvas-fonts/PoiretOne-OFL.txt",
+          "bytes": 4366,
+          "sha256": "2eaf541f7eb8b512e4c757a5212060abf5b6edfef230e9d7640bf736b315c33a"
+        },
+        {
+          "path": "canvas-fonts/RedHatMono-OFL.txt",
+          "bytes": 4394,
+          "sha256": "435fbfb7e66988b2a06686a4cb966faec733f35d8fe100a1601573c27f3e0bb8"
+        },
+        {
+          "path": "canvas-fonts/Silkscreen-OFL.txt",
+          "bytes": 4394,
+          "sha256": "6b849745119bbe85ec01fd080c9cd50234da9f52ac6e48b55d1a424a0c4d7ca9"
+        },
+        {
+          "path": "canvas-fonts/SmoochSans-OFL.txt",
+          "bytes": 4396,
+          "sha256": "74c9c4eb88e891483e1b7bc54780b452cbf4f4df66d4e71881d7569aa2130749"
+        },
+        {
+          "path": "canvas-fonts/Tektur-OFL.txt",
+          "bytes": 4385,
+          "sha256": "3f1466cb5438f31782eeb6e895f3a655bc4d090e24263e331f555357d1cb734e"
+        },
+        {
+          "path": "canvas-fonts/WorkSans-OFL.txt",
+          "bytes": 4397,
+          "sha256": "ace8c22a3326318b54e67c3691857929634205533f454a70ef5a3473ddb2e2ba"
+        },
+        {
+          "path": "canvas-fonts/YoungSerif-OFL.txt",
+          "bytes": 4398,
+          "sha256": "cdcb8039606b40a027a6d24586ec62d5fe29c701343d82a048c829cb28a3dd28"
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 11939,
+          "sha256": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b"
+        }
+      ]
+    },
+    {
+      "name": "theme-factory",
+      "slug": "theme-factory",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/theme-factory/SKILL.md",
+      "sourcePath": "skills/theme-factory",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Media",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 200891,
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "long": "This skill provides a curated collection of professional font and color themes themes, each with carefully selected color palettes and font pairings. Once a theme is chosen, it can be applied to any artifact.",
+      "fileCount": 12,
+      "bytes": 19784,
+      "packageSha256": "e74eac7161b6f0b9cd0a1521166a9b5e32e471d6a2bb7b103faf716d5f97a60a",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 3124,
+          "sha256": "c35893e221e28895c52143cc11bf30e41a44817796b39d4b15727dadc9796552"
+        },
+        {
+          "path": "themes/arctic-frost.md",
+          "bytes": 544,
+          "sha256": "868a75a8fb5b2a61d0f0ab87c437fe632d3cbab6371c418f06aa2816ac109ae0"
+        },
+        {
+          "path": "themes/botanical-garden.md",
+          "bytes": 519,
+          "sha256": "222cb8e7496abc9b75b29453c809fb9839e7e4b01fa45deecdd896b38d087765"
+        },
+        {
+          "path": "themes/desert-rose.md",
+          "bytes": 496,
+          "sha256": "bd065b8629be3b64655183927e248e3d892a27b8d184b009cfba89c96102744f"
+        },
+        {
+          "path": "themes/forest-canopy.md",
+          "bytes": 506,
+          "sha256": "ecb722efa24688e808b5bf323c334ca2349e989cfddd72ce8400ce5d4c4bd3e7"
+        },
+        {
+          "path": "themes/golden-hour.md",
+          "bytes": 528,
+          "sha256": "3444a00df971d3c2f06b665e21a2e9eb5d7d7d6f6281f2758773b8345776a139"
+        },
+        {
+          "path": "themes/midnight-galaxy.md",
+          "bytes": 513,
+          "sha256": "0e134c4c0324df41e34ac314269aa6829cd378cf3c304b31858d0cd158d2f944"
+        },
+        {
+          "path": "themes/modern-minimalist.md",
+          "bytes": 549,
+          "sha256": "b8bc572b75948d4df69c401af703b9262ed6820a3ceb270da30a529e92763614"
+        },
+        {
+          "path": "themes/ocean-depths.md",
+          "bytes": 555,
+          "sha256": "a7ad8eec85341dbfcb2665da827a4b6a4baee08ab3335ac02421f18e6b46b2e2"
+        },
+        {
+          "path": "themes/sunset-boulevard.md",
+          "bytes": 558,
+          "sha256": "658af11ab04be4923692571081ffb42a428141ae537703117b9236d9f8ee22a3"
+        },
+        {
+          "path": "themes/tech-innovation.md",
+          "bytes": 547,
+          "sha256": "183648163026dd5eeba3df5effa335b55ba333c3ee1fe215278605e55f40a52a"
+        }
+      ]
+    },
+    {
       "name": "frontend-design",
       "slug": "frontend-design",
       "owner": "anthropics",
@@ -922,7 +4449,7 @@
       "category": "Web",
       "language": "Markdown",
       "color": "#8a8479",
-      "stars": 200591,
+      "stars": 200891,
       "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
       "long": "Approach this as the design lead at a design studio known for giving every client a distinct visual identity that is not mistaken for anyone else's. This client has already rejected proposals that felt cliché or templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about pale…",
       "fileCount": 2,
@@ -938,6 +4465,49 @@
           "path": "SKILL.md",
           "bytes": 9390,
           "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+        }
+      ]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "slug": "web-artifacts-builder",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/web-artifacts-builder/SKILL.md",
+      "sourcePath": "skills/web-artifacts-builder",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Web",
+      "language": "Shell",
+      "color": "#89e051",
+      "stars": 200891,
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "long": "To build powerful frontend claude.ai artifacts, follow these steps: 1. Initialize the frontend repo using `scripts/init-artifact.sh` 2. Develop your artifact by editing the generated code 3. Bundle all code into a single HTML file using `scripts/bundle-artifact.sh` 4. Display artifact to user 5. (Optional) Test the …",
+      "fileCount": 4,
+      "bytes": 25873,
+      "packageSha256": "71253d5ed37985aac7206c8dd4cc73b1bf352cd9784739119aeddf90e4318e0a",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "scripts/bundle-artifact.sh",
+          "bytes": 1517,
+          "sha256": "abf0e480bf6585b56fab8526a407dfb7dc740812bddd70c636e1e8f3df5f9618"
+        },
+        {
+          "path": "scripts/init-artifact.sh",
+          "bytes": 9924,
+          "sha256": "355e5dd4382aaaee91f01f1627eaeab30b2676ffa8d9b3ec328a1ae450ebccaa"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 3087,
+          "sha256": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8"
         }
       ]
     }

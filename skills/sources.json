@@ -1,5 +1,5 @@
 {
-  "note": "Curated public skill repos mirrored into this registry by `npm run skills:sync`. Commits are pinned here so the site index and the deployed Worker serve identical files.",
+  "note": "Curated public skill repos mirrored into this registry by `npm run skills:sync`. Commits are pinned here so the site index and the MCP server serve identical files.",
   "repos": [
     {
       "repo": "anthropics/skills",
@@ -7,70 +7,46 @@
       "license": "Apache-2.0",
       "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
       "skills": [
-        {
-          "path": "skills/frontend-design",
-          "category": "Web"
-        },
-        {
-          "path": "skills/mcp-builder",
-          "category": "Dev"
-        },
-        {
-          "path": "skills/webapp-testing",
-          "category": "Dev"
-        },
-        {
-          "path": "skills/doc-coauthoring",
-          "category": "Docs"
-        },
-        {
-          "path": "skills/brand-guidelines",
-          "category": "Media"
-        },
-        {
-          "path": "skills/pdf",
-          "category": "Docs"
-        },
-        {
-          "path": "skills/algorithmic-art",
-          "category": "Media"
-        },
-        {
-          "path": "skills/internal-comms",
-          "category": "Docs"
-        }
+        { "path": "skills/frontend-design", "category": "Web" },
+        { "path": "skills/mcp-builder", "category": "Dev" },
+        { "path": "skills/webapp-testing", "category": "Dev" },
+        { "path": "skills/doc-coauthoring", "category": "Docs" },
+        { "path": "skills/brand-guidelines", "category": "Media" },
+        { "path": "skills/pdf", "category": "Docs" },
+        { "path": "skills/algorithmic-art", "category": "Media" },
+        { "path": "skills/internal-comms", "category": "Docs" },
+        { "path": "skills/canvas-design", "category": "Media" },
+        { "path": "skills/claude-api", "category": "Dev" },
+        { "path": "skills/docx", "category": "Docs" },
+        { "path": "skills/pptx", "category": "Docs" },
+        { "path": "skills/skill-creator", "category": "Dev" },
+        { "path": "skills/theme-factory", "category": "Media" },
+        { "path": "skills/web-artifacts-builder", "category": "Web" },
+        { "path": "skills/xlsx", "category": "Data" }
       ]
     },
     {
       "repo": "roerohan/skills",
       "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
       "skills": [
-        {
-          "path": "tmux",
-          "category": "Dev"
-        },
-        {
-          "path": "repo-walkthrough",
-          "category": "Docs"
-        },
-        {
-          "path": "librarian",
-          "category": "Data"
-        }
+        { "path": "tmux", "category": "Dev" },
+        { "path": "repo-walkthrough", "category": "Docs" },
+        { "path": "librarian", "category": "Data" },
+        { "path": "cloudflare", "category": "Dev" },
+        { "path": "diff-walkthrough", "category": "Dev" },
+        { "path": "spec-planner", "category": "Dev" }
       ]
     },
     {
       "repo": "gohypergiant/agent-skills",
       "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
       "skills": [
-        {
-          "path": "skills/accelint-react-best-practices",
-          "category": "Dev"
-        },
-        {
-          "path": "skills/accelint-security-best-practices",
-          "category": "Dev"
-        }
+        { "path": "skills/accelint-react-best-practices", "category": "Dev" },
+        { "path": "skills/accelint-security-best-practices", "category": "Dev" },
+        { "path": "skills/accelint-architecture-doc", "category": "Docs" },
+        { "path": "skills/accelint-react-testing", "category": "Dev" },
+        { "path": "skills/accelint-ts-best-practices", "category": "Dev" },
+        { "path": "skills/pr-description", "category": "Dev" }
       ]
     }
   ]
