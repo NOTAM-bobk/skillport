@@ -1,0 +1,570 @@
+# skillport — full reference for AI assistants
+
+> skillport is a skill that finds skills: 47 open-source agent skills and 830 files behind one MCP endpoint, installable in seconds without a key.
+
+Site: https://skillport.mathclass.uk
+MCP endpoint: https://skillport.mcp.mathclass.uk/mcp
+Legacy SSE: https://skillport.mcp.mathclass.uk/sse
+Auth: none (public read)
+MCP revision: 2025-06-18
+Registry synced: 2026-11-26T16:42:30.169Z
+Source: https://github.com/NOTAM-bobk/skillport
+
+## What an agent should do
+
+1. Add https://skillport.mcp.mathclass.uk/mcp as a remote MCP server.
+2. Call skills.search with a one-line description of the task.
+3. Call skills.get on the results that fit, to read SKILL.md and the metadata.
+4. Call skills.install with the pinned version; write the returned files to disk.
+5. Verify each file against the sha256 in the response. If nothing fits, say so instead of inventing a skill.
+
+## Tools
+
+### skills.search
+Find skills by capability, category, repository or free text.
+- query (string, required): what you want to do, e.g. "review a pull request".
+- category (string, optional): Design | Security | Data | Software | Documentation.
+- limit (integer, 1-25, default 8): results to return.
+
+### skills.get
+Read one skill's manifest.
+- name (string, required): skill name, e.g. "pdf" or "anthropics/pdf".
+- includeInstructions (boolean, default true): include the SKILL.md body.
+
+### skills.install
+Return the real files for one skill.
+- name (string, required): skill name.
+- version (string, optional): commit prefix from skills.get. Omit for the current registry copy.
+- files (string[], optional): subset of file paths to return.
+
+## Skills
+
+### roerohan/librarian
+- Page: https://skillport.mathclass.uk/skills/librarian
+- Category: Data
+- Language: Markdown
+- Licence: MIT
+- Version: 171fbdd (commit 171fbdd3085ba76dacd148aa292d0559e8d913eb)
+- Source: roerohan/skills
+- Files: 6 (22452 bytes), package sha256 0da388d42660b0e2860eea5ca50a5a3f6e34d621bda3f08798d758c3d3cb9aa7
+- Summary: Deep codebase exploration across remote repositories.
+- Use when: Multi-repository codebase exploration. Research library internals, find code patterns, understand architecture, compare implementations across GitHub/npm/PyPI/crates. Use when needing deep understanding of how libraries work, finding implementations across open source, or exploring remote repository structure.
+
+### anthropics/xlsx
+- Page: https://skillport.mathclass.uk/skills/xlsx
+- Category: Data
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 52 (922335 bytes), package sha256 5370101ddec4a72c47f34edf6158a170531bf604e3c5ee536bd5e05138610825
+- Summary: > `openpyxl`, `pandas`, and `markitdown` are preinstalled — do not run `pip install` first; write the script and import directly. Only if an import fails (or the `markitdown` command is missing): `pip install` the missing package.
+- Use when: Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.
+
+### gohypergiant/accelint-react-best-practices
+- Page: https://skillport.mathclass.uk/skills/accelint-react-best-practices
+- Category: Software
+- Language: Shell
+- Licence: Apache-2.0
+- Version: f276ab4 (commit f276ab4543da47241ebd7107f828030972a55cc3)
+- Source: gohypergiant/agent-skills
+- Files: 44 (153821 bytes), package sha256 ca2b8758cf852564cd3acab4f07b785b619451a87b84f192032846c6b1d07fa9
+- Summary: Comprehensive performance optimization and best practices for React applications, designed for AI agents and LLMs working with React code.
+- Use when: React performance optimization and best practices. ALWAYS use this skill when working with any React code - writing components, hooks, JSX; refactoring; optimizing re-renders, memoization, state management; reviewing for performance; fixing hydration mismatches; debugging infinite re-renders, stale closures, input focus loss, animations restarting; preventing remounting; implementing transitions, lazy initialization, effect dependencies. Even simple React tasks benefit from these patterns. Covers React 19+ (useEffectEvent, Activity, ref props). Triggers - useEffect, useState, useMemo, useCallback, memo, inline components, nested components, components inside components, re-render, performance, hydration, SSR, Next.js, useDeferredValue, combined hooks.
+
+### gohypergiant/accelint-react-testing
+- Page: https://skillport.mathclass.uk/skills/accelint-react-testing
+- Category: Software
+- Language: Shell
+- Licence: Apache-2.0
+- Version: f276ab4 (commit f276ab4543da47241ebd7107f828030972a55cc3)
+- Source: gohypergiant/agent-skills
+- Files: 15 (110617 bytes), package sha256 b2c25038cfc6e0488c2adc9a7f5fd3b956328458cb47598bc2dc9eb8f3359fb1
+- Summary: Expert guidance for writing maintainable, user-centric React component tests with Testing Library. Focused on query selection, accessibility-first testing, and avoiding implementation details.
+- Use when: Use when writing, reviewing, or refactoring React component tests with Testing Library. Load when you see render(), screen, fireEvent, userEvent, waitFor, or *.test.tsx files. Covers query priority (getByRole > getByLabelText > getByText), user-centric testing patterns, async utilities, custom renders with providers, and accessibility-first assertions. Keywords include RTL, Testing Library, screen, getByRole, findBy, queryBy, userEvent, waitFor, toBeInTheDocument, testing-library/react, testing-library/user-event, jest-dom.
+
+### gohypergiant/accelint-security-best-practices
+- Page: https://skillport.mathclass.uk/skills/accelint-security-best-practices
+- Category: Security
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: f276ab4 (commit f276ab4543da47241ebd7107f828030972a55cc3)
+- Source: gohypergiant/agent-skills
+- Files: 19 (279303 bytes), package sha256 0ff5b7ba49ff795bb6fb85f4961e2b46f589675553f80a7f0cefc6f79a2d2306
+- Summary: Systematic security auditing and vulnerability detection for JavaScript/TypeScript applications. Combines audit workflow with OWASP Top 10 security patterns for production-ready code.
+- Use when: Comprehensive security audit and vulnerability detection for JavaScript/TypeScript applications following OWASP Top 10. Use when (1) Users say 'audit security', 'check for vulnerabilities', 'security review', 'implement authentication', 'secure this code', (2) Adding authentication, API endpoints, file uploads, or handling user input, (3) Working with secrets, credentials, or sensitive data, (4) Implementing payment features or blockchain integrations, (5) Conducting pre-deployment security checks. Audits for: hardcoded secrets, injection vulnerabilities, XSS/CSRF, broken access control, insecure authentication, rate limiting, dependency vulnerabilities, sensitive data exposure.
+
+### gohypergiant/accelint-ts-best-practices
+- Page: https://skillport.mathclass.uk/skills/accelint-ts-best-practices
+- Category: Software
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: f276ab4 (commit f276ab4543da47241ebd7107f828030972a55cc3)
+- Source: gohypergiant/agent-skills
+- Files: 22 (66364 bytes), package sha256 f79c301077bc0037388bc70c66d04c1b1ad85827c9254ab908374729c73d3762
+- Summary: Comprehensive coding standards for JavaScript and TypeScript applications, designed for AI agents and LLMs working with modern JavaScript/TypeScript codebases.
+- Use when: Comprehensive TypeScript/JavaScript coding standards focusing on type safety, defensive programming, and code correctness. Use when (1) Writing or reviewing TS/JS code, (2) Fixing type errors or avoiding any/enum/null, (3) Implementing control flow, state management, or error handling, (4) Applying zero-value pattern or immutability, (5) Code review for TypeScript anti-patterns. Covers naming conventions, function design, return values, bounded iteration, input validation. For performance optimization, use accelint-ts-performance skill. For documentation, use accelint-ts-documentation skill.
+
+### anthropics/claude-api
+- Page: https://skillport.mathclass.uk/skills/claude-api
+- Category: Software
+- Language: JavaScript
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 95 (1733613 bytes), package sha256 bca73b890343f5dd9c0461fd0710e04c47a7533102c94152ef85bc3056eb02e8
+- Summary: This skill helps you build LLM-powered applications with Claude. Choose the right surface based on your needs, detect the project language, then read the relevant language-specific documentation.
+- Use when: Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; don't skip because it "looks like a one-liner" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens). SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).
+
+### roerohan/cloudflare
+- Page: https://skillport.mathclass.uk/skills/cloudflare
+- Category: Software
+- Language: Markdown
+- Licence: MIT
+- Version: 171fbdd (commit 171fbdd3085ba76dacd148aa292d0559e8d913eb)
+- Source: roerohan/skills
+- Files: 257 (787493 bytes), package sha256 0b2b888650d874049b6d020fc59f690615e5d434d55a03b5759c50d0549aa0a4
+- Summary: Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.
+- Use when: Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), networking (Tunnel, Spectrum), security (WAF, DDoS), and infrastructure-as-code (Terraform, Pulumi). Use for any Cloudflare development task.
+
+### roerohan/diff-walkthrough
+- Page: https://skillport.mathclass.uk/skills/diff-walkthrough
+- Category: Software
+- Language: Markdown
+- Licence: MIT
+- Version: 171fbdd (commit 171fbdd3085ba76dacd148aa292d0559e8d913eb)
+- Source: roerohan/skills
+- Files: 5 (23087 bytes), package sha256 67ea71e7b6fb7f0c881ad31273f5c33dbdb45aef17c19d6044efe35d514b8309
+- Summary: Generate a grounded, reader-friendly walkthrough of a code change. Explain the change in the order a human should read it, not in filesystem or diff order.
+- Use when: Produce a guided walkthrough of a code diff, pull request, merge request, commit range, or staged changes. Use when the user asks to explain, narrate, summarize, review, or walk through a diff. Supports configurable depth and output formats, defaults to HTML, and uses Plannotator when available.
+
+### anthropics/mcp-builder
+- Page: https://skillport.mathclass.uk/skills/mcp-builder
+- Category: Software
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 11 (159159 bytes), package sha256 60c981af21888c9cdb714a51270cca6c215ea3d3a95066e052dd43aa48ae5731
+- Summary: Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.
+- Use when: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
+
+### gohypergiant/pr-description
+- Page: https://skillport.mathclass.uk/skills/pr-description
+- Category: Software
+- Language: JSON
+- Licence: Apache-2.0
+- Version: f276ab4 (commit f276ab4543da47241ebd7107f828030972a55cc3)
+- Source: gohypergiant/agent-skills
+- Files: 9 (58873 bytes), package sha256 a921312147f66ec2a4fbda8f57d638a33d79ffa17094115b5f1710ec24fa2e09
+- Summary: Write a PR as durable engineering context, not a narrated diff. The reader should understand the problem, the argument for the chosen mechanism, the contract it relies on, and the evidence without knowing this part of the codebase.
+- Use when: Use when the user wants to write, draft, rewrite, review, improve, or grade a pull request description or PR title; asks for a PR summary, rationale, reviewer context, test plan, or ready-to-paste GitHub/GitLab PR body; or needs to explain a code change to reviewers, future maintainers, or non-expert integrators. Trigger on requests such as "write the PR," "draft a pull request," "improve this PR description," "PR summary," "PR title," "test plan for the PR," or "review my PR write-up." Do not use for commit-message-only requests, release notes, implementation planning, or code review without a request to describe the change.
+
+### anthropics/skill-creator
+- Page: https://skillport.mathclass.uk/skills/skill-creator
+- Category: Software
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 18 (224992 bytes), package sha256 3a9b4bc3aa53c978706cd77f95151989c47622c929b7da81317be8c1ff8bb496
+- Summary: A skill for creating new skills and iteratively improving them.
+- Use when: Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.
+
+### roerohan/spec-planner
+- Page: https://skillport.mathclass.uk/skills/spec-planner
+- Category: Software
+- Language: Markdown
+- Licence: MIT
+- Version: 171fbdd (commit 171fbdd3085ba76dacd148aa292d0559e8d913eb)
+- Source: roerohan/skills
+- Files: 5 (16541 bytes), package sha256 73cec8c40aec4341e327d49b479d8676968ccde8f2a51fd0610f574675a6c3ab
+- Summary: Produce implementation-ready specs through rigorous dialogue and honest trade-off analysis.
+- Use when: Dialogue-driven spec development through skeptical questioning and iterative refinement. Triggers: "spec this out", feature planning, architecture decisions, "is this worth it?" questions, RFC/design doc creation, work scoping. Invoke Librarian for unfamiliar tech/frameworks/APIs.
+
+### roerohan/tmux
+- Page: https://skillport.mathclass.uk/skills/tmux
+- Category: Software
+- Language: Shell
+- Licence: MIT
+- Version: 171fbdd (commit 171fbdd3085ba76dacd148aa292d0559e8d913eb)
+- Source: roerohan/skills
+- Files: 14 (48107 bytes), package sha256 5f0a4d91846ac15aff6781a0b1915290c8c4bc3403c6157f0bc065801fd630d0
+- Summary: Use tmux for long-running or continuously logging commands. Do not run dev servers, file watchers, database consoles, or tailing logs directly inside the OpenCode shell unless the user explicitly asks for inline output. Put them in a tmux pane and read them from there.
+- Use when: Manage long-running commands in the user's current tmux session. Use when starting dev servers, watchers, background logs, or reading/interacting with named tmux panes.
+
+### anthropics/webapp-testing
+- Page: https://skillport.mathclass.uk/skills/webapp-testing
+- Category: Software
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 6 (22394 bytes), package sha256 45ffb0627e16ba548401709c7f143fa4cd3600ec5b365dd11bf247c1db6ae06f
+- Summary: To test local web applications, write native Python Playwright scripts.
+- Use when: Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.
+
+### gohypergiant/accelint-architecture-doc
+- Page: https://skillport.mathclass.uk/skills/accelint-architecture-doc
+- Category: Documentation
+- Language: JSON
+- Licence: Apache-2.0
+- Version: f276ab4 (commit f276ab4543da47241ebd7107f828030972a55cc3)
+- Source: gohypergiant/agent-skills
+- Files: 5 (51364 bytes), package sha256 22b82ecfd1bea2a0c89100538191a24007c8cc6b03504ea6f46a34ad0ff41364
+- Summary: Generate or update a living `ARCHITECTURE.md` for the current codebase. It should give agents and engineers a fast, complete view of the system structure, tech stack, and deployment model.
+- Use when: Create or update a living ARCHITECTURE.md for a codebase. Use when the user wants to write, refresh, restructure, or maintain an architecture document; document how the system is organized across tech stack, deployment model, services, components, and data stores; or turn codebase findings into durable architecture docs for engineers or agents. Trigger on requests such as write an architecture doc, document this system, create or update ARCHITECTURE.md, give me a technical overview of this repo, or map out how this app is put together, even when the file is not named. Prefer this skill for file-producing architecture documentation, not for generic architecture advice, implementation planning, or diagram-only brainstorming unless that work is clearly part of updating the document.
+
+### anthropics/doc-coauthoring
+- Page: https://skillport.mathclass.uk/skills/doc-coauthoring
+- Category: Documentation
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 1 (15815 bytes), package sha256 ac9739b49547f7f2ea448ba5f3a8ae68a4ebf9c150a1d496aff948dfd3fe002e
+- Summary: This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.
+- Use when: Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.
+
+### anthropics/docx
+- Page: https://skillport.mathclass.uk/skills/docx
+- Category: Documentation
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 60 (923872 bytes), package sha256 da9faa2c5e0510e032a8402419c1a8146a699ee3046254b9cca3860d4ab9bace
+- Summary: A `.docx` is a ZIP archive of XML files. Choose your approach by task:
+- Use when: Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.
+
+### anthropics/internal-comms
+- Page: https://skillport.mathclass.uk/skills/internal-comms
+- Category: Documentation
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 6 (22393 bytes), package sha256 30bda1d524a2d72eb7ef7445821563551823551698f8ecee858149264e73984c
+- Summary: To write internal communications, use this skill for: 3P updates (Progress, Plans, Problems) Company newsletters FAQ responses Status reports Leadership updates Project updates Incident reports
+- Use when: A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).
+
+### anthropics/pdf
+- Page: https://skillport.mathclass.uk/skills/pdf
+- Category: Documentation
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 12 (68603 bytes), package sha256 2011d32d477e1b873f75990e7f9e47f0fc4fd7d13fb3b0f873ca24d06413e13f
+- Summary: This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.
+- Use when: Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.
+
+### anthropics/pptx
+- Page: https://skillport.mathclass.uk/skills/pptx
+- Category: Documentation
+- Language: Python
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 57 (957375 bytes), package sha256 9ea5f1379fad198bdfaf8f957256d177f268356ab4f3f53d3373435fe6a96a69
+- Summary: A `.pptx` is a ZIP archive of XML files. Choose your approach by task:
+- Use when: Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.
+
+### roerohan/repo-walkthrough
+- Page: https://skillport.mathclass.uk/skills/repo-walkthrough
+- Category: Documentation
+- Language: Markdown
+- Licence: MIT
+- Version: 171fbdd (commit 171fbdd3085ba76dacd148aa292d0559e8d913eb)
+- Source: roerohan/skills
+- Files: 1 (4672 bytes), package sha256 1b4a1953b7b66aeaedc6c5c606addec432ff285d727cb021c9a157d8a19c96b1
+- Summary: Guide the user through a repository's architecture and critical flows, calibrated to their level.
+- Use when: Walk a user through how a repository works, explaining critical flows at a calibrated simplicity level. Use when user says "walk me through this repo", "explain this repo", "how does this codebase work", or asks to understand a repo. Accepts a simplicity level argument (novice, pro, brief, detailed, etc.).
+
+### anthropics/algorithmic-art
+- Page: https://skillport.mathclass.uk/skills/algorithmic-art
+- Category: Design
+- Language: JavaScript
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 4 (59784 bytes), package sha256 246dd11e54735a5a547582707471222c4cd665f21e7d902b022aeba93d8964d1
+- Summary: Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).
+- Use when: Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.
+
+### anthropics/brand-guidelines
+- Page: https://skillport.mathclass.uk/skills/brand-guidelines
+- Category: Design
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 2 (13580 bytes), package sha256 ceabc11d075e174c92cb51df6a4ee19e5effd8a713d1529383c35a4eaa19eb4d
+- Summary: To access Anthropic's official brand identity and style resources, use this skill.
+- Use when: Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.
+
+### anthropics/canvas-design
+- Page: https://skillport.mathclass.uk/skills/canvas-design
+- Category: Design
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 29 (141899 bytes), package sha256 6c3aee40a2980cd3005e88a1a9bcbfccaef1657437323112af6f6ef2e2b742a7
+- Summary: These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.
+- Use when: Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.
+
+### anthropics/theme-factory
+- Page: https://skillport.mathclass.uk/skills/theme-factory
+- Category: Design
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 12 (19784 bytes), package sha256 e74eac7161b6f0b9cd0a1521166a9b5e32e471d6a2bb7b103faf716d5f97a60a
+- Summary: This skill provides a curated collection of professional font and color themes themes, each with carefully selected color palettes and font pairings. Once a theme is chosen, it can be applied to any artifact.
+- Use when: Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.
+
+### anthropics/frontend-design
+- Page: https://skillport.mathclass.uk/skills/frontend-design
+- Category: Design
+- Language: Markdown
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 2 (19564 bytes), package sha256 d00e5e78be144b88160a6c61e9d0dec8a703c84e8002e7aa56e08eeb9dfb361c
+- Summary: Approach this as the design lead at a design studio known for giving every client a distinct visual identity that is not mistaken for anyone else's. This client has already rejected proposals that felt cliché or templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about pale…
+- Use when: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.
+
+### anthropics/web-artifacts-builder
+- Page: https://skillport.mathclass.uk/skills/web-artifacts-builder
+- Category: Design
+- Language: Shell
+- Licence: Apache-2.0
+- Version: e4bb5d9 (commit e4bb5d960d87126ff3b3a8af1a104b7db67560ba)
+- Source: anthropics/skills
+- Files: 4 (25873 bytes), package sha256 71253d5ed37985aac7206c8dd4cc73b1bf352cd9784739119aeddf90e4318e0a
+- Summary: To build powerful frontend claude.ai artifacts, follow these steps: 1. Initialize the frontend repo using `scripts/init-artifact.sh` 2. Develop your artifact by editing the generated code 3. Bundle all code into a single HTML file using `scripts/bundle-artifact.sh` 4. Display artifact to user 5. (Optional) Test the …
+- Use when: Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.
+
+### skillport/owasp-audit
+- Page: https://skillport.mathclass.uk/skills/owasp-audit
+- Category: Security
+- Language: Markdown
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/security-skills
+- Files: 3 (7425 bytes), package sha256 b292c9b74da94c00a3aa29f20f7a6c6a8eb04296dd670442ab309edf9beb2771
+- Summary: Detect and patch OWASP Top 10 vulnerabilities across web applications and serverless endpoints.
+- Use when: Comprehensive OWASP Top 10 web vulnerability review covering XSS, SQL/NoSQL injection, CSRF, broken access control, and insecure deserialization.
+
+### skillport/secrets-scanner
+- Page: https://skillport.mathclass.uk/skills/secrets-scanner
+- Category: Security
+- Language: Python
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/security-skills
+- Files: 3 (7110 bytes), package sha256 f52c96c8c273a13f4bda1a57efc23fff2f7ea1eb6cad7d8a3efec0958851e6af
+- Summary: Deep repository entropy and regex scanning to prevent credential leakage in git history.
+- Use when: Scans repository history, staged commits, and environment configs for leaked credentials, private keys, API tokens, and high-entropy secrets.
+
+### skillport/api-auth-defense
+- Page: https://skillport.mathclass.uk/skills/api-auth-defense
+- Category: Security
+- Language: TypeScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/security-skills
+- Files: 3 (7155 bytes), package sha256 1b3e07a23afbe6667764a05496876c26cdef3a1d31c3ec0392d0029abb4036f9
+- Summary: Hardens REST and GraphQL authentication layers against replay attacks, token forgery, and privilege escalation.
+- Use when: Audits JWT signature algorithms, OAuth2 PKCE flows, session invalidation, distributed rate limiting, and RBAC permission checks.
+
+### skillport/dependency-vulnerability-check
+- Page: https://skillport.mathclass.uk/skills/dependency-vulnerability-check
+- Category: Security
+- Language: Shell
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/security-skills
+- Files: 3 (7110 bytes), package sha256 67803114802929961c27f920bca11e47436eff3f76f67d9a32411e126c2550ea
+- Summary: Automated lockfile inspection and supply-chain vulnerability triage.
+- Use when: Audits npm, PyPI, and Cargo lockfiles for known CVEs, malicious maintainer takeovers, and vulnerable transitive packages.
+
+### skillport/penetration-testing-checklist
+- Page: https://skillport.mathclass.uk/skills/penetration-testing-checklist
+- Category: Security
+- Language: Markdown
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/security-skills
+- Files: 3 (7200 bytes), package sha256 cadb12005ee19dd52e331d2ac66cd803159ab8adaecc2504bb4dfe68dc9f7aa0
+- Summary: Systematic offensive security verification checklist for modern web apps.
+- Use when: Structured offensive penetration testing procedures for security headers (CSP, HSTS), CORS misconfigurations, SSRF, and edge routes.
+
+### skillport/figma-to-react
+- Page: https://skillport.mathclass.uk/skills/figma-to-react
+- Category: Design
+- Language: TypeScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/design-skills
+- Files: 3 (7605 bytes), package sha256 7ea99d08e1692ade28d21bd540fec37a598b7daebfd6a2562b86a31796d1502d
+- Summary: Converts Figma design hierarchies into clean, semantic React code matching exact token specifications.
+- Use when: Translates Figma design tokens, auto-layout frames, color palettes, and typography into clean, reusable React and Tailwind components.
+
+### skillport/accessible-ui
+- Page: https://skillport.mathclass.uk/skills/accessible-ui
+- Category: Design
+- Language: TypeScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/design-skills
+- Files: 3 (7335 bytes), package sha256 61cd02d4a02154af82ca5c7d8d9b6653055d2f822cfb65c2160a481f1f815893
+- Summary: Ensures full compliance with modern accessibility standards across interactive UI components.
+- Use when: WCAG 2.2 AA accessibility audit: focus trap management, keyboard navigation, aria-live announcements, and color contrast compliance.
+
+### skillport/motion-design-system
+- Page: https://skillport.mathclass.uk/skills/motion-design-system
+- Category: Design
+- Language: JavaScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/design-skills
+- Files: 3 (7560 bytes), package sha256 a871c339ffd01492765aa57f4f8f4b3c23269d5b1920faa9f1be25b28038ff84
+- Summary: Delightful motion design principles, choreographed enter/exit transitions, and smooth interactive physics.
+- Use when: Physics-based spring curves, micro-interactions, layout transitions, exit animations, and gesture drag interactions using Motion and GSAP.
+
+### skillport/responsive-design-engine
+- Page: https://skillport.mathclass.uk/skills/responsive-design-engine
+- Category: Design
+- Language: CSS
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/design-skills
+- Files: 3 (7425 bytes), package sha256 167066f7addfb70a080f7c66859fb1ba2c6c369e3c7363ccdb6bcd4aad908cab
+- Summary: State-of-the-art responsive CSS techniques avoiding rigid breakpoints in favor of fluid adaptability.
+- Use when: Container queries, fluid typography clamping, adaptive touch targets, and mobile-first responsive layout patterns.
+
+### skillport/sql-query-optimizer
+- Page: https://skillport.mathclass.uk/skills/sql-query-optimizer
+- Category: Data
+- Language: Markdown
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/data-skills
+- Files: 3 (7335 bytes), package sha256 5b3165c83d52d3f7fc164cd454a883308fe3902e099f293002ad924d6c95e346
+- Summary: Deep relational database query plan analysis and indexing optimization for PostgreSQL and MySQL.
+- Use when: Analyzes EXPLAIN ANALYZE query plans, identifies sequential scan bottlenecks, recommends composite indexes, and eliminates N+1 queries.
+
+### skillport/data-cleaning-pipeline
+- Page: https://skillport.mathclass.uk/skills/data-cleaning-pipeline
+- Category: Data
+- Language: Python
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/data-skills
+- Files: 3 (7290 bytes), package sha256 33bdd66f4dc9ce4c966c202cc1dca965222b75962d54f56031084f0eba1163d8
+- Summary: Robust data wrangling and validation pipeline for messy CSV, JSON, and external database dumps.
+- Use when: Automated data normalization, deduplication, missing-value imputation, date/time parsing, and schema constraint validation.
+
+### skillport/rag-embeddings-architect
+- Page: https://skillport.mathclass.uk/skills/rag-embeddings-architect
+- Category: Data
+- Language: Python
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/data-skills
+- Files: 3 (7380 bytes), package sha256 17ab9f259086e53ceedf1dc83e2bbde6cc95df4aa326d3aed34261a2b6e23b19
+- Summary: Production-grade retrieval augmented generation architecture for enterprise knowledge bases.
+- Use when: Document chunking heuristics, dense vector embedding generation, hybrid BM25 + cosine search, and cross-encoder reranking.
+
+### skillport/web-scraping-extractor
+- Page: https://skillport.mathclass.uk/skills/web-scraping-extractor
+- Category: Data
+- Language: TypeScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/data-skills
+- Files: 3 (7155 bytes), package sha256 09a09fc3cd45e55e2626db3a107c8c4749061df603bcdc11ea54f016fbd6ec56
+- Summary: Extract clean structured data from dynamic websites with polite concurrency controls.
+- Use when: Resilient HTML parsing, dynamic shadow-DOM traversal, JSON-LD schema extraction, and rate-limited crawling routines.
+
+### skillport/docker-deploy-pro
+- Page: https://skillport.mathclass.uk/skills/docker-deploy-pro
+- Category: Software
+- Language: Shell
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/software-skills
+- Files: 3 (7245 bytes), package sha256 0e0e75f2b73b796c9dad9914dbdfc3fd2817a0fce70661a174d753cfc62c752a
+- Summary: Build tiny, cache-optimized, secure Docker container images for Node, Python, and Go services.
+- Use when: Multi-stage Dockerfile scaffolding, minimal Alpine/Debian-slim base images, Docker Compose profiles, and container hardening.
+
+### skillport/rest-api-architect
+- Page: https://skillport.mathclass.uk/skills/rest-api-architect
+- Category: Software
+- Language: TypeScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/software-skills
+- Files: 3 (7290 bytes), package sha256 190679926b16708aaff26b32c35ff5b0dc6f0a3b73fc6466423d485bc563a49e
+- Summary: Design intuitive, versioned, consistent web APIs with type-safe contracts.
+- Use when: RESTful API design standards, OpenAPI 3.1 specification authoring, pagination (cursor/offset), idempotency keys, and error envelopes.
+
+### skillport/git-workflow-pro
+- Page: https://skillport.mathclass.uk/skills/git-workflow-pro
+- Category: Software
+- Language: Shell
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/software-skills
+- Files: 3 (7380 bytes), package sha256 6bd04a573f6bde0397b2e848658f552f7e6982a733774cb92ab883caf29233df
+- Summary: Master complex git workflows, history cleanup, and branch collaboration without losing commits.
+- Use when: Advanced git techniques: interactive rebase, bisecting bug regressions, cherry-picking, worktrees, and conventional commit hygiene.
+
+### skillport/nextjs-app-router
+- Page: https://skillport.mathclass.uk/skills/nextjs-app-router
+- Category: Software
+- Language: TypeScript
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/software-skills
+- Files: 3 (7515 bytes), package sha256 af581859a2a39ce71f06ec1bb30765a70fad49c2eea270594c2e0bd46daca2d1
+- Summary: Modern fullstack architecture using React Server Components, streaming SSR, and edge execution.
+- Use when: Next.js App Router patterns: React Server Components, Server Actions with Zod validation, parallel routes, and ISR revalidation.
+
+### skillport/api-docs-generator
+- Page: https://skillport.mathclass.uk/skills/api-docs-generator
+- Category: Documentation
+- Language: Markdown
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/docs-skills
+- Files: 3 (7290 bytes), package sha256 5a263806a88a2df1db20f24bf6457be33553f6238741363cc6cb6337a11db69f
+- Summary: Turns backend route handlers and schemas into polished developer documentation.
+- Use when: Generates accurate, developer-friendly Markdown documentation, endpoint parameter tables, and curl code examples from code.
+
+### skillport/release-notes-writer
+- Page: https://skillport.mathclass.uk/skills/release-notes-writer
+- Category: Documentation
+- Language: Markdown
+- Licence: MIT
+- Version: a1b2c3d (commit a1b2c3d4e5f67890123456789abcdef012345678)
+- Source: skillport/docs-skills
+- Files: 3 (7560 bytes), package sha256 c942b36b2b10e4f560ca75ddad960072a9bbff4538efa13e77f2e1b64d5006aa
+- Summary: Automated extraction and copywriting for changelogs, release notes, and breaking change warnings.
+- Use when: Synthesizes merged pull requests and git commit histories into clear, categorized user-facing release notes and migration guides.
+
+## Pages
+
+- https://skillport.mathclass.uk/ — overview
+- https://skillport.mathclass.uk/registry — all skills
+- https://skillport.mathclass.uk/docs — setup and tool reference
+- https://skillport.mathclass.uk/docs/mcp — JSON-RPC surface
+- https://skillport.mathclass.uk/cli — command line helper
+- https://skillport.mathclass.uk/publish — publishing a skill
+- https://skillport.mathclass.uk/about — background
+- https://skillport.mathclass.uk/changelog — changes
+- https://skillport.mathclass.uk/status — availability
+- https://skillport.mathclass.uk/llms.txt — short version of this file
