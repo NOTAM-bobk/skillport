@@ -4,27 +4,17 @@
 
 **Bring reusable Agent Skills to your AI coding workflow — through a CLI or an MCP server.**
 
-[![GitHub stars](https://img.shields.io/github/stars/NOTAM-bobk/skillport?style=for-the-badge&logo=github&color=yellow)](https://github.com/NOTAM-bobk/skillport/stargazers) [![GitHub issues](https://img.shields.io/github/issues/NOTAM-bobk/skillport?style=for-the-badge&logo=github)](https://github.com/NOTAM-bobk/skillport/issues) [![Last commit](https://img.shields.io/github/last-commit/NOTAM-bobk/skillport?style=for-the-badge&logo=git)](https://github.com/NOTAM-bobk/skillport/commits)
+[![GitHub stars](https://img.shields.io/github/stars/NOTAM-bobk/skillport?style=for-the-badge&logo=github&color=yellow)](https://github.com/NOTAM-bobk/skillport/stargazers)
 
-[Quick start](#-quick-start) · [MCP setup](#-connect-with-mcp) · [Redeploy](#-redeploy) · [Licence](#-licence)
+[Quick start](#-quick-start) · [MCP](#-connect-with-mcp) · [Deploy](#-deploy) · [Licence](#-licence)
 
 ## ✨ What is Skillport?
 
-Skillport helps you discover, install and use **Agent Skills**: add them from GitHub, a local folder or a ZIP archive, then use them through the CLI or an MCP-compatible client.
-
-## 🌐 Domain
-
-This project lives on **`mathclass.uk`**. Do not introduce a `skillport.dev`
-domain: it is not owned, will not be bought, and currently answers 404. It must
-never appear in canonical tags, `sitemap.xml`, `robots.txt`, `llms.txt`, docs or
-social metadata.
-
-- MCP host: `https://skillport.mcp.mathclass.uk` (`POST /mcp`, `GET /sse`)
-- Spelling: `mathclass` with `ss`. `mathclaes.uk` has no DNS record.
+Discover, install and use **Agent Skills**: add them from GitHub, a local folder or a ZIP archive, then use them through the CLI or an MCP-compatible client.
 
 ## 📦 Quick start
 
-Install [uv](https://docs.astral.sh/uv/) if it isn't already available, then:
+Install [uv](https://docs.astral.sh/uv/) if needed, then:
 
 ```bash
 uvx skillport init
@@ -40,19 +30,21 @@ uvx skillport remove <skill-id>
 { "mcpServers": { "skillport": { "url": "https://skillport-mcp-t5vo4e-preview.freebuff.site/mcp" } } }
 ```
 
-- Endpoint: `https://skillport-mcp-t5vo4e-preview.freebuff.site/mcp`
-- SSE: `https://skillport-mcp-t5vo4e-preview.freebuff.site/sse`
-- Tools: `skills.search`, `skills.get`, `skills.install`
+Endpoint `https://skillport-mcp-t5vo4e-preview.freebuff.site/mcp` · SSE `/sse` · health `/health` · tools `skills.search`, `skills.get`, `skills.install`. Public, read-only, no key.
 
-Public, read-only, no key or sign-in. The old `skillport.mcp.mathclass.uk` host sits behind Cloudflare's bot challenge and is no longer used — see [docs/mcp.md](docs/mcp.md).
+**Not on mathclass.uk any more.** `mcp/wrangler.jsonc` still routes the Worker there, but that zone answers non-browser requests with Cloudflare's "Just a moment…" challenge (403, `cf-mitigated: challenge`), which MCP clients cannot solve; free-plan Bot Fight Mode cannot be skipped with a WAF or Page rule, so turn it off under **Security → Bots**. Until then it runs on the Freebuff Sites deployment above — point `MCP_ENDPOINT` / `MCP_SSE_ENDPOINT` back at the domain once that is fixed.
 
-## ♻️ Redeploy
+The separate [`skillport-mcp`](https://pypi.org/project/skillport-mcp/) package serves skills from your disk over stdio.
+
+## ♻️ Deploy
 
 ```bash
-npm install && npm run skills:sync && npm run mcp:deploy
+npm install
+npm run skills:sync && npm run mcp:deploy   # wrangler deploy
+npm run mcp:dev                             # local: :8787/health
+npx esbuild mcp/src/index.ts --bundle --format=esm --platform=neutral \
+  --target=es2022 --minify --keep-names --outfile=mcp/deploy-index.js
 ```
-
-Rebuilding the single-file deploy artifact and running the worker locally: see [docs/mcp.md](docs/mcp.md).
 
 ## 📄 Licence
 
