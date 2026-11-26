@@ -5,7 +5,7 @@ verbatim from public GitHub repositories, pinned to the commit they were copied 
 and served as files by a Cloudflare Worker. The site reads the same index.
 
 The site is deployed on Vercel. Only the MCP endpoint runs on Cloudflare, at
-`https://skillport.mcp.base31.org/mcp` (legacy SSE at `/sse`).
+`https://skillport.mcp.mathclass.uk/mcp` (legacy SSE at `/sse`).
 
 ## Layout
 
@@ -77,10 +77,10 @@ Tested with `npx @modelcontextprotocol/inspector --cli http://127.0.0.1:8787/mcp
 ### Deploying
 
 `mcp/wrangler.jsonc` attaches the custom domain route
-`skillport.mcp.base31.org`. Wrangler needs a Cloudflare API token with **Workers
-Scripts: Edit** and **Zone: DNS: Edit** for `base31.org`, and the zone has to be
+`skillport.mcp.mathclass.uk`. Wrangler needs a Cloudflare API token with **Workers
+Scripts: Edit** and **Zone: DNS: Edit** for `mathclass.uk`, and the zone has to be
 active on Cloudflare (nameservers pointed at Cloudflare) before a custom domain can
-attach. `base31.org` currently resolves through Vercel DNS.
+attach.
 
 ## Site
 

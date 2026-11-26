@@ -6,7 +6,7 @@
   "workers_dev": true,
   "routes": [
     {
-      "pattern": "skillport.mcp.base31.org",
+      "pattern": "skillport.mcp.mathclass.uk",
       "custom_domain": true
     }
   ],
