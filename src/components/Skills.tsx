@@ -1,20 +1,38 @@
-import { useMemo, useState } from "react";
-import { CATEGORIES, SKILLS, type Category } from "../data/skills";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { CATEGORIES, SKILLS, portCode, type Category } from "../data/skills";
+import { Link } from "../lib/router";
 import { ArrowIcon, SearchIcon, StarIcon } from "./Icons";
 
 type Filter = (typeof CATEGORIES)[number];
 
-function monogram(skill: { name: string }) {
-  return skill.name.slice(0, 2).toUpperCase();
+function monogram(name: string) {
+  return name.slice(0, 2).toUpperCase();
 }
 
-export default function Skills() {
+type SkillsProps = {
+  showHeader?: boolean;
+};
+
+export default function Skills({ showHeader = true }: SkillsProps) {
   const [active, setActive] = useState<Filter>("All");
   const [query, setQuery] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key !== "/" || event.metaKey || event.ctrlKey) return;
+      const target = event.target as HTMLElement | null;
+      if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
+      event.preventDefault();
+      searchRef.current?.focus();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const visible = useMemo(() => {
     const term = query.trim().toLowerCase();
-    return SKILLS.filter((skill) => {
+    return SKILLS.map((skill, index) => ({ skill, index })).filter(({ skill }) => {
       const matchesCategory = active === "All" || skill.category === (active as Category);
       const matchesQuery =
         !term ||
@@ -26,31 +44,34 @@ export default function Skills() {
   }, [active, query]);
 
   return (
-    <section className="section" id="skills">
-      <div className="section-head">
-        <div>
-          <h2>Skills</h2>
-          <p>Installable capabilities, versioned and reviewed. Drop one into any MCP client.</p>
+    <section className="section" id="skills" aria-labelledby="skills-title">
+      {showHeader ? (
+        <div className="section-head">
+          <div>
+            <h2 id="skills-title">Skills</h2>
+            <p>Installable capabilities, versioned and reviewed. Drop one into any MCP client.</p>
+          </div>
+          <Link className="text-link" to="/publish">
+            Publish a skill
+            <ArrowIcon size={13} />
+          </Link>
         </div>
-        <a className="text-link" href="#docs">
-          Publish a skill
-          <ArrowIcon size={13} />
-        </a>
-      </div>
+      ) : null}
 
       <div className="toolbar">
         <div className="search">
           <SearchIcon size={14} />
           <input
+            ref={searchRef}
             type="search"
             placeholder="Search skills, APIs, categories…"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             aria-label="Search skills"
           />
-          <kbd>/</kbd>
+          <kbd aria-hidden="true">/</kbd>
         </div>
-        <div className="chips" role="tablist" aria-label="Categories">
+        <div className="chips" role="tablist" aria-label="Filter by category">
           {CATEGORIES.map((category) => (
             <button
               key={category}
@@ -67,16 +88,16 @@ export default function Skills() {
       </div>
 
       <div className="skill-list">
-        {visible.map((skill) => (
-          <a className="skill-row" key={skill.name} href="#docs">
+        {visible.map(({ skill, index }) => (
+          <Link className="skill-row" key={skill.name} to={`/skills/${skill.name}`}>
             <span className="skill-avatar" aria-hidden="true">
-              {monogram(skill)}
+              {monogram(skill.name)}
             </span>
             <span className="skill-body">
               <span className="skill-title">
                 <span className="skill-owner">{skill.owner}/</span>
                 <span className="skill-name">{skill.name}</span>
-                <span className="pill">{skill.version}</span>
+                <span className="skill-version">{skill.version}</span>
               </span>
               <span className="skill-desc">{skill.description}</span>
               <span className="skill-meta">
@@ -84,22 +105,25 @@ export default function Skills() {
                   <i style={{ background: skill.color }} />
                   {skill.language}
                 </span>
-                <span className="meta-item">{skill.category}</span>
+                <span>{skill.category}</span>
                 <span className="meta-item">
                   <StarIcon size={11} />
                   {skill.stars}
                 </span>
-                <span className="meta-item">{skill.runs} runs</span>
+                <span>{skill.runs} runs</span>
               </span>
             </span>
-            <span className="skill-action">
-              Install
-              <ArrowIcon size={12} />
+            <span className="skill-tail">
+              <span className="skill-action">
+                Open
+                <ArrowIcon size={12} />
+              </span>
+              <span className="skill-port">{portCode(index)}</span>
             </span>
-          </a>
+          </Link>
         ))}
 
-        {visible.length === 0 && (
+        {visible.length === 0 ? (
           <div className="empty">
             <p>No skills match “{query}”.</p>
             <button
@@ -113,17 +137,17 @@ export default function Skills() {
               Reset filters
             </button>
           </div>
-        )}
+        ) : null}
       </div>
 
       <div className="list-foot">
         <span>
           Showing {visible.length} of {SKILLS.length} skills
         </span>
-        <a className="text-link" href="#docs">
-          View all in the registry
+        <Link className="text-link" to="/registry">
+          Open the full registry
           <ArrowIcon size={12} />
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -1,97 +1,99 @@
 import { useEffect, useState } from "react";
 import { CLIENT_CONFIG, MCP_ENDPOINT, copyText } from "../lib/site";
+import { Link } from "../lib/router";
+import CodeBlock from "./CodeBlock";
 import { ArrowIcon, CheckIcon, CopyIcon } from "./Icons";
 
-const STATS = [
-  { value: "128", label: "published skills" },
-  { value: "42", label: "connected APIs" },
-  { value: "9.4k", label: "weekly installs" },
-  { value: "99.98%", label: "endpoint uptime" },
+const SPEC = [
+  { term: "Transport", value: "HTTP + SSE" },
+  { term: "Auth", value: "OAuth 2.1 or bearer" },
+  { term: "Revision", value: "2025-06-18" },
+  { term: "Registry", value: "128 skills, 42 APIs" },
+];
+
+const FACTS = [
+  { value: "128", label: "skills published" },
+  { value: "42", label: "APIs connected" },
+  { value: "9.4k", label: "installs this week" },
 ];
 
 export default function Hero() {
-  const [copied, setCopied] = useState<"endpoint" | "config" | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (!copied) return;
-    const timer = window.setTimeout(() => setCopied(null), 2000);
+    const timer = window.setTimeout(() => setCopied(false), 2000);
     return () => window.clearTimeout(timer);
   }, [copied]);
 
-  async function handleCopy(kind: "endpoint" | "config", value: string) {
-    const ok = await copyText(value);
-    if (ok) setCopied(kind);
+  async function handleCopy() {
+    if (await copyText(MCP_ENDPOINT)) setCopied(true);
   }
 
   return (
-    <section className="hero" id="top">
-      <div className="hero-badge">
-        <span className="dot" />
-        Model Context Protocol
-        <span className="badge-sep" />
-        <span className="muted">v2025-06-18</span>
-      </div>
+    <section className="hero">
+      <div className="hero-main">
+        <p className="hero-meta">Model Context Protocol, revision 2025-06-18</p>
+        <h1>Skills your agent can find, install and run.</h1>
+        <p className="hero-lede">
+          skillport is one MCP endpoint in front of a registry of API-backed skills. Search it from
+          any client, pin a version, and call it without writing glue code or handling tokens
+          yourself.
+        </p>
 
-      <h1>
-        Every API your agent needs,
-        <br />
-        <span className="gradient-text">one MCP endpoint.</span>
-      </h1>
-
-      <p className="hero-copy">
-        skillport turns scattered APIs into installable skills. Search the registry, pull a skill
-        into your client, and let your agent call it — no glue code, no credential juggling.
-      </p>
-
-      <div className="endpoint" role="group" aria-label="MCP endpoint">
-        <span className="endpoint-proto">sse</span>
-        <code>{MCP_ENDPOINT}</code>
-        <button
-          type="button"
-          className={copied === "endpoint" ? "copy-button copied" : "copy-button"}
-          onClick={() => handleCopy("endpoint", MCP_ENDPOINT)}
-          aria-label="Copy MCP endpoint"
-        >
-          {copied === "endpoint" ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
-          {copied === "endpoint" ? "Copied" : "Copy"}
-        </button>
-      </div>
-
-      <div className="hero-actions">
-        <a className="button primary" href="#skills">
-          Browse skills
-          <ArrowIcon size={14} />
-        </a>
-        <a className="button" href="#how">
-          Read the docs
-        </a>
-      </div>
-
-      <div className="code-card">
-        <div className="code-head">
-          <span className="code-title">claude_desktop_config.json</span>
+        <div className="endpoint" role="group" aria-label="MCP endpoint">
+          <span className="endpoint-proto">sse</span>
+          <code>{MCP_ENDPOINT}</code>
           <button
             type="button"
-            className="copy-button ghost"
-            onClick={() => handleCopy("config", CLIENT_CONFIG)}
+            className={copied ? "copy-button copied" : "copy-button"}
+            onClick={handleCopy}
+            aria-label="Copy MCP endpoint"
           >
-            {copied === "config" ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
-            {copied === "config" ? "Copied" : "Copy config"}
+            {copied ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
+            {copied ? "Copied" : "Copy"}
           </button>
         </div>
-        <pre>
-          <code>{CLIENT_CONFIG}</code>
-        </pre>
+
+        <div className="hero-actions">
+          <Link className="button primary" to="/#skills">
+            Browse skills
+            <ArrowIcon size={14} />
+          </Link>
+          <Link className="button" to="/docs">
+            Read the docs
+          </Link>
+        </div>
+
+        <dl className="hero-facts">
+          {FACTS.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd>{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
-      <dl className="stats">
-        {STATS.map((stat) => (
-          <div key={stat.label} className="stat">
-            <dt>{stat.label}</dt>
-            <dd>{stat.value}</dd>
+      <div className="hero-panel">
+        <div className="spec">
+          <div className="spec-head">
+            <h2>Connection</h2>
+            <span className="spec-port">SP-000</span>
           </div>
-        ))}
-      </dl>
+          <dl className="spec-list">
+            {SPEC.map((row) => (
+              <div key={row.term}>
+                <dt>{row.term}</dt>
+                <dd>{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="spec-note">One endpoint per workspace. No per-client setup.</p>
+        </div>
+
+        <CodeBlock code={CLIENT_CONFIG} title="claude_desktop_config.json" label="Copy config" />
+      </div>
     </section>
   );
 }
