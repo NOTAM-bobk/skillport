@@ -1,0 +1,87 @@
+# skillport
+
+> skillport is a skill that finds skills: a remote Model Context Protocol (MCP) endpoint that lets an AI assistant search a registry of open-source agent skills, read each manifest and install the real files at a pinned commit. 47 skills, 830 files, 8 source repositories. No API key, no OAuth, no account.
+
+skillport is a public read service for agents. It does not generate skills; every entry is mirrored verbatim from an upstream GitHub repository, with a licence, a pinned commit, a sha256 per file and a package hash. An agent should call skills.search with a description of the task, skills.get to read the manifest, then skills.install with the returned version and verify the files it writes.
+
+## Endpoint
+
+- MCP (Streamable HTTP): https://skillport.mcp.mathclass.uk/mcp
+- MCP (legacy SSE): https://skillport.mcp.mathclass.uk/sse
+- Auth: none. Public read, no key, no OAuth, no sign-in.
+- MCP revision: 2025-06-18
+- Transport: JSON-RPC 2.0 over HTTP POST
+
+## Tools
+
+- skills.search — find skills by capability, category, repository or free text. Arguments: query (string), category (Design | Security | Data | Software | Documentation), limit (1-25, default 8).
+- skills.get — read one skill's manifest, licence, pinned commit and file hashes. Arguments: name, includeInstructions (boolean, default true).
+- skills.install — return the real files for one skill at a pinned version. Arguments: name, version (commit prefix, optional), files (optional subset of paths).
+
+## Docs
+
+- [Documentation](https://skillport.mathclass.uk/docs): connecting a client, tool reference and troubleshooting.
+- [MCP spec](https://skillport.mathclass.uk/docs/mcp): the JSON-RPC surface skillport exposes.
+- [Registry](https://skillport.mathclass.uk/registry): every skill, filterable by category.
+- [CLI](https://skillport.mathclass.uk/cli): the @skillport/cli helper.
+- [Publish a skill](https://skillport.mathclass.uk/publish): how an upstream repository gets mirrored.
+- [About](https://skillport.mathclass.uk/about): what skillport is and is not.
+- [Full reference](https://skillport.mathclass.uk/llms-full.txt): this file plus every skill and its metadata.
+
+## Skills
+
+- [roerohan/librarian](https://skillport.mathclass.uk/skills/librarian): Deep codebase exploration across remote repositories.
+- [anthropics/xlsx](https://skillport.mathclass.uk/skills/xlsx): > `openpyxl`, `pandas`, and `markitdown` are preinstalled — do not run `pip install` first; write the script and import directly. Only if an import fails (or the `markitdown` command is missing): `pip install` the missing package.
+- [gohypergiant/accelint-react-best-practices](https://skillport.mathclass.uk/skills/accelint-react-best-practices): Comprehensive performance optimization and best practices for React applications, designed for AI agents and LLMs working with React code.
+- [gohypergiant/accelint-react-testing](https://skillport.mathclass.uk/skills/accelint-react-testing): Expert guidance for writing maintainable, user-centric React component tests with Testing Library. Focused on query selection, accessibility-first testing, and avoiding implementation details.
+- [gohypergiant/accelint-security-best-practices](https://skillport.mathclass.uk/skills/accelint-security-best-practices): Systematic security auditing and vulnerability detection for JavaScript/TypeScript applications. Combines audit workflow with OWASP Top 10 security patterns for production-ready code.
+- [gohypergiant/accelint-ts-best-practices](https://skillport.mathclass.uk/skills/accelint-ts-best-practices): Comprehensive coding standards for JavaScript and TypeScript applications, designed for AI agents and LLMs working with modern JavaScript/TypeScript codebases.
+- [anthropics/claude-api](https://skillport.mathclass.uk/skills/claude-api): This skill helps you build LLM-powered applications with Claude. Choose the right surface based on your needs, detect the project language, then read the relevant language-specific documentation.
+- [roerohan/cloudflare](https://skillport.mathclass.uk/skills/cloudflare): Consolidated skill for building on the Cloudflare platform. Use decision trees below to find the right product, then load detailed references.
+- [roerohan/diff-walkthrough](https://skillport.mathclass.uk/skills/diff-walkthrough): Generate a grounded, reader-friendly walkthrough of a code change. Explain the change in the order a human should read it, not in filesystem or diff order.
+- [anthropics/mcp-builder](https://skillport.mathclass.uk/skills/mcp-builder): Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.
+- [gohypergiant/pr-description](https://skillport.mathclass.uk/skills/pr-description): Write a PR as durable engineering context, not a narrated diff. The reader should understand the problem, the argument for the chosen mechanism, the contract it relies on, and the evidence without knowing this part of the codebase.
+- [anthropics/skill-creator](https://skillport.mathclass.uk/skills/skill-creator): A skill for creating new skills and iteratively improving them.
+- [roerohan/spec-planner](https://skillport.mathclass.uk/skills/spec-planner): Produce implementation-ready specs through rigorous dialogue and honest trade-off analysis.
+- [roerohan/tmux](https://skillport.mathclass.uk/skills/tmux): Use tmux for long-running or continuously logging commands. Do not run dev servers, file watchers, database consoles, or tailing logs directly inside the OpenCode shell unless the user explicitly asks for inline output. Put them in a tmux pane and read them from there.
+- [anthropics/webapp-testing](https://skillport.mathclass.uk/skills/webapp-testing): To test local web applications, write native Python Playwright scripts.
+- [gohypergiant/accelint-architecture-doc](https://skillport.mathclass.uk/skills/accelint-architecture-doc): Generate or update a living `ARCHITECTURE.md` for the current codebase. It should give agents and engineers a fast, complete view of the system structure, tech stack, and deployment model.
+- [anthropics/doc-coauthoring](https://skillport.mathclass.uk/skills/doc-coauthoring): This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.
+- [anthropics/docx](https://skillport.mathclass.uk/skills/docx): A `.docx` is a ZIP archive of XML files. Choose your approach by task:
+- [anthropics/internal-comms](https://skillport.mathclass.uk/skills/internal-comms): To write internal communications, use this skill for: 3P updates (Progress, Plans, Problems) Company newsletters FAQ responses Status reports Leadership updates Project updates Incident reports
+- [anthropics/pdf](https://skillport.mathclass.uk/skills/pdf): This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.
+- [anthropics/pptx](https://skillport.mathclass.uk/skills/pptx): A `.pptx` is a ZIP archive of XML files. Choose your approach by task:
+- [roerohan/repo-walkthrough](https://skillport.mathclass.uk/skills/repo-walkthrough): Guide the user through a repository's architecture and critical flows, calibrated to their level.
+- [anthropics/algorithmic-art](https://skillport.mathclass.uk/skills/algorithmic-art): Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).
+- [anthropics/brand-guidelines](https://skillport.mathclass.uk/skills/brand-guidelines): To access Anthropic's official brand identity and style resources, use this skill.
+- [anthropics/canvas-design](https://skillport.mathclass.uk/skills/canvas-design): These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.
+- [anthropics/theme-factory](https://skillport.mathclass.uk/skills/theme-factory): This skill provides a curated collection of professional font and color themes themes, each with carefully selected color palettes and font pairings. Once a theme is chosen, it can be applied to any artifact.
+- [anthropics/frontend-design](https://skillport.mathclass.uk/skills/frontend-design): Approach this as the design lead at a design studio known for giving every client a distinct visual identity that is not mistaken for anyone else's. This client has already rejected proposals that felt cliché or templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about pale…
+- [anthropics/web-artifacts-builder](https://skillport.mathclass.uk/skills/web-artifacts-builder): To build powerful frontend claude.ai artifacts, follow these steps: 1. Initialize the frontend repo using `scripts/init-artifact.sh` 2. Develop your artifact by editing the generated code 3. Bundle all code into a single HTML file using `scripts/bundle-artifact.sh` 4. Display artifact to user 5. (Optional) Test the …
+- [skillport/owasp-audit](https://skillport.mathclass.uk/skills/owasp-audit): Detect and patch OWASP Top 10 vulnerabilities across web applications and serverless endpoints.
+- [skillport/secrets-scanner](https://skillport.mathclass.uk/skills/secrets-scanner): Deep repository entropy and regex scanning to prevent credential leakage in git history.
+- [skillport/api-auth-defense](https://skillport.mathclass.uk/skills/api-auth-defense): Hardens REST and GraphQL authentication layers against replay attacks, token forgery, and privilege escalation.
+- [skillport/dependency-vulnerability-check](https://skillport.mathclass.uk/skills/dependency-vulnerability-check): Automated lockfile inspection and supply-chain vulnerability triage.
+- [skillport/penetration-testing-checklist](https://skillport.mathclass.uk/skills/penetration-testing-checklist): Systematic offensive security verification checklist for modern web apps.
+- [skillport/figma-to-react](https://skillport.mathclass.uk/skills/figma-to-react): Converts Figma design hierarchies into clean, semantic React code matching exact token specifications.
+- [skillport/accessible-ui](https://skillport.mathclass.uk/skills/accessible-ui): Ensures full compliance with modern accessibility standards across interactive UI components.
+- [skillport/motion-design-system](https://skillport.mathclass.uk/skills/motion-design-system): Delightful motion design principles, choreographed enter/exit transitions, and smooth interactive physics.
+- [skillport/responsive-design-engine](https://skillport.mathclass.uk/skills/responsive-design-engine): State-of-the-art responsive CSS techniques avoiding rigid breakpoints in favor of fluid adaptability.
+- [skillport/sql-query-optimizer](https://skillport.mathclass.uk/skills/sql-query-optimizer): Deep relational database query plan analysis and indexing optimization for PostgreSQL and MySQL.
+- [skillport/data-cleaning-pipeline](https://skillport.mathclass.uk/skills/data-cleaning-pipeline): Robust data wrangling and validation pipeline for messy CSV, JSON, and external database dumps.
+- [skillport/rag-embeddings-architect](https://skillport.mathclass.uk/skills/rag-embeddings-architect): Production-grade retrieval augmented generation architecture for enterprise knowledge bases.
+- [skillport/web-scraping-extractor](https://skillport.mathclass.uk/skills/web-scraping-extractor): Extract clean structured data from dynamic websites with polite concurrency controls.
+- [skillport/docker-deploy-pro](https://skillport.mathclass.uk/skills/docker-deploy-pro): Build tiny, cache-optimized, secure Docker container images for Node, Python, and Go services.
+- [skillport/rest-api-architect](https://skillport.mathclass.uk/skills/rest-api-architect): Design intuitive, versioned, consistent web APIs with type-safe contracts.
+- [skillport/git-workflow-pro](https://skillport.mathclass.uk/skills/git-workflow-pro): Master complex git workflows, history cleanup, and branch collaboration without losing commits.
+- [skillport/nextjs-app-router](https://skillport.mathclass.uk/skills/nextjs-app-router): Modern fullstack architecture using React Server Components, streaming SSR, and edge execution.
+- [skillport/api-docs-generator](https://skillport.mathclass.uk/skills/api-docs-generator): Turns backend route handlers and schemas into polished developer documentation.
+- [skillport/release-notes-writer](https://skillport.mathclass.uk/skills/release-notes-writer): Automated extraction and copywriting for changelogs, release notes, and breaking change warnings.
+
+## Optional
+
+- [Changelog](https://skillport.mathclass.uk/changelog): registry and endpoint changes.
+- [Status](https://skillport.mathclass.uk/status): endpoint availability.
+- [GitHub](https://github.com/NOTAM-bobk/skillport): source of the site and the MCP Worker.
+
+Registry synced 2026-11-26T16:42:30.169Z.
