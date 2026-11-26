@@ -1526,6 +1526,87 @@ kbd,
   font-size: 10.5px;
 }
 
+/* ---------- Install prompt ---------- */
+
+.prompt {
+  padding-top: 48px;
+}
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 36px;
+  align-items: start;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.prompt-eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.prompt-copy h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.prompt-copy > p {
+  margin-top: 10px;
+  max-width: 46ch;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--fg-2);
+}
+
+.prompt-steps {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.prompt-steps li {
+  display: flex;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--fg-2);
+}
+
+.prompt-steps li span {
+  flex: none;
+  padding-top: 1px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--fg-3);
+}
+
+.prompt-code pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 980px) {
+  .prompt-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .prompt-copy > p {
+    max-width: 60ch;
+  }
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 980px) {
