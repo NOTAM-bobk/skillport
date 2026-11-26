@@ -1,0 +1,945 @@
+{
+  "generated": "2026-11-26T03:32:12.702Z",
+  "count": 13,
+  "skills": [
+    {
+      "name": "librarian",
+      "slug": "librarian",
+      "owner": "roerohan",
+      "repo": "roerohan/skills",
+      "repoUrl": "https://github.com/roerohan/skills",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/roerohan/skills/blob/171fbdd/librarian/SKILL.md",
+      "sourcePath": "librarian",
+      "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
+      "version": "171fbdd",
+      "category": "Data",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 30,
+      "description": "Multi-repository codebase exploration. Research library internals, find code patterns, understand architecture, compare implementations across GitHub/npm/PyPI/crates. Use when needing deep understanding of how libraries work, finding implementations across open source, or exploring remote repository structure.",
+      "long": "Deep codebase exploration across remote repositories.",
+      "fileCount": 6,
+      "bytes": 22452,
+      "packageSha256": "0da388d42660b0e2860eea5ca50a5a3f6e34d621bda3f08798d758c3d3cb9aa7",
+      "files": [
+        {
+          "path": "references/diagrams.md",
+          "bytes": 1117,
+          "sha256": "e0016d787d6cc1dd535e4449e53c3060b68af4cb203a17100ea0c86e00d08ea5"
+        },
+        {
+          "path": "references/linking.md",
+          "bytes": 1237,
+          "sha256": "8c2cadaca97011f01479d1c7a5468b9a96bba6958f1583d04848ff8e83b1fd58"
+        },
+        {
+          "path": "references/opensrc-api.md",
+          "bytes": 5323,
+          "sha256": "b33a40e0c2ea5de4549f7e20f24b84fb26b3132e53eaea48a193813d3fdcbeaa"
+        },
+        {
+          "path": "references/opensrc-examples.md",
+          "bytes": 7461,
+          "sha256": "173e459c2264c9c3c3261942090f4c336eec844b12ba4fa450c2e3a74dca78de"
+        },
+        {
+          "path": "references/tool-routing.md",
+          "bytes": 3230,
+          "sha256": "c104f2a4794b8a38045e62ecaf0809a510f43d9594c65a4b6e8091ae4aebaec8"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 4084,
+          "sha256": "b4d6d2541b9bb9774d722b5d0d024fa96ff044df300c77d160bb4cc1aeac1012"
+        }
+      ]
+    },
+    {
+      "name": "accelint-react-best-practices",
+      "slug": "accelint-react-best-practices",
+      "owner": "gohypergiant",
+      "repo": "gohypergiant/agent-skills",
+      "repoUrl": "https://github.com/gohypergiant/agent-skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/gohypergiant/agent-skills/blob/f276ab4/skills/accelint-react-best-practices/SKILL.md",
+      "sourcePath": "skills/accelint-react-best-practices",
+      "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
+      "version": "f276ab4",
+      "category": "Dev",
+      "language": "Shell",
+      "color": "#89e051",
+      "stars": 25,
+      "description": "React performance optimization and best practices. ALWAYS use this skill when working with any React code - writing components, hooks, JSX; refactoring; optimizing re-renders, memoization, state management; reviewing for performance; fixing hydration mismatches; debugging infinite re-renders, stale closures, input focus loss, animations restarting; preventing remounting; implementing transitions, lazy initialization, effect dependencies. Even simple React tasks benefit from these patterns. Covers React 19+ (useEffectEvent, Activity, ref props). Triggers - useEffect, useState, useMemo, useCallback, memo, inline components, nested components, components inside components, re-render, performance, hydration, SSR, Next.js, useDeferredValue, combined hooks.",
+      "long": "Comprehensive performance optimization and best practices for React applications, designed for AI agents and LLMs working with React code.",
+      "fileCount": 44,
+      "bytes": 153821,
+      "packageSha256": "ca2b8758cf852564cd3acab4f07b785b619451a87b84f192032846c6b1d07fa9",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "bytes": 10294,
+          "sha256": "69352269873db1c222729ca6b6cde0688a2714fa8976dd42e0235ba2f504aa28"
+        },
+        {
+          "path": "assets/output-report-template.md",
+          "bytes": 9893,
+          "sha256": "a04fc6b3407ca21829f9139be24d8b964a985a53a0f90736bd3af7be8a0dfe0a"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "bytes": 7364,
+          "sha256": "e6107a0f2571f71399c551d4f004d38184709a09ca8159db9c6a05e0a95efe8c"
+        },
+        {
+          "path": "evals/assertions.md",
+          "bytes": 3024,
+          "sha256": "173e49bfa50b9cba78b9de08b57587679d2a9d3000fd2ed7ec42507e72e28b1a"
+        },
+        {
+          "path": "evals/evals.json",
+          "bytes": 12450,
+          "sha256": "f1c6b8e158dc2dcebe3e9dbdf4ea33d4fc6f243a44e482f32053473f780313d4"
+        },
+        {
+          "path": "README.md",
+          "bytes": 6382,
+          "sha256": "0b89313e765e014c0ef269ccac728d1ce8a23de78714b34673d5edddfaa55ed4"
+        },
+        {
+          "path": "references/activity-component-show-hide.md",
+          "bytes": 760,
+          "sha256": "f6cba68f997d9ebd7e4c9c86fdb0d8606a7827f46a5c27d60f463745c0506cf1"
+        },
+        {
+          "path": "references/animate-svg-wrapper.md",
+          "bytes": 1338,
+          "sha256": "0c1b22a1261f697d4886aae0d6586c7939a4339cbaa6233f3c2bd6a3c5a4d064"
+        },
+        {
+          "path": "references/avoid-usememo-simple-expressions.md",
+          "bytes": 1269,
+          "sha256": "397b3ebe6408c5d49364d48dcce5873db5fe0e142a6e975b9d9f2b207ac6f92c"
+        },
+        {
+          "path": "references/cache-repeated-function-calls.md",
+          "bytes": 2069,
+          "sha256": "44e8419be22fe13d0f3092e015f8ed410237c762bc64a648a10ff072baebfd40"
+        },
+        {
+          "path": "references/calculate-derived-state.md",
+          "bytes": 1372,
+          "sha256": "1e247d799cb248ccfb18bdfa94e364236b01f7867ea41cb247fe3c5bb701ed90"
+        },
+        {
+          "path": "references/compound-patterns.md",
+          "bytes": 22131,
+          "sha256": "c156e356056a49fffb78d2f1965a3ded363c2d7ec3e1a5f3652e1797891c37a5"
+        },
+        {
+          "path": "references/css-content-visibility.md",
+          "bytes": 954,
+          "sha256": "5435ab40aa41d8702ff45021e099af163f8f5ec3af2e3b2626603d56fb7b5087"
+        },
+        {
+          "path": "references/defer-state-reads.md",
+          "bytes": 1137,
+          "sha256": "e915790c225de1e205fac233222ce9a335e49c3de83bc69b8bb5baa5022a5b41"
+        },
+        {
+          "path": "references/effect-event-deps.md",
+          "bytes": 1976,
+          "sha256": "124f4a0614ab3b3048f76d59dd020d43ecc8771e5573195a72c34b2600f5c693"
+        },
+        {
+          "path": "references/extract-default-parameter-value.md",
+          "bytes": 1340,
+          "sha256": "07c2750d399473fdce1e3179bc308c3f3a2768b3286e2996b92bacb724b09110"
+        },
+        {
+          "path": "references/extract-memoized-components.md",
+          "bytes": 1159,
+          "sha256": "dab4bfdaee878a31da6400084ad9efab9d94efd8744a706a9bbca2df33ab8ab2"
+        },
+        {
+          "path": "references/functional-setstate-updates.md",
+          "bytes": 2168,
+          "sha256": "35bab686670827623cc527e1f6d8e893b028d95efc6eb1bcc38ad35cf53377bc"
+        },
+        {
+          "path": "references/hoist-regexp-creation.md",
+          "bytes": 1192,
+          "sha256": "366e3cf351881779874ff413042d549ee55609ca9eb16482848d4777db1b3406"
+        },
+        {
+          "path": "references/hoist-static-jsx.md",
+          "bytes": 995,
+          "sha256": "fbf4e3054fd306ffca056da3c3fa09dd2d668c2b9d52bc57c3cc2684678f218a"
+        },
+        {
+          "path": "references/initialize-app-once.md",
+          "bytes": 1150,
+          "sha256": "54d9c5ff627ccc6b5521b4780cd733d1a1072646c585ef49c638f55419dc1fa1"
+        },
+        {
+          "path": "references/interaction-logic-in-event-handlers.md",
+          "bytes": 1409,
+          "sha256": "020abaa98516c4480fd2c9902afdcdf6d0108fc85eae481926b4cb9e4fae88de"
+        },
+        {
+          "path": "references/lazy-state-initialization.md",
+          "bytes": 2201,
+          "sha256": "f5f37a1dd1ddfedb8a35317982f6469663240300ae6ddba240f90e4d5aa8cb86"
+        },
+        {
+          "path": "references/named-imports.md",
+          "bytes": 716,
+          "sha256": "ac3a63abcd46b8cc790d3f6e047dca299bf7598040adc2d9477a04c56a113ffc"
+        },
+        {
+          "path": "references/narrow-effect-dependencies.md",
+          "bytes": 1051,
+          "sha256": "c141e7520819f4c354128b49cd052bf7cbabbb8cc748054d64ddc3e7d5a212de"
+        },
+        {
+          "path": "references/no-forwardref.md",
+          "bytes": 696,
+          "sha256": "0c2dc77e3475298b459d76f903b7a6f22be4e1ff5c69e6cca243bf8807086bec"
+        },
+        {
+          "path": "references/no-inline-components.md",
+          "bytes": 1911,
+          "sha256": "ff8ec50fa269c18aeb111b36159f567fe641e0aff40e4c1651a9c118b644a3cb"
+        },
+        {
+          "path": "references/optimize-svg-precision.md",
+          "bytes": 836,
+          "sha256": "8df29b796a8616792ffd367b742f6b8086ea6a16ceb7cabdc998f7cd507a56c3"
+        },
+        {
+          "path": "references/prevent-hydration-mismatch.md",
+          "bytes": 2849,
+          "sha256": "ece79df39ee1d4da5b889950f038e15c0b45055725612eb10cc18711e1f7b85a"
+        },
+        {
+          "path": "references/quick-checklists.md",
+          "bytes": 9527,
+          "sha256": "1118904401160bc7a599a449015d4372e57c3516774862ca6bfc1e2c0506118e"
+        },
+        {
+          "path": "references/react-compiler-guide.md",
+          "bytes": 6513,
+          "sha256": "bf669012be190671adf879bf0abae3681a530f7c603093de904fd6b9dfe8e18e"
+        },
+        {
+          "path": "references/split-combined-hooks.md",
+          "bytes": 1668,
+          "sha256": "1265d65447dbd7d4291043e3de3a322d4eac4ce0416e9c7c053a74d1fdb7df5a"
+        },
+        {
+          "path": "references/store-event-handlers-refs.md",
+          "bytes": 1326,
+          "sha256": "c87203e1fa317b669c0165e15656eeeea4eb77cb751d86bbec85d458e90f445d"
+        },
+        {
+          "path": "references/subscribe-derived-state.md",
+          "bytes": 953,
+          "sha256": "f51161494cf199a68d1a8033a7bac92eee62ed44f9c9e4c94176fa0f11d84ec1"
+        },
+        {
+          "path": "references/transitions-non-urgent-updates.md",
+          "bytes": 1232,
+          "sha256": "c646f2c1e297e14a852dee149f820be545d4c86a8742a916b492719c9e637349"
+        },
+        {
+          "path": "references/use-deferred-value.md",
+          "bytes": 1641,
+          "sha256": "3097a5c150ace27659ae373731efbb4e408e4e6041f3b7ed59637d8918c9035a"
+        },
+        {
+          "path": "references/use-usetransition-over-manual-loading.md",
+          "bytes": 2169,
+          "sha256": "0cf255cb65c6d3db855726abe737f29dd9c6128292c288dd7bd77cebb8d97525"
+        },
+        {
+          "path": "references/uselatest-stable-callbacks.md",
+          "bytes": 2409,
+          "sha256": "2895af53208336f09f23d97422842e75114d46934a574f0528ff62b1422fc992"
+        },
+        {
+          "path": "references/useref-for-transient-values.md",
+          "bytes": 1934,
+          "sha256": "266b929e7664f9aa6f9e335fb2aea2ea02810d637e6008baa2c7bf9a70771486"
+        },
+        {
+          "path": "scripts/check-imports.sh",
+          "bytes": 1565,
+          "sha256": "9e7ff0de2969048a586c41790ebdbe7e9ed66d689ea0da3d211835315f6dae06"
+        },
+        {
+          "path": "scripts/detect-static-jsx.sh",
+          "bytes": 2928,
+          "sha256": "a54de6b49270dd96b9967a90c36f191dad92f201551bcbd27b53ad2799651a85"
+        },
+        {
+          "path": "scripts/find-forwardref.sh",
+          "bytes": 1658,
+          "sha256": "393545e1d3c43f453bc0cc94064cb0f9106c49a40bd0f2ae26e6c893757bacd0"
+        },
+        {
+          "path": "scripts/README.md",
+          "bytes": 4589,
+          "sha256": "55ed5079037855dbff1ea9a640605c05cdf06e6a9d9fbc0610e9e0e4652c3791"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 11623,
+          "sha256": "4b9327067525ef17173e2ad84fb4188cefa713929c5103e11353027d0b9f7ac0"
+        }
+      ]
+    },
+    {
+      "name": "accelint-security-best-practices",
+      "slug": "accelint-security-best-practices",
+      "owner": "gohypergiant",
+      "repo": "gohypergiant/agent-skills",
+      "repoUrl": "https://github.com/gohypergiant/agent-skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/gohypergiant/agent-skills/blob/f276ab4/skills/accelint-security-best-practices/SKILL.md",
+      "sourcePath": "skills/accelint-security-best-practices",
+      "commit": "f276ab4543da47241ebd7107f828030972a55cc3",
+      "version": "f276ab4",
+      "category": "Dev",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 25,
+      "description": "Comprehensive security audit and vulnerability detection for JavaScript/TypeScript applications following OWASP Top 10. Use when (1) Users say 'audit security', 'check for vulnerabilities', 'security review', 'implement authentication', 'secure this code', (2) Adding authentication, API endpoints, file uploads, or handling user input, (3) Working with secrets, credentials, or sensitive data, (4) Implementing payment features or blockchain integrations, (5) Conducting pre-deployment security checks. Audits for: hardcoded secrets, injection vulnerabilities, XSS/CSRF, broken access control, insecure authentication, rate limiting, dependency vulnerabilities, sensitive data exposure.",
+      "long": "Systematic security auditing and vulnerability detection for JavaScript/TypeScript applications. Combines audit workflow with OWASP Top 10 security patterns for production-ready code.",
+      "fileCount": 19,
+      "bytes": 279303,
+      "packageSha256": "0ff5b7ba49ff795bb6fb85f4961e2b46f589675553f80a7f0cefc6f79a2d2306",
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "bytes": 8211,
+          "sha256": "830c34fdf9d76c719811b1b33d5621ac13f14d2e050f5744574fda181d54f71c"
+        },
+        {
+          "path": "assets/output-report-template.md",
+          "bytes": 9767,
+          "sha256": "d366141226f2b5046688ec3bfdddbce9ddcc8410c829ddf110fa8730d7d54fd0"
+        },
+        {
+          "path": "README.md",
+          "bytes": 6371,
+          "sha256": "ba97a54357ba07d9a833a5d501fb447768d150f1bccc8e42b8faa6d7fc293c23"
+        },
+        {
+          "path": "references/authentication.md",
+          "bytes": 18915,
+          "sha256": "3129cda60def4a628b244d375e44075d7d5dc3298bd795dfe2ba8f066e273ce3"
+        },
+        {
+          "path": "references/authorization.md",
+          "bytes": 18251,
+          "sha256": "b60920ac1ce132f0de9089d3ca25d4f82925e6d39fc39aace5f38e6295beb5ce"
+        },
+        {
+          "path": "references/csrf-protection.md",
+          "bytes": 15850,
+          "sha256": "412027207944f1e1600e7b53de4446cc10aaa8259b708d473c2c83ed2a72bb4b"
+        },
+        {
+          "path": "references/dependency-security.md",
+          "bytes": 12330,
+          "sha256": "a241bfb93ceab244f37563d9d5ffb2a9c55182c06767e431968fe346105e72f3"
+        },
+        {
+          "path": "references/file-uploads.md",
+          "bytes": 15912,
+          "sha256": "11b2a1d2ab7efc90b1c0a8b469423d57336ece29d97c8cba54cdd8df076487ee"
+        },
+        {
+          "path": "references/injection-prevention.md",
+          "bytes": 20682,
+          "sha256": "bdcb774639552b08361ecbc0433beb6b6f88385bf41c64b8315d7263de0b8212"
+        },
+        {
+          "path": "references/input-validation.md",
+          "bytes": 16862,
+          "sha256": "7a137ee73ca9cb7775fc7a48c4126b596c72266c13ef301c882528e57b99e48b"
+        },
+        {
+          "path": "references/mfa.md",
+          "bytes": 17596,
+          "sha256": "62b16c78b75d621d36632436bc65183775a2fb8541fa733541d7ae53ef6c184d"
+        },
+        {
+          "path": "references/quick-reference.md",
+          "bytes": 12939,
+          "sha256": "4cf1cb9dc5a6bc194e2af01f797d0a1b61e59c8fffadfbd968883e8d88e53041"
+        },
+        {
+          "path": "references/rate-limiting.md",
+          "bytes": 14760,
+          "sha256": "6d8b80580775a273552edfbdd2d67dd9edb2ee89072a8999b85657de9071f078"
+        },
+        {
+          "path": "references/secrets-management.md",
+          "bytes": 10901,
+          "sha256": "2a312975b63c7260c58c4f769502a4263bcb9976f3842f7c2b2643f3ef34267a"
+        },
+        {
+          "path": "references/security-headers.md",
+          "bytes": 13396,
+          "sha256": "9a4d26fbf6f612230ab583f3146582b22ee0e51f67a08380a7312f3903edf665"
+        },
+        {
+          "path": "references/sensitive-data.md",
+          "bytes": 14686,
+          "sha256": "005376c6434372b656b225f10a913a53633f020c2eb3747cf97e8f0565dea61e"
+        },
+        {
+          "path": "references/ssrf-prevention.md",
+          "bytes": 16024,
+          "sha256": "5e4def0c060fcfc272dfa209aa117d2ce128e8551295876660d94aae97571b4f"
+        },
+        {
+          "path": "references/xss-prevention.md",
+          "bytes": 14353,
+          "sha256": "2759200fe7158f8a102ea1186a054faa2676f9cfc3a06f20f4cbe52a988c066f"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 21497,
+          "sha256": "27dc9f48c24776695b1eb01d6ece3487b79ce48f24c6757e15ef79425bffed9f"
+        }
+      ]
+    },
+    {
+      "name": "mcp-builder",
+      "slug": "mcp-builder",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/mcp-builder/SKILL.md",
+      "sourcePath": "skills/mcp-builder",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Dev",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200591,
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "long": "Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.",
+      "fileCount": 11,
+      "bytes": 159159,
+      "packageSha256": "60c981af21888c9cdb714a51270cca6c215ea3d3a95066e052dd43aa48ae5731",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "reference/evaluation.md",
+          "bytes": 21663,
+          "sha256": "8c99479f8a2d22a636c38e274537aac3610879e26f34e0709825077c4576f427"
+        },
+        {
+          "path": "reference/mcp_best_practices.md",
+          "bytes": 7330,
+          "sha256": "80fb4369a349447cf18ecdd7494fe7938b6065377e9f08c077cec411093a3007"
+        },
+        {
+          "path": "reference/node_mcp_server_v2.md",
+          "bytes": 35171,
+          "sha256": "49b2fe48f33910b743ae3a56353fffa5d5f252f531053f24f2da4e5914c0d3aa"
+        },
+        {
+          "path": "reference/node_mcp_server.md",
+          "bytes": 28745,
+          "sha256": "ee3c95d812e450f6168b734390d0c9ef6f8ebeef041d73a122c972dfbd4d476a"
+        },
+        {
+          "path": "reference/python_mcp_server.md",
+          "bytes": 25099,
+          "sha256": "2da52f77e675191014ca2e146a4b95aa04d0ca7dd7e2b100322df15ade685e80"
+        },
+        {
+          "path": "scripts/connections.py",
+          "bytes": 4875,
+          "sha256": "9403668a2041568772082a8b334122c1f88daf0541fb393af4522d0094a47a6e"
+        },
+        {
+          "path": "scripts/evaluation.py",
+          "bytes": 12579,
+          "sha256": "49ed1d17cdce5da101b210197740713f49b935c29d4f339542a14b132658e6f7"
+        },
+        {
+          "path": "scripts/example_evaluation.xml",
+          "bytes": 1194,
+          "sha256": "9272b348ddcc4b06ba562367ccd0770e018158c0068ac5116d5e34aaeff8777a"
+        },
+        {
+          "path": "scripts/requirements.txt",
+          "bytes": 29,
+          "sha256": "d5d7558b2368ecea9dfeed7d1fbc71ee9e0750bebd1282faa527d528a344c3c7"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 11129,
+          "sha256": "b483b56d6673134497e45489c317f26ae0f1429c194db0297e43073e17e6748c"
+        }
+      ]
+    },
+    {
+      "name": "tmux",
+      "slug": "tmux",
+      "owner": "roerohan",
+      "repo": "roerohan/skills",
+      "repoUrl": "https://github.com/roerohan/skills",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/roerohan/skills/blob/171fbdd/tmux/SKILL.md",
+      "sourcePath": "tmux",
+      "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
+      "version": "171fbdd",
+      "category": "Dev",
+      "language": "Shell",
+      "color": "#89e051",
+      "stars": 30,
+      "description": "Manage long-running commands in the user's current tmux session. Use when starting dev servers, watchers, background logs, or reading/interacting with named tmux panes.",
+      "long": "Use tmux for long-running or continuously logging commands. Do not run dev servers, file watchers, database consoles, or tailing logs directly inside the OpenCode shell unless the user explicitly asks for inline output. Put them in a tmux pane and read them from there.",
+      "fileCount": 14,
+      "bytes": 48107,
+      "packageSha256": "5f0a4d91846ac15aff6781a0b1915290c8c4bc3403c6157f0bc065801fd630d0",
+      "files": [
+        {
+          "path": "scripts/cleanup-dead-panes.sh",
+          "bytes": 707,
+          "sha256": "1d7c56fa3bae35ed617fb885b60aa52e204610a4497b3772e63e9505223259ea"
+        },
+        {
+          "path": "scripts/layout-window.sh",
+          "bytes": 2158,
+          "sha256": "8311495a3442d1cb690b1a2b92f6ae0fa6875aed4ac68eaf636ca93ec1118818"
+        },
+        {
+          "path": "scripts/lib.sh",
+          "bytes": 8915,
+          "sha256": "f50e96eb0461392f85e71f65e86313307cf1d7af1f7c30febf905e404b1432e9"
+        },
+        {
+          "path": "scripts/list-panes.sh",
+          "bytes": 1844,
+          "sha256": "67ef9bb562056e6f5620a0e4135d01763b6b3ecefea7b77908f27cf5e98eae06"
+        },
+        {
+          "path": "scripts/managed-panes.sh",
+          "bytes": 1245,
+          "sha256": "53d68b91dc9c34f71ac8f145de46957ee86362aa0901ce4252244144754f0851"
+        },
+        {
+          "path": "scripts/read-pane.sh",
+          "bytes": 1573,
+          "sha256": "c7ce56435660c56da9b335b0607a46542ad117c0fea7a0555ee5bec011e354e1"
+        },
+        {
+          "path": "scripts/restart-pane.sh",
+          "bytes": 3115,
+          "sha256": "c5d115ff87e85753133f0e0b0e6ff7489558af36394b5abfcb6ebe5edbc71cb5"
+        },
+        {
+          "path": "scripts/run-in-pane.sh",
+          "bytes": 5837,
+          "sha256": "870f32c3a2975d4d84572d02a8b18169d822386932e85c3eb1d0c51102777099"
+        },
+        {
+          "path": "scripts/run-or-reuse-pane.sh",
+          "bytes": 2091,
+          "sha256": "ed07e390efc32a1ce9ba31df088e214525f7255e323e3f81469ba67f5482d046"
+        },
+        {
+          "path": "scripts/send-to-pane.sh",
+          "bytes": 2229,
+          "sha256": "ef33e4327aabba6c1235d88d5b02ba003758155dd8dab198d478e1631f2e20fe"
+        },
+        {
+          "path": "scripts/stop-pane.sh",
+          "bytes": 3048,
+          "sha256": "6b6e991a5743951d4815b89e299ca8e52ef59d535d79088a9418db7893d26498"
+        },
+        {
+          "path": "scripts/tail-pane.sh",
+          "bytes": 2019,
+          "sha256": "f5ab537ed5ec0a3cc508690ebacd70c08445d0c538c2ab9cd01e102b35e8e74f"
+        },
+        {
+          "path": "scripts/wait-for-text.sh",
+          "bytes": 2427,
+          "sha256": "ab0676449d6fecd3e20439557e180fbe0de4b1a0db099fbecf6e3310aaddf28c"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 10899,
+          "sha256": "71ae79c814c53a6c255f37708dd4da88dcfd24d068f0f437635ae81236d0ffe0"
+        }
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "slug": "webapp-testing",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/webapp-testing/SKILL.md",
+      "sourcePath": "skills/webapp-testing",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Dev",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200591,
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "long": "To test local web applications, write native Python Playwright scripts.",
+      "fileCount": 6,
+      "bytes": 22394,
+      "packageSha256": "45ffb0627e16ba548401709c7f143fa4cd3600ec5b365dd11bf247c1db6ae06f",
+      "files": [
+        {
+          "path": "examples/console_logging.py",
+          "bytes": 1027,
+          "sha256": "ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da"
+        },
+        {
+          "path": "examples/element_discovery.py",
+          "bytes": 1463,
+          "sha256": "d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0"
+        },
+        {
+          "path": "examples/static_html_automation.py",
+          "bytes": 953,
+          "sha256": "9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064"
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "scripts/with_server.py",
+          "bytes": 3693,
+          "sha256": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 3913,
+          "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+        }
+      ]
+    },
+    {
+      "name": "doc-coauthoring",
+      "slug": "doc-coauthoring",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/doc-coauthoring/SKILL.md",
+      "sourcePath": "skills/doc-coauthoring",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Docs",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 200591,
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "long": "This skill provides a structured workflow for guiding users through collaborative document creation. Act as an active guide, walking users through three stages: Context Gathering, Refinement & Structure, and Reader Testing.",
+      "fileCount": 1,
+      "bytes": 15815,
+      "packageSha256": "ac9739b49547f7f2ea448ba5f3a8ae68a4ebf9c150a1d496aff948dfd3fe002e",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 15815,
+          "sha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4"
+        }
+      ]
+    },
+    {
+      "name": "internal-comms",
+      "slug": "internal-comms",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/internal-comms/SKILL.md",
+      "sourcePath": "skills/internal-comms",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Docs",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 200591,
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "long": "To write internal communications, use this skill for: 3P updates (Progress, Plans, Problems) Company newsletters FAQ responses Status reports Leadership updates Project updates Incident reports",
+      "fileCount": 6,
+      "bytes": 22393,
+      "packageSha256": "30bda1d524a2d72eb7ef7445821563551823551698f8ecee858149264e73984c",
+      "files": [
+        {
+          "path": "examples/3p-updates.md",
+          "bytes": 3274,
+          "sha256": "087e4363c0f3513728a7e695eeb9ead5c3ecd12a4681b59340691180e65b68fc"
+        },
+        {
+          "path": "examples/company-newsletter.md",
+          "bytes": 3295,
+          "sha256": "30f81cfbdb03858a006169c72169024089c7c5d3d32611d337782da4f38c86b5"
+        },
+        {
+          "path": "examples/faq-answers.md",
+          "bytes": 2366,
+          "sha256": "5ecd3356cd6666937f2ebefa753253edfdbdca15e368d07baf398bfcced72484"
+        },
+        {
+          "path": "examples/general-comms.md",
+          "bytes": 602,
+          "sha256": "4d3a4bb198a77626bcf018e96b2b45a2dbabed172d4ade0fcd70d23ae8a47a47"
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 1511,
+          "sha256": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475"
+        }
+      ]
+    },
+    {
+      "name": "pdf",
+      "slug": "pdf",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/pdf/SKILL.md",
+      "sourcePath": "skills/pdf",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Docs",
+      "language": "Python",
+      "color": "#3572a5",
+      "stars": 200591,
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "long": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.",
+      "fileCount": 12,
+      "bytes": 68603,
+      "packageSha256": "2011d32d477e1b873f75990e7f9e47f0fc4fd7d13fb3b0f873ca24d06413e13f",
+      "files": [
+        {
+          "path": "FORMS.md",
+          "bytes": 11857,
+          "sha256": "d5df5757e23634cd8a1a37e092af6c3b3b63afb3fd3ce86337fce9017cc3ee9f"
+        },
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11357,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+        },
+        {
+          "path": "REFERENCE.md",
+          "bytes": 16724,
+          "sha256": "07af9a8f59e77e88fe9b238a403348244f38a4771c54911c412716d8f88f0ea9"
+        },
+        {
+          "path": "scripts/check_bounding_boxes.py",
+          "bytes": 2774,
+          "sha256": "0ced522402dd7b3c82a0be9518cf4e485fa9cc0467d7beab6ddb04cb36fcc3e1"
+        },
+        {
+          "path": "scripts/check_fillable_fields.py",
+          "bytes": 268,
+          "sha256": "1fe10b9980a5493c9bbec8c20630c603eaa475b45403751c08f26738736647b8"
+        },
+        {
+          "path": "scripts/convert_pdf_to_images.py",
+          "bytes": 1008,
+          "sha256": "7f58e292a67e18a8ff000d30bad2469389546731f7e8a698cc1d0aed001ea15d"
+        },
+        {
+          "path": "scripts/create_validation_image.py",
+          "bytes": 1258,
+          "sha256": "8fa9fd7962c9f940045b81cf6b991e7c1057c1838e3f9cc6d305007a222ffebf"
+        },
+        {
+          "path": "scripts/extract_form_field_info.py",
+          "bytes": 4300,
+          "sha256": "bb235b36f497bbb1c7c6821cecf527bbba7213520de11219da99f7b13a38c109"
+        },
+        {
+          "path": "scripts/extract_form_structure.py",
+          "bytes": 3945,
+          "sha256": "6814e3fe8f78c2b16d766c132b5a727ff7a31b71d76a7d46bd6e40fe50bc97c5"
+        },
+        {
+          "path": "scripts/fill_fillable_fields.py",
+          "bytes": 3819,
+          "sha256": "d140872c2e92e41b1e05370ae8d270c5b7f5ebdf55d9905f03bc974a9c708ff5"
+        },
+        {
+          "path": "scripts/fill_pdf_form_with_annotations.py",
+          "bytes": 3235,
+          "sha256": "8a56e063a49ed53c0b0e1d312ecf8023af76816ed139486ec3b539873de202fd"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 8058,
+          "sha256": "d1c7caf5f35eb7d37877dd7fc33a095037be2b34fb5d2f7f4d43bde3165bb4ee"
+        }
+      ]
+    },
+    {
+      "name": "repo-walkthrough",
+      "slug": "repo-walkthrough",
+      "owner": "roerohan",
+      "repo": "roerohan/skills",
+      "repoUrl": "https://github.com/roerohan/skills",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/roerohan/skills/blob/171fbdd/repo-walkthrough/SKILL.md",
+      "sourcePath": "repo-walkthrough",
+      "commit": "171fbdd3085ba76dacd148aa292d0559e8d913eb",
+      "version": "171fbdd",
+      "category": "Docs",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 30,
+      "description": "Walk a user through how a repository works, explaining critical flows at a calibrated simplicity level. Use when user says \"walk me through this repo\", \"explain this repo\", \"how does this codebase work\", or asks to understand a repo. Accepts a simplicity level argument (novice, pro, brief, detailed, etc.).",
+      "long": "Guide the user through a repository's architecture and critical flows, calibrated to their level.",
+      "fileCount": 1,
+      "bytes": 4672,
+      "packageSha256": "1b4a1953b7b66aeaedc6c5c606addec432ff285d727cb021c9a157d8a19c96b1",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 4672,
+          "sha256": "d1ed89e944c273310021066b0919e716ca719a3bb419b66fcb632864307ef8b5"
+        }
+      ]
+    },
+    {
+      "name": "algorithmic-art",
+      "slug": "algorithmic-art",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/algorithmic-art/SKILL.md",
+      "sourcePath": "skills/algorithmic-art",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Media",
+      "language": "JavaScript",
+      "color": "#f1e05a",
+      "stars": 200591,
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "long": "Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).",
+      "fileCount": 4,
+      "bytes": 59784,
+      "packageSha256": "246dd11e54735a5a547582707471222c4cd665f21e7d902b022aeba93d8964d1",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 19769,
+          "sha256": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef"
+        },
+        {
+          "path": "templates/generator_template.js",
+          "bytes": 7826,
+          "sha256": "9ee0f1da52ef8f7bbfde1917123654880890d43f2d388642d71eab6dd78f94c4"
+        },
+        {
+          "path": "templates/viewer.html",
+          "bytes": 20844,
+          "sha256": "86c79d7ce97d2599ebe4bd9b97fdeb7295c9d3ed61ceeb513cbe1b2bb5d1ce29"
+        }
+      ]
+    },
+    {
+      "name": "brand-guidelines",
+      "slug": "brand-guidelines",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/brand-guidelines/SKILL.md",
+      "sourcePath": "skills/brand-guidelines",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Media",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 200591,
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "long": "To access Anthropic's official brand identity and style resources, use this skill.",
+      "fileCount": 2,
+      "bytes": 13580,
+      "packageSha256": "ceabc11d075e174c92cb51df6a4ee19e5effd8a713d1529383c35a4eaa19eb4d",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 11345,
+          "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 2235,
+          "sha256": "1120b3769e2985cefb3d25be981b1f914abeba57ae079b83c20c666c164fa9fe"
+        }
+      ]
+    },
+    {
+      "name": "frontend-design",
+      "slug": "frontend-design",
+      "owner": "anthropics",
+      "repo": "anthropics/skills",
+      "repoUrl": "https://github.com/anthropics/skills",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://github.com/anthropics/skills/blob/e4bb5d9/skills/frontend-design/SKILL.md",
+      "sourcePath": "skills/frontend-design",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "version": "e4bb5d9",
+      "category": "Web",
+      "language": "Markdown",
+      "color": "#8a8479",
+      "stars": 200591,
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "long": "Approach this as the design lead at a design studio known for giving every client a distinct visual identity that is not mistaken for anyone else's. This client has already rejected proposals that felt cliché or templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about pale…",
+      "fileCount": 2,
+      "bytes": 19564,
+      "packageSha256": "d00e5e78be144b88160a6c61e9d0dec8a703c84e8002e7aa56e08eeb9dfb361c",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "bytes": 10174,
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 9390,
+          "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+        }
+      ]
+    }
+  ]
+}
