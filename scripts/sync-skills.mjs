@@ -127,18 +127,16 @@ function primaryLanguage(files) {
 
 const sources = JSON.parse(await readFile(path.join(SKILLS_DIR, "sources.json"), "utf8"));
 
-// --ensure: no-op when the generated artifacts already exist, so `npm run build`
+// --ensure: no-op when the generated index already exists, so `npm run build`
 // can call this unconditionally without hitting the network on every build.
 if (process.argv.includes("--ensure")) {
   const { access, constants } = await import("node:fs/promises");
-  const ready = await Promise.all(
-    [
-      path.join(SKILLS_DIR, "index.json"),
-      path.join(ROOT, "mcp", "src", "skills.bundle.json"),
-    ].map((file) => access(file, constants.R_OK).then(() => true, () => false)),
+  const ready = await access(path.join(SKILLS_DIR, "index.json"), constants.R_OK).then(
+    () => true,
+    () => false,
   );
-  if (ready.every(Boolean)) {
-    console.log("skills: index and bundle already present, skipping sync");
+  if (ready) {
+    console.log("skills: index already present, skipping sync");
     process.exit(0);
   }
 }
@@ -153,7 +151,7 @@ for (const source of sources.repos) {
   const stars = repo.stargazers_count;
   const repoLicense = repo.license?.spdx_id ?? "NOASSERTION";
   const branch = repo.default_branch;
-  const commit = (await gh(`${GH}/repos/${source.repo}/commits/${branch}`)).sha;
+  const commit = source.commit ?? (await gh(`${GH}/repos/${source.repo}/commits/${branch}`)).sha;
   const tree = await gh(`${GH}/repos/${source.repo}/git/trees/${commit}?recursive=1`);
   const version = commit.slice(0, 7);
 
