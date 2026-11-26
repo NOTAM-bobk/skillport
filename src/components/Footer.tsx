@@ -1,17 +1,34 @@
+import { REPO_URL } from "../lib/site";
+import { Link } from "../lib/router";
 import { GitHubIcon, SkillMark } from "./Icons";
 
 const COLUMNS = [
   {
     title: "Product",
-    links: ["Skills", "Registry", "Changelog", "Status"],
+    links: [
+      { label: "Skills", to: "/#skills" },
+      { label: "Registry", to: "/registry" },
+      { label: "Changelog", to: "/changelog" },
+      { label: "Status", to: "/status" },
+    ],
   },
   {
     title: "Developers",
-    links: ["Documentation", "MCP spec", "CLI", "Publish a skill"],
+    links: [
+      { label: "Documentation", to: "/docs" },
+      { label: "MCP spec", to: "/docs/mcp" },
+      { label: "CLI", to: "/cli" },
+      { label: "Publish a skill", to: "/publish" },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Blog", "Contact", "Privacy"],
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Blog", to: "/blog" },
+      { label: "Contact", to: "/contact" },
+      { label: "Privacy", to: "/privacy" },
+    ],
   },
 ];
 
@@ -20,14 +37,20 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <span className="brand">
+          <Link className="brand" to="/">
             <span className="brand-mark">
               <SkillMark size={16} />
             </span>
             <span className="brand-name">skillport</span>
-          </span>
+          </Link>
           <p>The MCP endpoint for agent skills.</p>
-          <a className="icon-button" href="#docs" aria-label="GitHub repository">
+          <a
+            className="icon-button"
+            href={REPO_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="skillport repository on GitHub"
+          >
             <GitHubIcon size={15} />
           </a>
         </div>
@@ -35,11 +58,11 @@ export default function Footer() {
         <div className="footer-cols">
           {COLUMNS.map((column) => (
             <div key={column.title}>
-              <h4>{column.title}</h4>
+              <h2>{column.title}</h2>
               <ul>
                 {column.links.map((link) => (
-                  <li key={link}>
-                    <a href="#docs">{link}</a>
+                  <li key={link.label}>
+                    <Link to={link.to}>{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -49,8 +72,8 @@ export default function Footer() {
       </div>
 
       <div className="footer-base">
-        <span>© {new Date().getFullYear()} skillport. All rights reserved.</span>
-        <span className="footer-note">Mock registry · APIs and skills land soon.</span>
+        <span>© {new Date().getFullYear()} skillport</span>
+        <span className="footer-note">Preview build: registry data and endpoint are mocked.</span>
       </div>
     </footer>
   );

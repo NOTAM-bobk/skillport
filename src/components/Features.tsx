@@ -1,66 +1,66 @@
-import { DownloadIcon, PlugIcon, SearchIcon, TerminalIcon } from "./Icons";
+import { Link } from "../lib/router";
+import { ArrowIcon } from "./Icons";
 
 const STEPS = [
   {
-    icon: <PlugIcon size={18} />,
     title: "Connect once",
-    body: "Point your client at the endpoint. skillport handles auth, transport and tool schemas.",
+    body: "Point your client at the endpoint. skillport handles transport, auth and tool schemas.",
     code: "POST /sse",
   },
   {
-    icon: <SearchIcon size={18} />,
     title: "Search the registry",
     body: "Ask for what you need. The agent queries by capability, category or API provider.",
     code: "skills.search",
   },
   {
-    icon: <DownloadIcon size={18} />,
     title: "Download a skill",
-    body: "Skills resolve to a pinned manifest, so runs stay reproducible across clients.",
+    body: "Skills resolve to a pinned manifest, so the same version runs across clients.",
     code: "skills.get",
   },
   {
-    icon: <TerminalIcon size={18} />,
     title: "Run it",
-    body: "Calls execute through the provider API and return structured, typed output.",
+    body: "Calls execute against the provider API and come back as structured, typed output.",
     code: "skills.run",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="section" id="how">
+    <section className="section" id="how" aria-labelledby="how-title">
       <div className="section-head">
         <div>
-          <h2>How it works</h2>
+          <h2 id="how-title">How it works</h2>
           <p>Four tool calls between your agent and any connected API.</p>
         </div>
       </div>
 
-      <div className="grid">
-        {STEPS.map((step) => (
-          <article className="card" key={step.title}>
-            <span className="card-icon">{step.icon}</span>
+      <ol className="steps">
+        {STEPS.map((step, index) => (
+          <li className="step" key={step.title}>
+            <span className="step-number" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
             <h3>{step.title}</h3>
             <p>{step.body}</p>
-            <code className="card-code">{step.code}</code>
-          </article>
+            <code>{step.code}</code>
+          </li>
         ))}
-      </div>
+      </ol>
 
-      <div className="docs-panel" id="docs">
+      <div className="docs-panel">
         <div>
           <h3>Wire it up in a minute</h3>
           <p>
-            The endpoint speaks JSON-RPC over SSE. Any MCP-compatible client works — Claude Desktop,
-            Cursor, VS Code, or your own runtime.
+            The endpoint speaks JSON-RPC over SSE, so any MCP-compatible client works: Claude
+            Desktop, Cursor, VS Code, Zed or your own runtime.
           </p>
         </div>
         <div className="docs-actions">
           <code className="inline-code">npx @skillport/cli connect</code>
-          <a className="button small" href="#top">
-            Back to endpoint
-          </a>
+          <Link className="button small" to="/docs">
+            Read the setup guide
+            <ArrowIcon size={13} />
+          </Link>
         </div>
       </div>
     </section>
