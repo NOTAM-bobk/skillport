@@ -59,6 +59,26 @@ export function ArrowIcon({ size = 14, className }: IconProps) {
   );
 }
 
+export function ArrowUpRightIcon({ size = 14, className }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
+  );
+}
+
 export function StarIcon({ size = 12, className }: IconProps) {
   return (
     <svg
@@ -169,6 +189,26 @@ export function TerminalIcon({ size = 16, className }: IconProps) {
       <rect x="3" y="4" width="18" height="16" rx="2" />
       <path d="m7 9 3 3-3 3" />
       <path d="M13 15h4" />
+    </svg>
+  );
+}
+
+export function MailIcon({ size = 14, className }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3.6 6.4 8.4 6 8.4-6" />
     </svg>
   );
 }
