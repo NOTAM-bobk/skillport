@@ -1,5 +1,5 @@
-export const MCP_ENDPOINT = "https://skillport.mcp.mathclass.uk/mcp";
-export const MCP_SSE_ENDPOINT = "https://skillport.mcp.mathclass.uk/sse";
+export const MCP_ENDPOINT = "https://skillport-mcp-t5vo4e-preview.freebuff.site/mcp";
+export const MCP_SSE_ENDPOINT = "https://skillport-mcp-t5vo4e-preview.freebuff.site/sse";
 export const SITE_URL = "https://skillport.dev";
 export const REPO_URL = "https://github.com/NOTAM-bobk/skillport";
 export const CONTACT_EMAIL = "hello@skillport.dev";
