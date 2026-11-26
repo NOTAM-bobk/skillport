@@ -1,28 +1,27 @@
 import CodeBlock from "../components/CodeBlock";
 import { Page, Section } from "../components/Page";
 import { ArrowIcon } from "../components/Icons";
-import { SKILLS, findSkill, portCode } from "../data/skills";
+import { SKILLS, findSkill, formatBytes, formatStars, portCode } from "../data/skills";
 import { Link } from "../lib/router";
-import { MCP_ENDPOINT, REPO_URL } from "../lib/site";
+import { MCP_ENDPOINT } from "../lib/site";
 import { usePageMeta } from "../lib/seo";
 import NotFound from "./NotFound";
 
-const INSTALL = (owner: string, name: string, version: string) =>
-  `{
-  "skill": "${owner}/${name}",
-  "version": "${version}",
-  "registry": "${MCP_ENDPOINT}"
-}`;
-
-const CALL = (owner: string, name: string) =>
+const INSTALL = (name: string, version: string) =>
   `{
   "method": "tools/call",
   "params": {
-    "name": "skills.run",
-    "arguments": {
-      "skill": "${owner}/${name}",
-      "input": {}
-    }
+    "name": "skills.install",
+    "arguments": { "name": "${name}", "version": "${version}" }
+  }
+}`;
+
+const SEARCH = (name: string) =>
+  `{
+  "method": "tools/call",
+  "params": {
+    "name": "skills.search",
+    "arguments": { "query": "${name}", "limit": 5 }
   }
 }`;
 
@@ -31,9 +30,7 @@ export default function SkillPage({ slug }: { slug: string }) {
 
   usePageMeta({
     title: found ? `${found.skill.owner}/${found.skill.name} — skillport` : "Skill not found — skillport",
-    description: found
-      ? found.skill.long
-      : "This skill is not in the registry.",
+    description: found ? found.skill.description : "This skill is not in the registry.",
     path: `/skills/${slug}`,
     type: "article",
     noindex: !found,
@@ -45,6 +42,7 @@ export default function SkillPage({ slug }: { slug: string }) {
   const related = SKILLS.filter(
     (entry) => entry.category === skill.category && entry.name !== skill.name,
   ).slice(0, 3);
+  const sourceUrl = `${skill.repoUrl}/tree/${skill.commit}/${skill.sourcePath}`;
 
   return (
     <Page>
@@ -61,11 +59,11 @@ export default function SkillPage({ slug }: { slug: string }) {
         </h1>
         <p className="page-lede">{skill.long}</p>
         <div className="skill-tags">
-          <span className="tag">{skill.version}</span>
+          <span className="tag mono">{skill.version}</span>
           <span className="tag">{skill.category}</span>
           <span className="tag">{skill.language}</span>
-          <span className="tag">{skill.stars} stars</span>
-          <span className="tag">{skill.runs} runs</span>
+          <span className="tag">{formatStars(skill.stars)} stars</span>
+          <span className="tag">{skill.fileCount} files</span>
           <span className="tag mono">{portCode(index)}</span>
         </div>
       </header>
@@ -74,45 +72,48 @@ export default function SkillPage({ slug }: { slug: string }) {
         <div className="doc-main">
           <Section title="Install" id="install">
             <p>
-              Add the endpoint to your client, then ask for the skill by name. Versions are pinned
-              on install, so later releases do not change a running agent.
+              Mirrored verbatim from <a href={sourceUrl} target="_blank" rel="noreferrer">{skill.repo}</a>{" "}
+              at commit <code>{skill.version}</code>. The MCP server returns every file with its
+              sha256, so an install can be verified rather than trusted.
             </p>
-            <CodeBlock code={INSTALL(skill.owner, skill.name, skill.version)} title="install request" />
+            <CodeBlock code={INSTALL(skill.name, skill.version)} title="tools/call" />
+            <p>
+              Write the returned files to <code>skills/{skill.name}/</code>, then follow the
+              instructions in <code>SKILL.md</code>.
+            </p>
           </Section>
 
-          <Section title="Parameters" id="parameters">
+          <Section title="Find it" id="find">
+            <p>Search by capability instead of by name, which is what an assistant does:</p>
+            <CodeBlock code={SEARCH(skill.name)} title="tools/call" />
+          </Section>
+
+          <Section title="Files" id="files">
             <div className="table-wrap">
               <table className="table">
                 <thead>
                   <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Required</th>
-                    <th scope="col">Description</th>
+                    <th scope="col">Path</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">sha256</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {skill.params.map((param) => (
-                    <tr key={param.name}>
+                  {skill.files.map((file) => (
+                    <tr key={file.path}>
                       <td>
-                        <code>{param.name}</code>
+                        <code>{file.path}</code>
                       </td>
-                      <td className="mono">{param.type}</td>
-                      <td>{param.required ? "Yes" : "No"}</td>
-                      <td>{param.description}</td>
+                      <td className="mono">{formatBytes(file.bytes)}</td>
+                      <td className="mono">{file.sha256.slice(0, 12)}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </Section>
-
-          <Section title="Call it" id="call">
-            <p>
-              The agent calls <code>skills.run</code> with the pinned skill name. Structured output
-              comes back in the same response.
+            <p className="mono muted">
+              package {skill.packageSha256.slice(0, 24)} · {formatBytes(skill.bytes)}
             </p>
-            <CodeBlock code={CALL(skill.owner, skill.name)} title="tools/call" />
           </Section>
         </div>
 
@@ -129,20 +130,28 @@ export default function SkillPage({ slug }: { slug: string }) {
                 <dd className="mono">{skill.version}</dd>
               </div>
               <div>
+                <dt>Commit</dt>
+                <dd className="mono">{skill.commit.slice(0, 10)}</dd>
+              </div>
+              <div>
                 <dt>Category</dt>
                 <dd>{skill.category}</dd>
               </div>
               <div>
-                <dt>Runtime</dt>
-                <dd>{skill.language}</dd>
+                <dt>Licence</dt>
+                <dd>{skill.license}</dd>
               </div>
               <div>
                 <dt>Source</dt>
                 <dd>
-                  <a href={REPO_URL} target="_blank" rel="noreferrer">
-                    GitHub
+                  <a href={sourceUrl} target="_blank" rel="noreferrer">
+                    {skill.repo}
                   </a>
                 </dd>
+              </div>
+              <div>
+                <dt>Endpoint</dt>
+                <dd className="mono">{MCP_ENDPOINT.replace("https://", "")}</dd>
               </div>
             </dl>
           </div>

@@ -1,6 +1,7 @@
 import AIWall from "../components/AIWall";
 import Features from "../components/Features";
 import Hero from "../components/Hero";
+import InstallPrompt from "../components/InstallPrompt";
 import Skills from "../components/Skills";
 import { usePageMeta } from "../lib/seo";
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <InstallPrompt />
       <AIWall />
       <Skills />
       <Features />

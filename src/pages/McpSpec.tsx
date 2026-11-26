@@ -4,8 +4,9 @@ import { Link } from "../lib/router";
 import { MCP_ENDPOINT } from "../lib/site";
 import { usePageMeta } from "../lib/seo";
 
-const HANDSHAKE = `POST /messages
+const HANDSHAKE = `POST /mcp
 Content-Type: application/json
+Accept: application/json, text/event-stream
 
 {
   "jsonrpc": "2.0",
@@ -18,16 +19,16 @@ Content-Type: application/json
 }`;
 
 const SCHEMA = `{
-  "name": "skills.search",
-  "description": "Search the skill registry by capability or provider.",
+  "name": "skills.install",
+  "description": "Download every file of a pinned skill version.",
   "inputSchema": {
     "type": "object",
     "properties": {
-      "query": { "type": "string" },
-      "category": { "enum": ["search", "data", "web", "media", "dev", "docs"] },
-      "limit": { "type": "integer", "minimum": 1, "maximum": 20 }
+      "name": { "type": "string" },
+      "version": { "type": "string" },
+      "files": { "type": "array", "items": { "type": "string" } }
     },
-    "required": ["query"]
+    "required": ["name"]
   }
 }`;
 
@@ -51,44 +52,46 @@ export default function McpSpec() {
         <div className="doc-main">
           <Section title="Transport" id="transport">
             <p>
-              The endpoint keeps a server-sent event stream open for responses and accepts client
-              messages as JSON-RPC 2.0 POSTs. Streamable HTTP is available at <code>/mcp</code> for
-              clients that prefer it.
+              JSON-RPC 2.0 over streamable HTTP at <code>/mcp</code>: POST a message, get a JSON
+              response (or a single-event SSE stream when the client asks for one). The legacy
+              transport is still wired up at <code>/sse</code>, which announces
+              <code>/messages</code> as its reply endpoint.
             </p>
             <CodeBlock code={HANDSHAKE} title="initialize" />
           </Section>
 
           <Section title="Authentication" id="auth">
             <p>
-              Workspaces authenticate with OAuth 2.1. Clients discover the authorization server from
-              the protected resource metadata document, then present a bearer token on every request.
-              Tokens are scoped to one workspace; skills never see provider credentials directly.
+              None for reading. The endpoint accepts anonymous connections, so there is no key, no
+              OAuth flow and no account to create before a client can search the registry or download
+              a skill package. Publishing is a separate, token-protected HTTP API that the MCP server
+              never exposes, which is what keeps the read surface keyless.
             </p>
           </Section>
 
           <Section title="Tool schemas" id="schemas">
             <p>
               Every tool publishes a JSON Schema, so clients can validate arguments before a call
-              leaves the machine. Skill inputs are folded into <code>skills.run</code> at call time.
+              leaves the machine. Each call returns both readable text and the same payload as JSON.
             </p>
             <CodeBlock code={SCHEMA} title="tools/list" />
           </Section>
 
           <Section title="Versioning" id="versioning">
             <p>
-              Skills are immutable once published. A version resolves to a manifest hash, so a
-              pinned install keeps the same inputs and outputs until the caller opts into a new
-              version. The registry revision (<code>2025-06-18</code>) tracks the MCP spec, not
-              individual skills.
+              A version is the upstream git commit the files were copied from, so
+              <code>skills.install</code> with a version either returns exactly those files or fails
+              with <code>VERSION_NOT_FOUND</code>. Packages also carry a sha256, which makes an
+              install verifiable after the fact.
             </p>
           </Section>
 
           <Section title="Limits" id="limits">
             <ul className="bullets">
-              <li>120 requests per minute per workspace, burst of 30.</li>
-              <li>1 MB maximum request body; large payloads belong in a provider upload.</li>
-              <li>Default run timeout of 30 seconds, 120 seconds for media skills.</li>
-              <li>Search returns at most 20 results per call.</li>
+              <li>Anonymous and unauthenticated; no account, key or token.</li>
+              <li>Read-only: the three tools never mutate the registry.</li>
+              <li>Search returns at most 25 results per call.</li>
+              <li>Standard Cloudflare Workers limits apply to request size and CPU time.</li>
             </ul>
             <p>
               Those limits apply to the preview build and will be re-tuned before general

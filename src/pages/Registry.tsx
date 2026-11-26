@@ -1,12 +1,12 @@
 import Skills from "../components/Skills";
 import { Page, PageHeader } from "../components/Page";
-import { SKILLS } from "../data/skills";
+import { SKILLS, SKILLS_GENERATED, SOURCE_REPOS } from "../data/skills";
 import { usePageMeta } from "../lib/seo";
 
 export default function Registry() {
   usePageMeta({
     title: "Skill registry — skillport",
-    description: `Browse ${SKILLS.length} installable MCP skills for search, data, web, media, dev and docs. Each entry lists its version, language and run count.`,
+    description: `Browse ${SKILLS.length} installable agent skills mirrored from open-source repos, with pinned commits, licences and file-level hashes.`,
     path: "/registry",
   });
 
@@ -14,8 +14,8 @@ export default function Registry() {
     <Page>
       <PageHeader
         title="Registry"
-        lede="Every skill published to skillport, with the version and manifest slot the endpoint resolves. Filter by category or search by API name."
-        meta={`${SKILLS.length} skills · 42 connected APIs · revision 2025-06-18`}
+        lede="Every skill in the registry, with the upstream commit and manifest slot the endpoint resolves. Filter by category or search by name, capability or repository."
+        meta={`${SKILLS.length} skills · ${SOURCE_REPOS.length} source repos · synced ${SKILLS_GENERATED.slice(0, 10)}`}
       />
       <div className="page-body">
         <Skills showHeader={false} />

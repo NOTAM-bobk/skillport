@@ -1,36 +1,37 @@
 import CodeBlock from "../components/CodeBlock";
 import { Page, PageHeader, Section } from "../components/Page";
-import { CLIENT_CONFIG, MCP_ENDPOINT } from "../lib/site";
+import { CLIENT_CONFIG, INSTALL_PROMPT, MCP_ENDPOINT } from "../lib/site";
 import { Link } from "../lib/router";
 import { usePageMeta } from "../lib/seo";
 
 const TOOLS = [
-  { name: "skills.search", purpose: "Find skills by capability, category or provider.", returns: "Ranked list of manifests" },
-  { name: "skills.get", purpose: "Resolve one skill to a pinned manifest.", returns: "Manifest with versions" },
-  { name: "skills.run", purpose: "Execute a skill against the provider API.", returns: "Structured output" },
-  { name: "skills.publish", purpose: "Push a new skill version to the registry.", returns: "Review status" },
+  { name: "skills.search", purpose: "Find skills by capability, category or repository.", returns: "Ranked manifests and the install call for each" },
+  { name: "skills.get", purpose: "Resolve one skill to its pinned manifest.", returns: "Commit, licence, file hashes and SKILL.md" },
+  { name: "skills.install", purpose: "Download every file of a pinned commit.", returns: "UTF-8 file contents with sha256" },
 ];
 
 const RESPONSE = `{
-  "skill": {
-    "name": "skillport/web-search",
-    "version": "v2.4.0",
-    "slot": "SP-001",
-    "inputs": { "query": "string", "limit": "number" }
-  },
-  "result": {
-    "items": [
-      { "title": "Model Context Protocol", "url": "https://modelcontextprotocol.io" }
-    ],
-    "took_ms": 412
-  }
+  "name": "pdf",
+  "version": "e4bb5d9",
+  "commit": "e4bb5d9…",
+  "license": "Apache-2.0",
+  "packageSha256": "9f2c41…",
+  "writeTo": "skills/pdf/",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 4021,
+      "sha256": "1a7d09…",
+      "text": "---\\nname: pdf\\ndescription: ..."
+    }
+  ]
 }`;
 
 const ERRORS = [
-  { code: "-32602", meaning: "Invalid params", fix: "Check the parameter table on the skill page." },
-  { code: "-32601", meaning: "Unknown skill", fix: "Confirm the name with skills.search." },
-  { code: "401", meaning: "Missing or expired token", fix: "Re-run the OAuth flow for the workspace." },
-  { code: "429", meaning: "Rate limited", fix: "Back off, then retry. Limits are per workspace." },
+  { code: "SKILL_NOT_FOUND", meaning: "No skill with that name", fix: "Confirm the name with skills.search." },
+  { code: "VERSION_NOT_FOUND", meaning: "That commit is not in the registry", fix: "Omit version or use the one on the skill page." },
+  { code: "FILE_NOT_FOUND", meaning: "Requested file is not part of the skill", fix: "Drop the files filter to install the whole skill." },
+  { code: "-32601", meaning: "Method not found", fix: "The endpoint implements initialize, tools/list and tools/call." },
 ];
 
 export default function Docs() {
@@ -53,10 +54,17 @@ export default function Docs() {
         <div className="doc-main">
           <Section title="Get started" id="start">
             <p>
-              skillport exposes the Model Context Protocol over SSE. Add the endpoint to your client
-              once; every skill in the registry is then reachable through the same connection.
+              skillport speaks the Model Context Protocol over streamable HTTP, with a legacy SSE
+              endpoint for older clients. Add it once; every skill in the registry is then reachable
+              through the same connection.
             </p>
             <CodeBlock code={CLIENT_CONFIG} title="client config" />
+            <p>
+              Or hand the whole setup to the assistant: paste the prompt below into a client that
+              can add a remote MCP server and it will connect, search the registry and install what
+              your task needs.
+            </p>
+            <CodeBlock code={INSTALL_PROMPT} title="install prompt" label="Copy prompt" />
             <p>
               Restart the client and ask it to search the registry. The endpoint is{" "}
               <code>{MCP_ENDPOINT}</code>. If you would rather work from a terminal, the{" "}
@@ -65,7 +73,7 @@ export default function Docs() {
           </Section>
 
           <Section title="Tools" id="tools">
-            <p>Four tools cover the whole lifecycle. Nothing else is exposed.</p>
+            <p>Three tools cover the whole lifecycle. Nothing else is exposed.</p>
             <div className="table-wrap">
               <table className="table">
                 <thead>
@@ -92,10 +100,10 @@ export default function Docs() {
 
           <Section title="Response shape" id="response">
             <p>
-              A run returns the resolved manifest plus the provider result. Token counts and timing
-              come back alongside the payload so clients can budget context.
+              An install returns the pinned manifest plus the file contents themselves. The server
+              never writes to your disk, so the client does — verbatim, into the path it names.
             </p>
-            <CodeBlock code={RESPONSE} title="skills.run response" />
+            <CodeBlock code={RESPONSE} title="skills.install response" />
           </Section>
 
           <Section title="Errors" id="errors">
@@ -123,9 +131,8 @@ export default function Docs() {
 
           <Section title="Clients" id="clients">
             <p>
-              Tested against Claude Desktop, Claude Code, Cursor, VS Code, Zed, Windsurf, Copilot
-              and the OpenAI Agents SDK. Any client that speaks MCP over SSE or streamable HTTP
-              connects the same way.
+              Works with any client that speaks MCP: Claude Code, Claude Desktop, Cursor, VS Code,
+              Zed, Windsurf and the OpenAI Agents SDK all connect the same way, keyless.
             </p>
             <p>
               Next: read the <Link to="/docs/mcp">protocol details</Link> or publish your own skill.
