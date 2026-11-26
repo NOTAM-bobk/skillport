@@ -2,32 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0a0a09" />
 
-    <title>skillport — the MCP endpoint for agent skills</title>
+    <title>skillport — a skill that finds skills for your AI</title>
     <meta
       name="description"
-      content="One MCP endpoint for a registry of API-backed skills. Search, install and run skills from Claude, Cursor, VS Code, Zed or any Model Context Protocol client."
+      content="One MCP endpoint that gives your AI hundreds of tools in seconds. Search %SKILL_COUNT% open-source agent skills, pin a commit and install %FILE_COUNT% files — no key, no sign-in."
     />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://skillport.dev/" />
+    <meta
+      name="keywords"
+      content="MCP server, Model Context Protocol, agent skills, AI tools, skill registry, Claude Code, Cursor, VS Code, Zed, install agent skills"
+    />
+    <meta name="author" content="skillport" />
+    <meta name="application-name" content="skillport" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://skillport.mathclass.uk/" />
 
+    <!-- Icons: browser tab, installed app, home screen -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
     <meta property="og:site_name" content="skillport" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://skillport.dev/" />
-    <meta property="og:title" content="skillport — the MCP endpoint for agent skills" />
+    <meta property="og:url" content="https://skillport.mathclass.uk/" />
+    <meta property="og:title" content="skillport — a skill that finds skills for your AI" />
     <meta
       property="og:description"
-      content="One MCP endpoint for a registry of API-backed skills. Search, install and run skills from any Model Context Protocol client."
+      content="One MCP endpoint. Hundreds of tools in seconds: search %SKILL_COUNT% open-source agent skills, read their manifests and install %FILE_COUNT% files at pinned commits. No key, no sign-in."
     />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="skillport — the MCP endpoint for agent skills" />
+    <meta property="og:image" content="https://skillport.mathclass.uk/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="skillport — a skill that finds skills" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="skillport — a skill that finds skills for your AI" />
     <meta
       name="twitter:description"
-      content="One MCP endpoint for a registry of API-backed skills, for any Model Context Protocol client."
+      content="One MCP endpoint that gives your AI hundreds of tools in seconds. %SKILL_COUNT% open-source skills, %FILE_COUNT% files, pinned commits, no key."
+    />
+    <meta name="twitter:image" content="https://skillport.mathclass.uk/og.png" />
+    <meta name="twitter:image:alt" content="skillport — a skill that finds skills" />
+
+    <!-- Plain-text entry points for AI assistants and answer engines -->
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="skillport for LLMs" />
+    <link
+      rel="alternate"
+      type="text/markdown"
+      href="/llms-full.txt"
+      title="skillport full reference for LLMs"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,21 +76,50 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "WebSite",
-            "@id": "https://skillport.dev/#website",
-            "url": "https://skillport.dev/",
+            "@type": "Organization",
+            "@id": "https://skillport.mathclass.uk/#organization",
             "name": "skillport",
-            "description": "The MCP endpoint for agent skills.",
-            "inLanguage": "en"
+            "url": "https://skillport.mathclass.uk/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://skillport.mathclass.uk/icon-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "description": "The open MCP endpoint for agent skills.",
+            "sameAs": ["https://github.com/NOTAM-bobk/skillport"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://skillport.mathclass.uk/#website",
+            "url": "https://skillport.mathclass.uk/",
+            "name": "skillport",
+            "alternateName": ["skillport MCP", "skillport skill registry"],
+            "description": "A skill that finds skills: one MCP endpoint that gives an AI agent hundreds of tools in seconds.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://skillport.mathclass.uk/#organization" }
           },
           {
             "@type": "SoftwareApplication",
+            "@id": "https://skillport.mathclass.uk/#application",
             "name": "skillport",
             "applicationCategory": "DeveloperApplication",
+            "applicationSubCategory": "Model Context Protocol server",
             "operatingSystem": "Any",
-            "url": "https://skillport.dev/",
-            "description": "An MCP endpoint in front of a registry of API-backed skills that agents can search, install and run.",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+            "url": "https://skillport.mathclass.uk/",
+            "downloadUrl": "https://skillport.mcp.mathclass.uk/mcp",
+            "description": "A remote Model Context Protocol endpoint in front of a registry of open-source agent skills that assistants can search, read and install at pinned commits.",
+            "featureList": [
+              "Search a registry of agent skills by capability",
+              "Read a skill manifest with licence, commit and per-file sha256 hashes",
+              "Install skill files with a pinned version and verify what was written",
+              "Public read endpoint with no API key, OAuth or account"
+            ],
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "license": "https://opensource.org/licenses/MIT",
+            "sameAs": ["https://github.com/NOTAM-bobk/skillport"],
+            "publisher": { "@id": "https://skillport.mathclass.uk/#organization" }
           }
         ]
       }
@@ -64,6 +127,45 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <noscript>
+      <div
+        style="
+          max-width: 720px;
+          margin: 0 auto;
+          padding: 48px 24px;
+          font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+          color: #f3efe7;
+          background: #0a0a09;
+          line-height: 1.65;
+        "
+      >
+        <h1 style="font-size: 2rem; line-height: 1.2">skillport — a skill that finds skills</h1>
+        <p>
+          skillport is a remote Model Context Protocol endpoint that lets an AI assistant search a
+          registry of %SKILL_COUNT% open-source agent skills, read each manifest and install the real files.
+          That is %FILE_COUNT% files of tools, pinned to upstream commits, with a sha256 for every file — no
+          API key, no OAuth, no sign-in.
+        </p>
+        <p>
+          <strong>Endpoint:</strong>
+          <code>https://skillport.mcp.mathclass.uk/mcp</code> (Streamable HTTP, SSE fallback at
+          <code>/sse</code>). MCP revision 2025-06-18.
+        </p>
+        <ul>
+          <li><a href="/registry">Skill registry</a></li>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/docs/mcp">MCP spec</a></li>
+          <li><a href="/llms.txt">llms.txt</a> — short reference for AI assistants</li>
+          <li><a href="/llms-full.txt">llms-full.txt</a> — full registry reference</li>
+        </ul>
+        <p style="color: #a8a29a">
+          The interactive interface needs JavaScript. Everything above is also available as plain
+          text.
+        </p>
+      </div>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
