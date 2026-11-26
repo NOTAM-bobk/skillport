@@ -1,0 +1,37 @@
+export const MCP_ENDPOINT = "https://mcp.skillport.dev/sse";
+export const REPO_URL = "https://github.com/";
+
+export const CLIENT_CONFIG = `{
+  "mcpServers": {
+    "skillport": {
+      "url": "${MCP_ENDPOINT}"
+    }
+  }
+}`;
+
+/** Copies text, falling back to a hidden textarea on insecure origins. */
+export async function copyText(text: string): Promise<boolean> {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch {
+    /* fall through to the legacy path */
+  }
+
+  try {
+    const area = document.createElement("textarea");
+    area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+    document.body.appendChild(area);
+    area.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(area);
+    return ok;
+  } catch {
+    return false;
+  }
+}
