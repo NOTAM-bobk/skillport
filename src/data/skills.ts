@@ -1,6 +1,6 @@
 import index from "../../skills/index.json";
 
-export type Category = "Docs" | "Dev" | "Web" | "Media" | "Data";
+export type Category = "Design" | "Security" | "Data" | "Software" | "Documentation";
 
 export type SkillFile = {
   path: string;
@@ -40,7 +40,7 @@ export const SKILLS: Skill[] = INDEX.skills;
 export const SKILLS_GENERATED = INDEX.generated;
 export const SOURCE_REPOS = [...new Set(SKILLS.map((skill) => skill.repo))];
 
-export const CATEGORIES = ["All", "Docs", "Dev", "Web", "Media", "Data"] as const;
+export const CATEGORIES = ["All", "Design", "Security", "Data", "Software", "Documentation"] as const;
 
 /** Stable manifest slot shown throughout the interface, e.g. SP-003. */
 export function portCode(position: number): string {
