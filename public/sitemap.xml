@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://skillport.dev/</loc><priority>1.0</priority></url>
+  <url><loc>https://skillport.dev/registry</loc><priority>0.9</priority></url>
+  <url><loc>https://skillport.dev/docs</loc><priority>0.9</priority></url>
+  <url><loc>https://skillport.dev/docs/mcp</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/cli</loc><priority>0.6</priority></url>
+  <url><loc>https://skillport.dev/publish</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/changelog</loc><priority>0.5</priority></url>
+  <url><loc>https://skillport.dev/status</loc><priority>0.4</priority></url>
+  <url><loc>https://skillport.dev/about</loc><priority>0.6</priority></url>
+  <url><loc>https://skillport.dev/blog</loc><priority>0.6</priority></url>
+  <url><loc>https://skillport.dev/contact</loc><priority>0.5</priority></url>
+  <url><loc>https://skillport.dev/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://skillport.dev/blog/one-endpoint</loc><priority>0.5</priority></url>
+  <url><loc>https://skillport.dev/blog/pinned-versions</loc><priority>0.5</priority></url>
+  <url><loc>https://skillport.dev/blog/tool-schemas</loc><priority>0.5</priority></url>
+  <url><loc>https://skillport.dev/skills/web-search</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/pdf-extract</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/stripe-ops</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/postgres-query</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/browser-scrape</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/image-gen</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/github-issues</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/semantic-memory</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/audio-transcribe</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/docs-crawler</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/code-runner</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/maps-places</loc><priority>0.7</priority></url>
+</urlset>

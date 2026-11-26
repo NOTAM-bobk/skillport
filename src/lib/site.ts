@@ -1,5 +1,7 @@
 export const MCP_ENDPOINT = "https://mcp.skillport.dev/sse";
-export const REPO_URL = "https://github.com/";
+export const SITE_URL = "https://skillport.dev";
+export const REPO_URL = "https://github.com/NOTAM-bobk/skillport";
+export const CONTACT_EMAIL = "hello@skillport.dev";
 
 export const CLIENT_CONFIG = `{
   "mcpServers": {

@@ -1,21 +1,66 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0a09" />
+
+    <title>skillport — the MCP endpoint for agent skills</title>
     <meta
       name="description"
-      content="skillport is an MCP endpoint that lets agents search, download and run skills built on top of any API."
+      content="One MCP endpoint for a registry of API-backed skills. Search, install and run skills from Claude, Cursor, VS Code, Zed or any Model Context Protocol client."
     />
-    <title>skillport — the MCP endpoint for agent skills</title>
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://skillport.dev/" />
+
+    <meta property="og:site_name" content="skillport" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skillport.dev/" />
+    <meta property="og:title" content="skillport — the MCP endpoint for agent skills" />
+    <meta
+      property="og:description"
+      content="One MCP endpoint for a registry of API-backed skills. Search, install and run skills from any Model Context Protocol client."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="skillport — the MCP endpoint for agent skills" />
+    <meta
+      name="twitter:description"
+      content="One MCP endpoint for a registry of API-backed skills, for any Model Context Protocol client."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://skillport.dev/#website",
+            "url": "https://skillport.dev/",
+            "name": "skillport",
+            "description": "The MCP endpoint for agent skills.",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "skillport",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "url": "https://skillport.dev/",
+            "description": "An MCP endpoint in front of a registry of API-backed skills that agents can search, install and run.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
