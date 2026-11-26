@@ -4,7 +4,7 @@ import { usePageMeta } from "../lib/seo";
 import { SKILLS, SKILLS_GENERATED, SOURCE_REPOS } from "../data/skills";
 
 const COMPONENTS = [
-  { name: "MCP endpoint", detail: "skillport.mcp.base31.org/mcp", state: "Not deployed" },
+  { name: "MCP endpoint", detail: "skillport.mcp.mathclass.uk/mcp", state: "Operational" },
   { name: "Registry API", detail: "skills.search, skills.get, skills.install", state: "Not deployed" },
   { name: "Skill mirror", detail: `${SKILLS.length} skills · ${SOURCE_REPOS.length} repos · synced ${SKILLS_GENERATED.slice(0, 10)}`, state: "Built" },
   { name: "Website", detail: "Vercel", state: "Operational" },
