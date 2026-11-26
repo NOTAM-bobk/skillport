@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-import { CLIENT_CONFIG, MCP_ENDPOINT, copyText } from "../lib/site";
+import { CLIENT_CONFIG, MCP_ENDPOINT, MCP_SSE_ENDPOINT, copyText } from "../lib/site";
+import { SKILLS, SOURCE_REPOS } from "../data/skills";
 import { Link } from "../lib/router";
 import CodeBlock from "./CodeBlock";
 import { ArrowIcon, CheckIcon, CopyIcon } from "./Icons";
 
+const TOTAL_FILES = SKILLS.reduce((sum, skill) => sum + skill.fileCount, 0);
+
 const SPEC = [
-  { term: "Transport", value: "HTTP + SSE" },
-  { term: "Auth", value: "OAuth 2.1 or bearer" },
+  { term: "Transport", value: "Streamable HTTP + SSE" },
+  { term: "Auth", value: "None, public read" },
   { term: "Revision", value: "2025-06-18" },
-  { term: "Registry", value: "128 skills, 42 APIs" },
+  { term: "Registry", value: `${SKILLS.length} skills, ${SOURCE_REPOS.length} repos` },
 ];
 
 const FACTS = [
-  { value: "128", label: "skills published" },
-  { value: "42", label: "APIs connected" },
-  { value: "9.4k", label: "installs this week" },
+  { value: String(SKILLS.length), label: "skills mirrored" },
+  { value: String(TOTAL_FILES), label: "files served" },
+  { value: String(SOURCE_REPOS.length), label: "source repos" },
 ];
 
 export default function Hero() {
@@ -36,13 +39,13 @@ export default function Hero() {
         <p className="hero-meta">Model Context Protocol, revision 2025-06-18</p>
         <h1>Skills your agent can find, install and run.</h1>
         <p className="hero-lede">
-          skillport is one MCP endpoint in front of a registry of API-backed skills. Search it from
-          any client, pin a version, and call it without writing glue code or handling tokens
-          yourself.
+          skillport is one MCP endpoint in front of a registry of open-source agent skills. Search it
+          from any client, pin a commit, and download the real files — no key, no glue code, no
+          copying SKILL.md by hand.
         </p>
 
         <div className="endpoint" role="group" aria-label="MCP endpoint">
-          <span className="endpoint-proto">sse</span>
+          <span className="endpoint-proto">mcp</span>
           <code>{MCP_ENDPOINT}</code>
           <button
             type="button"
@@ -89,7 +92,7 @@ export default function Hero() {
               </div>
             ))}
           </dl>
-          <p className="spec-note">One endpoint per workspace. No per-client setup.</p>
+          <p className="spec-note">SSE fallback at {MCP_SSE_ENDPOINT.replace("https://", "")}</p>
         </div>
 
         <CodeBlock code={CLIENT_CONFIG} title="claude_desktop_config.json" label="Copy config" />

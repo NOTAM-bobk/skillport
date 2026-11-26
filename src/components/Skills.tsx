@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CATEGORIES, SKILLS, portCode, type Category } from "../data/skills";
+import { CATEGORIES, SKILLS, formatStars, portCode, type Category } from "../data/skills";
 import { Link } from "../lib/router";
 import { ArrowIcon, SearchIcon, StarIcon } from "./Icons";
 
@@ -38,6 +38,7 @@ export default function Skills({ showHeader = true }: SkillsProps) {
         !term ||
         skill.name.includes(term) ||
         skill.description.toLowerCase().includes(term) ||
+        skill.repo.toLowerCase().includes(term) ||
         skill.category.toLowerCase().includes(term);
       return matchesCategory && matchesQuery;
     });
@@ -49,7 +50,7 @@ export default function Skills({ showHeader = true }: SkillsProps) {
         <div className="section-head">
           <div>
             <h2 id="skills-title">Skills</h2>
-            <p>Installable capabilities, versioned and reviewed. Drop one into any MCP client.</p>
+            <p>Real skills from open-source repos, pinned to a commit and served as files your agent can install.</p>
           </div>
           <Link className="text-link" to="/publish">
             Publish a skill
@@ -64,7 +65,7 @@ export default function Skills({ showHeader = true }: SkillsProps) {
           <input
             ref={searchRef}
             type="search"
-            placeholder="Search skills, APIs, categories…"
+            placeholder="Search skills, repos, categories…"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             aria-label="Search skills"
@@ -97,7 +98,7 @@ export default function Skills({ showHeader = true }: SkillsProps) {
               <span className="skill-title">
                 <span className="skill-owner">{skill.owner}/</span>
                 <span className="skill-name">{skill.name}</span>
-                <span className="skill-version">{skill.version}</span>
+                <span className="mono skill-version">{skill.version}</span>
               </span>
               <span className="skill-desc">{skill.description}</span>
               <span className="skill-meta">
@@ -108,9 +109,9 @@ export default function Skills({ showHeader = true }: SkillsProps) {
                 <span>{skill.category}</span>
                 <span className="meta-item">
                   <StarIcon size={11} />
-                  {skill.stars}
+                  {formatStars(skill.stars)}
                 </span>
-                <span>{skill.runs} runs</span>
+                <span>{skill.fileCount} files</span>
               </span>
             </span>
             <span className="skill-tail">

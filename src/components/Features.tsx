@@ -4,23 +4,23 @@ import { ArrowIcon } from "./Icons";
 const STEPS = [
   {
     title: "Connect once",
-    body: "Point your client at the endpoint. skillport handles transport, auth and tool schemas.",
-    code: "POST /sse",
+    body: "Point your client at the endpoint. No key, no OAuth, no account.",
+    code: "POST /mcp",
   },
   {
     title: "Search the registry",
-    body: "Ask for what you need. The agent queries by capability, category or API provider.",
+    body: "Ask for what you need in plain language. The agent searches by capability, category or repo.",
     code: "skills.search",
   },
   {
-    title: "Download a skill",
-    body: "Skills resolve to a pinned manifest, so the same version runs across clients.",
+    title: "Read the manifest",
+    body: "Every skill resolves to an upstream commit, a licence and a sha256 per file.",
     code: "skills.get",
   },
   {
-    title: "Run it",
-    body: "Calls execute against the provider API and come back as structured, typed output.",
-    code: "skills.run",
+    title: "Install the files",
+    body: "The server returns the real files; the assistant writes them and follows SKILL.md.",
+    code: "skills.install",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function Features() {
       <div className="section-head">
         <div>
           <h2 id="how-title">How it works</h2>
-          <p>Four tool calls between your agent and any connected API.</p>
+          <p>Four steps from a prompt to real skill files on disk.</p>
         </div>
       </div>
 
@@ -51,8 +51,8 @@ export default function Features() {
         <div>
           <h3>Wire it up in a minute</h3>
           <p>
-            The endpoint speaks JSON-RPC over SSE, so any MCP-compatible client works: Claude
-            Desktop, Cursor, VS Code, Zed or your own runtime.
+            The endpoint speaks JSON-RPC over streamable HTTP, with an SSE fallback, so any
+            MCP-compatible client works: Claude Code, Cursor, VS Code, Zed or your own runtime.
           </p>
         </div>
         <div className="docs-actions">

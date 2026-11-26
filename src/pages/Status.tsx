@@ -1,12 +1,13 @@
 import { Page, PageHeader, Section } from "../components/Page";
 import { Link } from "../lib/router";
 import { usePageMeta } from "../lib/seo";
+import { SKILLS, SKILLS_GENERATED, SOURCE_REPOS } from "../data/skills";
 
 const COMPONENTS = [
-  { name: "MCP endpoint", detail: "mcp.skillport.dev/sse", state: "Mocked" },
-  { name: "Registry API", detail: "skills.search, skills.get", state: "Mocked" },
-  { name: "Skill runs", detail: "Provider execution", state: "Not deployed" },
-  { name: "Website", detail: "skillport.dev", state: "Operational" },
+  { name: "MCP endpoint", detail: "skillport.mcp.base31.org/mcp", state: "Not deployed" },
+  { name: "Registry API", detail: "skills.search, skills.get, skills.install", state: "Not deployed" },
+  { name: "Skill mirror", detail: `${SKILLS.length} skills · ${SOURCE_REPOS.length} repos · synced ${SKILLS_GENERATED.slice(0, 10)}`, state: "Built" },
+  { name: "Website", detail: "Vercel", state: "Operational" },
 ];
 
 export default function Status() {
@@ -49,8 +50,8 @@ export default function Status() {
 
       <Section title="Incidents">
         <p className="prose">
-          No incidents recorded. The MCP endpoint and registry are not serving traffic yet, so there
-          is nothing to page anyone about. Real monitoring will land with the server.
+          No incidents recorded. The MCP server is built and tested locally; it starts serving when
+          the Worker is deployed and this page will say so.
         </p>
         <p className="prose">
           Something looks wrong on the site? Report it through{" "}

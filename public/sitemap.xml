@@ -15,16 +15,17 @@
   <url><loc>https://skillport.dev/blog/one-endpoint</loc><priority>0.5</priority></url>
   <url><loc>https://skillport.dev/blog/pinned-versions</loc><priority>0.5</priority></url>
   <url><loc>https://skillport.dev/blog/tool-schemas</loc><priority>0.5</priority></url>
-  <url><loc>https://skillport.dev/skills/web-search</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/pdf-extract</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/stripe-ops</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/postgres-query</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/browser-scrape</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/image-gen</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/github-issues</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/semantic-memory</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/audio-transcribe</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/docs-crawler</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/code-runner</loc><priority>0.7</priority></url>
-  <url><loc>https://skillport.dev/skills/maps-places</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/librarian</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/accelint-react-best-practices</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/accelint-security-best-practices</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/mcp-builder</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/tmux</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/webapp-testing</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/doc-coauthoring</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/internal-comms</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/pdf</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/repo-walkthrough</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/algorithmic-art</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/brand-guidelines</loc><priority>0.7</priority></url>
+  <url><loc>https://skillport.dev/skills/frontend-design</loc><priority>0.7</priority></url>
 </urlset>

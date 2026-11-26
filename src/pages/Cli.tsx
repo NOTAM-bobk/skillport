@@ -6,19 +6,17 @@ import { usePageMeta } from "../lib/seo";
 const COMMANDS = [
   { command: "connect", detail: "Write the endpoint into a supported client config." },
   { command: "search <query>", detail: "Query the registry and print matching skills." },
-  { command: "install <owner/name>", detail: "Pin a version into the current project." },
-  { command: "run <skill> --input file.json", detail: "Call a skill and stream the result." },
-  { command: "publish", detail: "Validate a manifest and submit it for review." },
+  { command: "install <name>", detail: "Download a pinned skill into the current project." },
 ];
 
 const OUTPUT = `$ npx @skillport/cli search pdf
 
-skillport/pdf-extract   v1.9.2   Python
-  Parse PDFs into markdown, tables and page-level citations.
-  SP-002 · 3.1k stars · 68k runs
+anthropics/pdf   e4bb5d9   12 files
+  Create, edit, fill and extract PDFs.
+  SP-002 · 78k stars · Apache-2.0
 
 1 skill found. Install with:
-  npx @skillport/cli install skillport/pdf-extract`;
+  npx @skillport/cli install pdf`;
 
 export default function Cli() {
   usePageMeta({
@@ -32,7 +30,7 @@ export default function Cli() {
     <Page>
       <PageHeader
         title="CLI"
-        lede="The same registry tools, without a client. Useful for CI, scripts and checking a manifest before publishing."
+        lede="The same registry tools, without a client. Useful for CI and for pulling a pinned skill into a repo."
         meta="Preview: the package is not published to npm yet"
       />
 
