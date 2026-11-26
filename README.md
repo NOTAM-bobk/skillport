@@ -12,9 +12,11 @@
 
 Discover, install and use **Agent Skills**: add them from GitHub, a local folder or a ZIP archive, then use them through the CLI or an MCP-compatible client.
 
-## 📦 Quick start
+## 🌐 Domain
 
-Install [uv](https://docs.astral.sh/uv/) if needed, then:
+This project lives on **`mathclass.uk`**. Do not introduce a `skillport.dev` domain: it is not owned, will not be bought and answers 404, so it must never appear in canonicals, `sitemap.xml`, `robots.txt`, `llms.txt` or social metadata. Spelling: `mathclass` with `ss`.
+
+## 📦 Quick start
 
 ```bash
 uvx skillport init
@@ -32,9 +34,7 @@ uvx skillport remove <skill-id>
 
 Endpoint `https://skillport-mcp-t5vo4e-preview.freebuff.site/mcp` · SSE `/sse` · health `/health` · tools `skills.search`, `skills.get`, `skills.install`. Public, read-only, no key.
 
-**Not on mathclass.uk any more.** `mcp/wrangler.jsonc` still routes the Worker there, but that zone answers non-browser requests with Cloudflare's "Just a moment…" challenge (403, `cf-mitigated: challenge`), which MCP clients cannot solve; free-plan Bot Fight Mode cannot be skipped with a WAF or Page rule, so turn it off under **Security → Bots**. Until then it runs on the Freebuff Sites deployment above — point `MCP_ENDPOINT` / `MCP_SSE_ENDPOINT` back at the domain once that is fixed.
-
-The separate [`skillport-mcp`](https://pypi.org/project/skillport-mcp/) package serves skills from your disk over stdio.
+**The MCP host is temporarily not `skillport.mcp.mathclass.uk`.** That host answers every non-browser request with Cloudflare's "Just a moment…" challenge (403, `cf-mitigated: challenge`), which MCP clients cannot solve, and free-plan Bot Fight Mode cannot be skipped with a WAF or Page rule. Turn it off under **Security → Bots**, then point `MCP_ENDPOINT` / `MCP_SSE_ENDPOINT` in `src/lib/site.ts` back at the domain.
 
 ## ♻️ Deploy
 
