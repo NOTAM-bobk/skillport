@@ -12,6 +12,16 @@
 
 Skillport helps you discover, install and use **Agent Skills**: add them from GitHub, a local folder or a ZIP archive, then use them through the CLI or an MCP-compatible client.
 
+## 🌐 Domain
+
+This project lives on **`mathclass.uk`**. Do not introduce a `skillport.dev`
+domain: it is not owned, will not be bought, and currently answers 404. It must
+never appear in canonical tags, `sitemap.xml`, `robots.txt`, `llms.txt`, docs or
+social metadata.
+
+- MCP host: `https://skillport.mcp.mathclass.uk` (`POST /mcp`, `GET /sse`)
+- Spelling: `mathclass` with `ss`. `mathclaes.uk` has no DNS record.
+
 ## 📦 Quick start
 
 Install [uv](https://docs.astral.sh/uv/) if it isn't already available, then:
