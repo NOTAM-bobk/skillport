@@ -3,7 +3,7 @@ import { CLIENT_CONFIG, MCP_ENDPOINT, MCP_SSE_ENDPOINT, copyText } from "../lib/
 import { SKILLS, SOURCE_REPOS } from "../data/skills";
 import { Link } from "../lib/router";
 import CodeBlock from "./CodeBlock";
-import { ArrowIcon, CheckIcon, CopyIcon, SparklesIcon } from "./Icons";
+import { ArrowIcon, CheckIcon, CopyIcon } from "./Icons";
 import { triggerConfetti } from "../lib/confetti";
 
 const TOTAL_FILES = SKILLS.reduce((sum, skill) => sum + skill.fileCount, 0);
@@ -44,22 +44,13 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-main">
-        <div className="hero-badge-row">
-          <span className="live-status-pill">
-            <span className="live-dot" />
-            MCP Gateway Online
-          </span>
-          <span className="hero-meta-badge">
-            <SparklesIcon size={12} className="sparkle-icon" />
-            MCP 2025-06-18
-          </span>
-        </div>
+        <p className="hero-protocol">MCP 2025-06-18 · streamable HTTP + SSE</p>
 
-        <h1>Skills your agent can find, install and run.</h1>
+        <h1>A skill that finds skills.</h1>
         <p className="hero-lede">
-          skillport is one MCP endpoint in front of a registry of open-source agent skills. Search it
-          from any client, pin a commit, and download the real files — no key, no glue code, no
-          copying SKILL.md by hand.
+          skillport is one MCP endpoint your agent calls to search {SKILLS.length} open-source skills
+          and install their files in seconds. Hundreds of tools, pinned commits — no key, no glue
+          code, no copying SKILL.md by hand.
         </p>
 
         <div className="endpoint" role="group" aria-label="MCP endpoint">
@@ -72,7 +63,7 @@ export default function Hero() {
             aria-label="Copy MCP endpoint"
           >
             {copied ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
-            {copied ? "Copied!" : "Copy"}
+            {copied ? "Copied" : "Copy"}
           </button>
         </div>
 

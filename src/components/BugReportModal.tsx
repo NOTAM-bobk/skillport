@@ -98,7 +98,7 @@ export default function BugReportModal({ isOpen, onClose }: BugReportModalProps)
             <span className="modal-label">Details</span>
             <textarea
               rows={3}
-              placeholder="Describe what happened, what device or client you used, and any error message..."
+              placeholder="Describe what happened, what device or client you used, and any error message…"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="modal-textarea"

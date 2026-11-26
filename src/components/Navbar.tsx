@@ -96,7 +96,7 @@ export default function Navbar() {
               aria-label={copied ? "Endpoint copied" : "Copy MCP endpoint"}
             >
               {copied ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
-              <span className="nav-copy-label">{copied ? "Copied!" : "Copy endpoint"}</span>
+              <span className="nav-copy-label">{copied ? "Copied" : "Copy endpoint"}</span>
             </button>
 
             <button
