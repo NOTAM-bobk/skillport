@@ -52,11 +52,32 @@ const INSTRUCTIONS =
 
 const CORS: Record<string, string> = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS, DELETE",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Accept, Mcp-Session-Id, MCP-Protocol-Version, Authorization",
   "Access-Control-Expose-Headers": "Mcp-Session-Id",
   "Access-Control-Max-Age": "86400",
 };
+
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 60;
+const RATE_LIMITS = new Map<string, { started: number; count: number }>();
+
+function rateLimit(request: Request): Response | undefined {
+  const ip = request.headers.get("CF-Connecting-IP") ?? request.headers.get("X-Forwarded-For")?.split(",", 1)[0]?.trim() ?? "unknown";
+  const now = Date.now();
+  const current = RATE_LIMITS.get(ip);
+  if (!current || now - current.started >= RATE_LIMIT_WINDOW_MS) {
+    RATE_LIMITS.set(ip, { started: now, count: 1 });
+    return;
+  }
+  current.count += 1;
+  if (current.count <= RATE_LIMIT_MAX) return;
+  const retryAfter = Math.max(1, Math.ceil((RATE_LIMIT_WINDOW_MS - (now - current.started)) / 1000));
+  return new Response(JSON.stringify({ error: { code: "RATE_LIMITED", message: "too many requests" } }), {
+    status: 429,
+    headers: { "Content-Type": "application/json; charset=utf-8", "Retry-After": String(retryAfter), ...CORS },
+  });
+}
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -395,6 +416,11 @@ export default {
     const pathname = url.pathname.replace(/\/+$/, "") || "/";
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
+    if (request.method !== "GET" && request.method !== "POST") {
+      return json({ error: { code: "METHOD_NOT_ALLOWED", message: "only GET, POST and OPTIONS are supported" } }, 405);
+    }
+    const limited = rateLimit(request);
+    if (limited) return limited;
 
     if (pathname === "/" && request.method === "GET") {
       return json({
@@ -428,7 +454,6 @@ export default {
       if (request.method === "GET") {
         return json({ error: { code: "METHOD_NOT_ALLOWED", message: "POST JSON-RPC to /mcp. The legacy SSE stream is at /sse." } }, 405);
       }
-      if (request.method === "DELETE") return new Response(null, { status: 204, headers: CORS });
       if (request.method !== "POST") return json({ error: { code: "METHOD_NOT_ALLOWED" } }, 405);
 
       let payload: any;
