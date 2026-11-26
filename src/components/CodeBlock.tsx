@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { copyText } from "../lib/site";
 import { CheckIcon, CopyIcon } from "./Icons";
+import { triggerConfetti } from "../lib/confetti";
 
 type CodeBlockProps = {
   code: string;
@@ -18,8 +19,12 @@ export default function CodeBlock({ code, title, label = "Copy", className }: Co
     return () => window.clearTimeout(timer);
   }, [copied]);
 
-  async function handleCopy() {
-    if (await copyText(code)) setCopied(true);
+  async function handleCopy(e: React.MouseEvent<HTMLButtonElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    if (await copyText(code)) {
+      setCopied(true);
+      triggerConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    }
   }
 
   return (

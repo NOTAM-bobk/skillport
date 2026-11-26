@@ -224,6 +224,7 @@ export default function Skills({ showHeader = true }: SkillsProps) {
             <div
               key={folder.category}
               className={`skill-folder ${isOpen ? "open" : "collapsed"}`}
+              style={{ "--folder-accent": folder.accent } as React.CSSProperties}
             >
               <button
                 type="button"

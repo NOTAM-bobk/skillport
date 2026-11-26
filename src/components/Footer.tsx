@@ -1,6 +1,8 @@
-import { REPO_URL } from "../lib/site";
+import { useState } from "react";
+import { ISSUES_URL, REPO_URL } from "../lib/site";
 import { Link } from "../lib/router";
-import { GitHubIcon, SkillMark } from "./Icons";
+import { BugIcon, GitHubIcon, SkillMark } from "./Icons";
+import BugReportModal from "./BugReportModal";
 
 const COLUMNS = [
   {
@@ -22,59 +24,99 @@ const COLUMNS = [
     ],
   },
   {
-    title: "Company",
+    title: "Community",
     links: [
+      { label: "GitHub Discussions", to: `${REPO_URL}/discussions`, external: true },
       { label: "About", to: "/about" },
-      { label: "Blog", to: "/blog" },
-      { label: "Contact", to: "/contact" },
       { label: "Privacy", to: "/privacy" },
     ],
   },
 ];
 
 export default function Footer() {
+  const [bugModalOpen, setBugModalOpen] = useState(false);
+
   return (
-    <footer className="footer">
-      <div className="footer-inner">
-        <div className="footer-brand">
-          <Link className="brand" to="/">
-            <span className="brand-mark">
-              <SkillMark size={16} />
-            </span>
-            <span className="brand-name">skillport</span>
-          </Link>
-          <p>The MCP endpoint for agent skills.</p>
+    <>
+      <footer className="footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <Link className="brand" to="/">
+              <span className="brand-mark">
+                <SkillMark size={16} />
+              </span>
+              <span className="brand-name">skillport</span>
+            </Link>
+            <p>The open MCP endpoint for agent skills.</p>
+            <div className="footer-socials">
+              <a
+                className="icon-button"
+                href={REPO_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="skillport repository on GitHub"
+              >
+                <GitHubIcon size={15} />
+              </a>
+              <button
+                type="button"
+                className="footer-bug-btn"
+                onClick={() => setBugModalOpen(true)}
+                title="Report a bug"
+              >
+                <BugIcon size={13} />
+                <span>Report bug</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="footer-cols">
+            {COLUMNS.map((column) => (
+              <div key={column.title}>
+                <h2>{column.title}</h2>
+                <ul>
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      {"external" in link && link.external ? (
+                        <a href={link.to} target="_blank" rel="noreferrer">
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link to={link.to}>{link.label}</Link>
+                      )}
+                    </li>
+                  ))}
+                  {column.title === "Developers" && (
+                    <li>
+                      <button
+                        type="button"
+                        className="footer-link-btn"
+                        onClick={() => setBugModalOpen(true)}
+                      >
+                        Report a bug
+                      </button>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="footer-base">
+          <span>© {new Date().getFullYear()} skillport • Built for the Model Context Protocol</span>
           <a
-            className="icon-button"
-            href={REPO_URL}
+            href={ISSUES_URL}
             target="_blank"
             rel="noreferrer"
-            aria-label="skillport repository on GitHub"
+            className="footer-issues-link"
           >
-            <GitHubIcon size={15} />
+            GitHub Issues
           </a>
         </div>
+      </footer>
 
-        <div className="footer-cols">
-          {COLUMNS.map((column) => (
-            <div key={column.title}>
-              <h2>{column.title}</h2>
-              <ul>
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <Link to={link.to}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="footer-base">
-        <span>© {new Date().getFullYear()} skillport</span>
-        <span className="footer-note">Preview build: registry data and endpoint are mocked.</span>
-      </div>
-    </footer>
+      <BugReportModal isOpen={bugModalOpen} onClose={() => setBugModalOpen(false)} />
+    </>
   );
 }

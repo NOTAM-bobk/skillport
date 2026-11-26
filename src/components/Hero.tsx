@@ -3,7 +3,8 @@ import { CLIENT_CONFIG, MCP_ENDPOINT, MCP_SSE_ENDPOINT, copyText } from "../lib/
 import { SKILLS, SOURCE_REPOS } from "../data/skills";
 import { Link } from "../lib/router";
 import CodeBlock from "./CodeBlock";
-import { ArrowIcon, CheckIcon, CopyIcon } from "./Icons";
+import { ArrowIcon, CheckIcon, CopyIcon, SparklesIcon } from "./Icons";
+import { triggerConfetti } from "../lib/confetti";
 
 const TOTAL_FILES = SKILLS.reduce((sum, skill) => sum + skill.fileCount, 0);
 
@@ -29,14 +30,31 @@ export default function Hero() {
     return () => window.clearTimeout(timer);
   }, [copied]);
 
-  async function handleCopy() {
-    if (await copyText(MCP_ENDPOINT)) setCopied(true);
+  async function handleCopy(e: React.MouseEvent<HTMLButtonElement>) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    if (await copyText(MCP_ENDPOINT)) {
+      setCopied(true);
+      triggerConfetti(x, y);
+    }
   }
 
   return (
     <section className="hero">
       <div className="hero-main">
-        <p className="hero-meta">Model Context Protocol, revision 2025-06-18</p>
+        <div className="hero-badge-row">
+          <span className="live-status-pill">
+            <span className="live-dot" />
+            MCP Gateway Online
+          </span>
+          <span className="hero-meta-badge">
+            <SparklesIcon size={12} className="sparkle-icon" />
+            MCP 2025-06-18
+          </span>
+        </div>
+
         <h1>Skills your agent can find, install and run.</h1>
         <p className="hero-lede">
           skillport is one MCP endpoint in front of a registry of open-source agent skills. Search it
@@ -46,7 +64,7 @@ export default function Hero() {
 
         <div className="endpoint" role="group" aria-label="MCP endpoint">
           <span className="endpoint-proto">mcp</span>
-          <code>{MCP_ENDPOINT}</code>
+          <code className="endpoint-code">{MCP_ENDPOINT}</code>
           <button
             type="button"
             className={copied ? "copy-button copied" : "copy-button"}
@@ -54,7 +72,7 @@ export default function Hero() {
             aria-label="Copy MCP endpoint"
           >
             {copied ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
-            {copied ? "Copied" : "Copy"}
+            {copied ? "Copied!" : "Copy"}
           </button>
         </div>
 
@@ -70,7 +88,7 @@ export default function Hero() {
 
         <dl className="hero-facts">
           {FACTS.map((fact) => (
-            <div key={fact.label}>
+            <div key={fact.label} className="fact-item">
               <dt>{fact.label}</dt>
               <dd>{fact.value}</dd>
             </div>

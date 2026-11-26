@@ -64,3 +64,5 @@ export async function copyText(text: string): Promise<boolean> {
     return false;
   }
 }
+
+export const ISSUES_URL = `${REPO_URL}/issues/new?title=%5BBug%5D+&labels=bug`;
