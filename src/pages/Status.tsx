@@ -4,10 +4,11 @@ import { usePageMeta } from "../lib/seo";
 import { SKILLS, SKILLS_GENERATED, SOURCE_REPOS } from "../data/skills";
 
 const COMPONENTS = [
-  { name: "MCP endpoint", detail: "skillport.mcp.mathclass.uk/mcp", state: "Operational" },
-  { name: "Registry API", detail: "skills.search, skills.get, skills.install", state: "Not deployed" },
+  { name: "MCP endpoint", detail: "skillport-mcp-t5vo4e-preview.freebuff.site/mcp", state: "Operational" },
+  { name: "Registry API", detail: "skills.search, skills.get, skills.install", state: "Operational" },
   { name: "Skill mirror", detail: `${SKILLS.length} skills · ${SOURCE_REPOS.length} repos · synced ${SKILLS_GENERATED.slice(0, 10)}`, state: "Built" },
-  { name: "Website", detail: "Vercel", state: "Operational" },
+  { name: "Custom domain", detail: "skillport.mcp.mathclass.uk", state: "Blocked by Cloudflare challenge" },
+  { name: "Website", detail: "skillport.dev", state: "Not deployed" },
 ];
 
 export default function Status() {
@@ -50,8 +51,9 @@ export default function Status() {
 
       <Section title="Incidents">
         <p className="prose">
-          No incidents recorded. The MCP server is built and tested locally; it starts serving when
-          the Worker is deployed and this page will say so.
+          The MCP server is live on Freebuff Sites. The Cloudflare custom domain stays offline while
+          the mathclass.uk zone serves its bot challenge to non-browser clients, and skillport.dev
+          has no deployment yet.
         </p>
         <p className="prose">
           Something looks wrong on the site? Report it through{" "}
