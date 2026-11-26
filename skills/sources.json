@@ -1,0 +1,34 @@
+{
+  "note": "Curated public skill repos mirrored into this registry by `npm run skills:sync`. Each entry pins a repo path; the sync script records the exact commit it copied.",
+  "repos": [
+    {
+      "repo": "anthropics/skills",
+      "license": "Apache-2.0",
+      "skills": [
+        { "path": "skills/frontend-design", "category": "Web" },
+        { "path": "skills/mcp-builder", "category": "Dev" },
+        { "path": "skills/webapp-testing", "category": "Dev" },
+        { "path": "skills/doc-coauthoring", "category": "Docs" },
+        { "path": "skills/brand-guidelines", "category": "Media" },
+        { "path": "skills/pdf", "category": "Docs" },
+        { "path": "skills/algorithmic-art", "category": "Media" },
+        { "path": "skills/internal-comms", "category": "Docs" }
+      ]
+    },
+    {
+      "repo": "roerohan/skills",
+      "skills": [
+        { "path": "tmux", "category": "Dev" },
+        { "path": "repo-walkthrough", "category": "Docs" },
+        { "path": "librarian", "category": "Data" }
+      ]
+    },
+    {
+      "repo": "gohypergiant/agent-skills",
+      "skills": [
+        { "path": "skills/accelint-react-best-practices", "category": "Dev" },
+        { "path": "skills/accelint-security-best-practices", "category": "Dev" }
+      ]
+    }
+  ]
+}
