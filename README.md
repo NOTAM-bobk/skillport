@@ -20,7 +20,7 @@ npm run preview   # serve the build locally
 
 ## Deploy
 
-**Vercel** — import the repo. `vercel.json` sets the framework, build command and output directory, so no dashboard configuration is needed.
+**Vercel** — import the repo. `vercel.json` sets the framework, build command, output directory and SPA rewrites, so no dashboard configuration is needed.
 
 ```bash
 npx vercel deploy --prod
@@ -32,14 +32,37 @@ npx vercel deploy --prod
 npm run deploy:cf
 ```
 
+Both targets need the SPA rewrite because pages are client-routed.
+
+## Pages
+
+| Path | Page |
+| --- | --- |
+| `/` | Hero, client wall, skill list, how it works |
+| `/registry` | Full searchable skill registry |
+| `/skills/:name` | Skill detail: install request, parameters, call |
+| `/docs`, `/docs/mcp` | Setup guide and protocol details |
+| `/cli`, `/publish` | CLI reference and publishing guide |
+| `/about`, `/blog`, `/blog/:slug` | Company pages and posts |
+| `/changelog`, `/status`, `/contact`, `/privacy` | Product and policy pages |
+
+`src/lib/router.tsx` is a ~70-line history router: real `<a href>` links, in-place navigation, scroll handling. `src/lib/seo.ts` sets the title, description, canonical and Open Graph tags per route.
+
+## SEO files
+
+- `public/robots.txt` — allows crawling, points at the sitemap.
+- `public/sitemap.xml` — every static route plus the twelve skill pages.
+- `index.html` — site-level title, description, canonical, Open Graph, Twitter tags and JSON-LD.
+
 ## Structure
 
 ```
 src/
-  components/   Navbar, Hero, Skills, Features, Footer, Icons
-  data/skills.ts  mock skill catalog
-  lib/site.ts     endpoint constant + clipboard helper
+  components/     Navbar, Hero, AIWall, Skills, Features, Footer, CodeBlock, Page, Icons
+  data/skills.ts  mock skill catalog (descriptions, params, port slots)
+  lib/            endpoint constants, router, per-route SEO
+  pages/          one component per route
   styles.css      design tokens and layout
 ```
 
-The endpoint lives in `src/lib/site.ts` (`MCP_ENDPOINT`) — update it once the real MCP server is available.
+The endpoint lives in `src/lib/site.ts` (`MCP_ENDPOINT`) — update it once the real MCP server is available. `REPO_URL` points at this repository.
