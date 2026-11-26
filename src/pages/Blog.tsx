@@ -21,8 +21,8 @@ const POSTS: Post[] = [
       "Every MCP client stores servers differently. Putting the registry behind a single URL removes that whole category of maintenance.",
     body: [
       "The first thing most teams notice about MCP is that each client keeps its own idea of a server list. Claude Desktop reads a JSON file, a code editor keeps workspace settings, and a CLI holds its own config. Add a tool and you edit all of them, in three formats.",
-      "skillport's answer is boring on purpose: one endpoint per workspace. Whatever the client, the configuration is the same URL and the same OAuth flow. The registry decides which skills exist, and the client does not need to know.",
-      "That also means access control has a single place to live. Removing a skill from a workspace removes it from every client that uses the endpoint, without a migration.",
+      "skillport's answer is boring on purpose: one public endpoint. Whatever the client, the configuration is the same URL and nothing else — no key, no token, no per-client account. The registry decides which skills exist, and the client does not need to know.",
+      "That also means a skill is published once and every client sees it. Unpublishing it removes it from every client that points at the endpoint, without a migration.",
     ],
   },
   {
